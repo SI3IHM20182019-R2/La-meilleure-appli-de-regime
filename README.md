@@ -12,8 +12,10 @@ Conception de la meilleures IHM du monde pour un site de régime
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/SI3IHM20182019-R2/Le-meilleur-site-de-regime/blob/master/Marie-Dumont.pdf">Download PDF</a>.</p>
     </embed>
 </object>
+<img src="Marie-Dumont.pdf" alt="some text"  width="100%" height="auto">
 <object data="https://github.com/SI3IHM20182019-R2/Le-meilleur-site-de-regime/blob/master/Martin-Durand.pdf" type="application/pdf" width="100%" height="auto">
     <embed src="https://github.com/SI3IHM20182019-R2/Le-meilleur-site-de-regime/blob/master/Martin-Durand.pdf">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/SI3IHM20182019-R2/Le-meilleur-site-de-regime/blob/master/Martin-Durand.pdf">Download PDF</a>.</p>
     </embed>
 </object>
+<img src="Martin-Durand.pdf" alt="some text"  width="100%" height="auto">
