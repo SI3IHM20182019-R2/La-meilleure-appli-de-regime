@@ -7,5 +7,5 @@ Conception de la meilleures IHM du monde pour un site de régime
 - LARROYE Rémy
 - GIUNTINI Romain
 # Personnas
-knitr::include_graphics("Martin-Durand.pdf")
-knitr::include_graphics("Marie-Dumont.pdf") 
+<a href="https://github.com/SI3IHM20182019-R2/Le-meilleur-site-de-regime/blob/master/Martin-Durand.pdf"> Martin Durand </a> </br>
+<a href="https://github.com/SI3IHM20182019-R2/Le-meilleur-site-de-regime/blob/master/Marie-Dumont.pdf"> Marie Dumont </a>
