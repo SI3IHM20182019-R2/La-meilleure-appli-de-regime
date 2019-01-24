@@ -1,5 +1,5 @@
-# Le meilleur site de regime
-Conception de la meilleures IHM du monde pour un site de régime
+# La meilleure appli de regime
+Conception de la meilleure IHM du monde pour une appli de régime
 # Membres
 - MONIN Donélia
 - SABRI Anass
