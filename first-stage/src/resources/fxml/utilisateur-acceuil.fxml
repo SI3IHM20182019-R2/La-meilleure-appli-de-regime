@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" spacing="30.0" style="-fx-border-width: 5; -fx-border-color: lightgrey; -fx-border-radius: 5; -fx-background-color: lightgrey; -fx-background-radius: 5;" VBox.vgrow="ALWAYS">
+         <children>
+            <Button ellipsisString="" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 3em; -fx-min-height: 3em; -fx-font-size: 1em;" styleClass="addUserButton" text="+" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button ellipsisString="" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 10em; -fx-min-height: 10em;">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <ScrollPane style="-fx-fit-to-height: true; -fx-background-color: lightgrey;" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+               <content>
+                  <HBox alignment="CENTER" spacing="20.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <Button ellipsisString="" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 8em; -fx-min-height: 8em;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button ellipsisString="" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 8em; -fx-min-height: 8em;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button ellipsisString="" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 8em; -fx-min-height: 8em;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button ellipsisString="" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 8em; -fx-min-height: 8em;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button ellipsisString="" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 8em; -fx-min-height: 8em;" />
+                        <Button ellipsisString="" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-width: 8em; -fx-min-height: 8em;" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </HBox>
+               </content>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ScrollPane>
+         </children>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+      </HBox>
+      <ScrollPane style="-fx-fit-to-height: true; -fx-border-width: 5; -fx-border-color: lightgrey; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: lightgrey;" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+         <content>
+            <HBox alignment="CENTER" spacing="15.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <Button ellipsisString="" mnemonicParsing="false" prefHeight="144.0" prefWidth="266.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button ellipsisString="" mnemonicParsing="false" prefHeight="144.0" prefWidth="266.0" />
+                  <Button ellipsisString="" mnemonicParsing="false" prefHeight="144.0" prefWidth="266.0" />
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </HBox>
+         </content>
+      </ScrollPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>
