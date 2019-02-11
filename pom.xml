@@ -19,6 +19,7 @@
 
     <build>
         <sourceDirectory>src</sourceDirectory>
+        <outputDirectory>build</outputDirectory>
         <finalName>Le-meilleur-site-de-regime</finalName>
         <plugins>
             <plugin>
