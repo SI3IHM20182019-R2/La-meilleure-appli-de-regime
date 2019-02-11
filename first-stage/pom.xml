@@ -2,20 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <packaging>jar</packaging>
-
-    <properties>
-        <team.name>La TEAM</team.name>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Team ${team.name}</name>
-
-    <groupId>Le-meilleur-site-de-regime</groupId>
+    <groupId>first-stage</groupId>
     <artifactId>first-stage</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -27,8 +16,6 @@
     </parent>
 
     <build>
-        <sourceDirectory>src</sourceDirectory>
-        <outputDirectory>build</outputDirectory>
         <finalName>first-stage</finalName>
         <plugins>
             <plugin>
@@ -39,7 +26,7 @@
         </plugins>
         <resources>
             <resource>
-                <directory>stage1/src/resources</directory>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
     </build>

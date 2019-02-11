@@ -24,7 +24,6 @@
     </modules>
 
     <build>
-        <sourceDirectory>first-stage/src</sourceDirectory>
         <outputDirectory>build</outputDirectory>
         <finalName>Le-meilleur-site-de-regime</finalName>
         <plugins>
@@ -44,10 +43,5 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>first-stage/src/resources</directory>
-            </resource>
-        </resources>
     </build>
 </project>
