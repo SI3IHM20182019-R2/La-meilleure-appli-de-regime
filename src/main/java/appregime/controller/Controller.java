@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Controller {
+abstract class Controller {
     protected Stage primaryStage;
     protected Stage myStage;
     protected String fxmlPath;
@@ -24,8 +24,18 @@ public class Controller {
      * affiche le fxml lié au controller dans la fenêtre de base
      */
     public void showInPrimaryStage() {
-        // Affiche la scène contenant la vbox avec le menu
         Scene scene = new Scene(fxml);
+        primaryStage.setScene(scene);
+        this.primaryStage.show();
+    }
+
+    /**
+     * affiche le fxml lié au controller avec la barre de menu
+     */
+    public void showWithMenu() {
+        MenuController menuController = new MenuController(primaryStage);
+        Scene scene = new Scene(menuController.getFxml());
+        menuController.setMenuElement(fxml);
         primaryStage.setScene(scene);
         this.primaryStage.show();
     }

@@ -16,7 +16,7 @@ public class AjouterRepasController extends Controller {
         creerRepas.setOnAction(event -> {
             myStage.close();
             CreerRepasController creerRepasController = new CreerRepasController(primaryStage);
-            creerRepasController.showInPrimaryStage();
+            creerRepasController.showWithMenu();
         });
     }
 }

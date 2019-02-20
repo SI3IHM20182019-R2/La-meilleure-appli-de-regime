@@ -18,6 +18,6 @@ public class CreerRepasController extends Controller {
      */
     private void retour() {
         CreerRegimeController creerRegimeController = new CreerRegimeController(primaryStage);
-        creerRegimeController.showInPrimaryStage();
+        creerRegimeController.showWithMenu();
     }
 }
