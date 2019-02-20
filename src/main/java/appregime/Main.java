@@ -1,8 +1,6 @@
 package appregime;
 
-import appregime.controller.AjouterRepasController;
 import appregime.controller.CreerRegimeController;
-import appregime.controller.MenuController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

@@ -22,9 +22,9 @@ public class MenuController extends Controller {
     }
 
     /**
-     * insère à l'indice 1 de la VBox principale (élément 0 étant la barre de menu) le code du fxml représenté par la variable node
+     * affiche la partie de l'écran (représentée ici par la variable node) qui se trouve sous la barre de menu
      */
-    public void setMenuElement(Node node) {
-        fxml.getChildren().set(1, node);
+    public void setBelowMenuElement(Node node) {
+        fxml.getChildren().set(1, node); // insère à l'indice 1 de la VBox principale (élément 0 étant la barre de menu)
     }
 }

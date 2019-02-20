@@ -3,7 +3,6 @@ package appregime.controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,7 +34,7 @@ abstract class Controller {
     public void showWithMenu() {
         MenuController menuController = new MenuController(primaryStage);
         Scene scene = new Scene(menuController.getFxml());
-        menuController.setMenuElement(fxml);
+        menuController.setBelowMenuElement(this.fxml);
         primaryStage.setScene(scene);
         this.primaryStage.show();
     }
