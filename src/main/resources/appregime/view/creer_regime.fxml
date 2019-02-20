@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="557.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="retour" fx:id="retour" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" text="Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="13.0" />
+      <TextField id="nomRegime" fx:id="nomRegime" layoutX="304.0" layoutY="13.0" text="Nom du régime" AnchorPane.leftAnchor="304.0" AnchorPane.topAnchor="13.0" />
+      <TextArea id="descriptionRegime" fx:id="descriptionRegime" layoutX="14.0" layoutY="54.0" prefHeight="150.0" prefWidth="518.0" text="Description du régime" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="54.0" />
+      <AnchorPane layoutX="546.0" layoutY="52.0" prefHeight="154.0" prefWidth="149.0" AnchorPane.leftAnchor="546.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="154.0" stroke="BLACK" strokeType="INSIDE" width="195.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fitHeight="154.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button id="ajouterImage" fx:id="ajouterImage" layoutX="43.0" layoutY="115.0" mnemonicParsing="false" text="Ajouter une image" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="43.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="15.0" layoutY="214.0" prefHeight="89.0" prefWidth="728.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="214.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="89.0" stroke="BLACK" strokeType="INSIDE" width="728.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button id="ajouterObjectif" fx:id="ajouterObjectif" layoutX="14.0" layoutY="50.0" mnemonicParsing="false" text="Ajouter un objectif" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="15.0" layoutY="314.0" prefHeight="143.0" prefWidth="728.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="314.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="143.0" stroke="BLACK" strokeType="INSIDE" width="728.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <TabPane prefHeight="128.0" prefWidth="720.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <tabs>
+                  <Tab id="lundi" fx:id="lundi" text="Lundi">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="ajouterRepas" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" text="Ajouter un repas" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab id="mardi" fx:id="mardi" text="Mardi">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" text="Ajouter un repas" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab id="mercredi" fx:id="mercredi" text="Mercredi">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" text="Ajouter un repas" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab id="jeudi" fx:id="jeudi" text="Jeudi">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" text="Ajouter un repas" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab id="vendredi" fx:id="vendredi" text="Vendredi">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" text="Ajouter un repas" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab id="samedi" fx:id="samedi" text="Samedi">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" text="Ajouter un repas" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab id="dimanche" fx:id="dimanche" text="Dimanche">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" text="Ajouter un repas" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+      <Button id="terminer" fx:id="terminer" layoutX="666.0" layoutY="514.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" text="Terminer" AnchorPane.leftAnchor="666.0" AnchorPane.topAnchor="514.0" />
+      <AnchorPane layoutX="15.0" layoutY="471.0" prefHeight="67.0" prefWidth="644.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8e8e8" height="70.0" stroke="BLACK" strokeType="INSIDE" width="644.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <HBox layoutX="258.0" prefHeight="70.0" prefWidth="386.0" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox prefHeight="131.0" prefWidth="100.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Glucides (g) :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Protéines (g):">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="68.0" prefWidth="96.0" />
+                  <VBox prefHeight="131.0" prefWidth="100.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lipides (g):">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calories (kcal) :">
+                           <font>
+                              <Font name="System Italic" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations nutritionnelles" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
