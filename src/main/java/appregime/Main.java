@@ -19,7 +19,7 @@ public class Main extends Application {
 
         menu = new MenuController(primaryStage);
         creerRegimeController = new CreerRegimeController(primaryStage);
-        menu.setElementLayout(creerRegimeController.getFxml());
+        menu.setMenuElement(creerRegimeController.getFxml());
 
         menu.showInPrimaryStage();
     }

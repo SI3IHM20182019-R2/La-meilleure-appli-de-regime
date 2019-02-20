@@ -20,6 +20,9 @@ public class Controller {
         setFxml(fxmlPath);
     }
 
+    /**
+     * affiche le fxml lié au controller dans la fenêtre de base
+     */
     public void showInPrimaryStage() {
         // Affiche la scène contenant la vbox avec le menu
         Scene scene = new Scene(fxml);
@@ -27,8 +30,10 @@ public class Controller {
         this.primaryStage.show();
     }
 
-    public void showInNewStage(String stageTitile) {
-        // Affiche la scène contenant la vbox avec le menu
+    /**
+     * affiche le fxml lié au controller dans une nouvelle fenêtre
+     */
+    public void showInMyStage(String stageTitile) {
         myStage = new Stage();
         myStage.initModality(Modality.WINDOW_MODAL);
         myStage.setTitle(stageTitile);
@@ -46,12 +51,15 @@ public class Controller {
         return fxml;
     }
 
-    protected void setFxml(String fxmlPath) {
-            FXMLLoader loader = new FXMLLoader();
 
-            // Charge le fichier fxml
-            loader.setController(this);
-            loader.setLocation(this.getClass().getResource(fxmlPath));
+    /**
+     * charge le fichier fxml et le lie au controller
+     */
+    protected void setFxml(String fxmlPath) {
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setController(this);
+        loader.setLocation(this.getClass().getResource(fxmlPath));
 
         try {
             fxml = loader.load();
