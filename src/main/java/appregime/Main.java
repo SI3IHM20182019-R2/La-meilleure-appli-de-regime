@@ -10,7 +10,6 @@ public class Main extends Application {
     private Stage primaryStage;
     private MenuController menu;
     private CreerRegimeController creerRegimeController;
-    private AjouterRepasController ajouterRepasController;
 
     @Override
     public void start(Stage primaryStage) {
