@@ -45,7 +45,6 @@ abstract class Controller {
      */
     public void showInMyStage(String stageTitile) {
         myStage = new Stage();
-        myStage.initModality(Modality.WINDOW_MODAL);
         myStage.setTitle(stageTitile);
         myStage.initOwner(primaryStage);
         Scene scene = new Scene(fxml);

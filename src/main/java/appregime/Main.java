@@ -7,20 +7,13 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    private Stage primaryStage;
-    private MenuController menu;
-    private CreerRegimeController creerRegimeController;
-
     @Override
     public void start(Stage primaryStage) {
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("La meilleure appli de régime");
+        Stage primaryStage1 = primaryStage;
+        primaryStage1.setTitle("La meilleure appli de régime");
 
-        menu = new MenuController(primaryStage);
-        creerRegimeController = new CreerRegimeController(primaryStage);
-        menu.setMenuElement(creerRegimeController.getFxml());
-
-        menu.showInPrimaryStage();
+        CreerRegimeController creerRegimeController = new CreerRegimeController(primaryStage);
+        creerRegimeController.showWithMenu();
     }
 
     public static void main(String[] args) {
