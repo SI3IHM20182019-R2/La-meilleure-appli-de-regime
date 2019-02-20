@@ -3,6 +3,7 @@ package appregime.controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -45,6 +46,7 @@ abstract class Controller {
     public void showInMyStage(String stageTitile) {
         myStage = new Stage();
         myStage.setTitle(stageTitile);
+        myStage.initModality(Modality.WINDOW_MODAL);
         myStage.initOwner(primaryStage);
         Scene scene = new Scene(fxml);
         myStage.setScene(scene);
