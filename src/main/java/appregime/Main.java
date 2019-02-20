@@ -9,8 +9,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
-        Stage primaryStage1 = primaryStage;
-        primaryStage1.setTitle("La meilleure appli de régime");
+        primaryStage.setTitle("La meilleure appli de régime");
 
         CreerRegimeController creerRegimeController = new CreerRegimeController(primaryStage);
         creerRegimeController.showWithMenu();
