@@ -7,10 +7,21 @@ import javafx.stage.Stage;
 public class CreerRepasController extends Controller {
     @FXML
     private Button retour;
+    @FXML
+    private Button terminer;
+    @FXML
+    private Button ajouterPlat;
 
     public CreerRepasController(Stage primaryStage) {
         super(primaryStage, "/appregime/view/creer_repas.fxml");
+        ajouterPlat.setOnAction(event -> afficheAjouterPlat());
         retour.setOnAction(event -> retour());
+        terminer.setOnAction(event -> retour());
+    }
+
+    private void afficheAjouterPlat() {
+        AjouterPlatController ajouterPlatController = new AjouterPlatController(primaryStage);
+        ajouterPlatController.showInMyStage("Ajouter un plat");
     }
 
     /**

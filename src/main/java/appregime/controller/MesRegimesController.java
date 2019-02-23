@@ -9,44 +9,20 @@ import javafx.stage.Stage;
 
 public class MesRegimesController extends Controller {
     @FXML
-    private Button DetailsActuel;
+    private Button creerRegime;
     @FXML
-    private Button DeletActuel;
+    private TextField chercher;
     @FXML
-    private Button DetailFavoris;
+    private MenuButton triDate;
     @FXML
-    private Button DeleteFavoris;
-    @FXML
-    private Button Detail1;
-    @FXML
-    private Button Add1;
-    @FXML
-    private Button Details2;
-    @FXML
-    private Button Add2;
-    @FXML
-    private Button Details3;
-    @FXML
-    private Button Add3;
-    @FXML
-    private Button Details4;
-    @FXML
-    private Button Add4;
-    @FXML
-    private Button CreateRegime;
-    @FXML
-    private TextField Search;
-    @FXML
-    private MenuButton tri1;
-    @FXML
-    private MenuButton Tri2;
+    private MenuButton triNote;
 
     public MesRegimesController (Stage primaryStage) {
         super(primaryStage, "/appregime/view/mes_regimes.fxml");
-        CreateRegime.setOnAction(event -> CreateRegime());
+        creerRegime.setOnAction(event -> creerRegime());
     }
 
-    private void CreateRegime() {
+    private void creerRegime() {
         CreerRegimeController Creation = new CreerRegimeController(primaryStage);
         Creation.showWithMenu();
     }

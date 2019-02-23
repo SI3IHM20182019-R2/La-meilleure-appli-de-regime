@@ -19,7 +19,7 @@
       <Button fx:id="ajouter" layoutX="283.0" layoutY="261.0" mnemonicParsing="false" text="Ajouter" AnchorPane.leftAnchor="283.0" AnchorPane.topAnchor="261.0" />
       <VBox layoutX="31.0" layoutY="77.0" prefHeight="166.0" prefWidth="438.0">
          <children>
-            <TextField promptText="Nom du repas" />
+            <TextField fx:id="nomRepas" promptText="Nom du repas" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ScrollPane prefHeight="141.0" prefWidth="438.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -32,8 +32,8 @@
             </AnchorPane>
          </children>
       </VBox>
-      <TextField layoutX="269.0" layoutY="23.0" prefHeight="25.0" prefWidth="28.0" promptText="12" AnchorPane.leftAnchor="269.0" AnchorPane.topAnchor="23.0" />
-      <TextField layoutX="310.0" layoutY="23.0" prefHeight="25.0" prefWidth="28.0" promptText="30" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="23.0" />
+      <TextField fx:id="heure" layoutX="269.0" layoutY="23.0" prefHeight="25.0" prefWidth="28.0" promptText="12" AnchorPane.leftAnchor="269.0" AnchorPane.topAnchor="23.0" />
+      <TextField fx:id="minute" layoutX="310.0" layoutY="23.0" prefHeight="25.0" prefWidth="28.0" promptText="30" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="23.0" />
       <Text layoutX="297.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h" wrappingWidth="10.0" AnchorPane.leftAnchor="297.0" AnchorPane.topAnchor="27.0">
          <font>
             <Font size="13.0" />

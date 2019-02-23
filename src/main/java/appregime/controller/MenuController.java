@@ -2,24 +2,27 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class MenuController extends Controller {
     @FXML
-    private Button accueil;
+    private Label accueil;
     @FXML
-    private Button monProfil;
+    private Label monProfil;
     @FXML
-    private Button mesRegimes;
+    private Label mesRegimes;
     @FXML
-    private Button monEvolution;
+    private Label monEvolution;
     @FXML
-    private Button deconnexion;
+    private Label deconnexion;
 
     public MenuController(Stage primaryStage) {
         super(primaryStage, "/appregime/view/menu_layout.fxml");
-        mesRegimes.setOnAction(event -> setBelowMenuElement(new MesRegimesController(primaryStage).getFxml()));
+        fxml.getStylesheets().add("/appregime/css/menu_layout.css");
+
+        mesRegimes.setOnMouseClicked(event -> setBelowMenuElement(new MesRegimesController(primaryStage).getFxml()));
+        deconnexion.setOnMouseClicked(event -> connexion());
     }
 
     /**
@@ -27,5 +30,10 @@ public class MenuController extends Controller {
      */
     public void setBelowMenuElement(Node node) {
         fxml.getChildren().set(1, node); // insère à l'indice 1 de la VBox principale (élément 0 étant la barre de menu)
+    }
+
+    public void connexion() {
+        ConnexionController connexionController = new ConnexionController(primaryStage);
+        connexionController.showInPrimaryStage();
     }
 }

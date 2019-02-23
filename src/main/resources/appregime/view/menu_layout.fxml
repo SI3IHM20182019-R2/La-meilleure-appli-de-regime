@@ -1,19 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="13.0" prefWidth="760.0">
+      <HBox prefHeight="34.0" prefWidth="760.0" style="-fx-border-color: gray;">
          <children>
-            <Button fx:id="accueil" mnemonicParsing="false" text="Accueil" />
-            <Button fx:id="monProfil" mnemonicParsing="false" text="Mon profil" />
-            <Button fx:id="mesRegimes" mnemonicParsing="false" text="Mes régimes" />
-            <Button fx:id="monEvolution" mnemonicParsing="false" text="Mon évolution" />
-            <Button fx:id="deconnexion" mnemonicParsing="false" text="Déconnexion" />
+            <Label fx:id="accueil" styleClass="menuButton" text="Accueil">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="monProfil" styleClass="menuButton" text="Mon profil">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="mesRegimes" styleClass="menuButton" text="Mes régimes">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="monEvolution" styleClass="menuButton" text="Mon évolution">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="deconnexion" styleClass="menuButton" text="Déconnexion">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
       <AnchorPane />

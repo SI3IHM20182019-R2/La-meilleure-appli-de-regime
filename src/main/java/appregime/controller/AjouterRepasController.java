@@ -9,14 +9,19 @@ public class AjouterRepasController extends Controller {
     private Button annuler;
     @FXML
     private Button creerRepas;
+    @FXML
+    private Button ajouter;
 
     public AjouterRepasController(Stage primaryStage) {
         super(primaryStage, "/appregime/view/ajouter_repas.fxml");
+        ajouter.setOnAction(event -> myStage.close());
         annuler.setOnAction(event -> myStage.close());
-        creerRepas.setOnAction(event -> {
-            myStage.close();
-            CreerRepasController creerRepasController = new CreerRepasController(primaryStage);
-            creerRepasController.showWithMenu();
-        });
+        creerRepas.setOnAction(event -> creerRepas());
+    }
+
+    private void creerRepas() {
+        myStage.close();
+        CreerRepasController creerRepasController = new CreerRepasController(primaryStage);
+        creerRepasController.showWithMenu();
     }
 }
