@@ -18,6 +18,7 @@ abstract class Controller {
         this.primaryStage = primaryStage;
         this.fxmlPath = fxmlPath;
         setFxml(fxmlPath);
+        fxml.getStylesheets().add("/appregime/css/common.css");
     }
 
     /**
