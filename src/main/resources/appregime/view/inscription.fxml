@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
@@ -10,10 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button mnemonicParsing="false" text="&lt;Retour">
+      <Button fx:id="retour" mnemonicParsing="false" text="&lt; Retour">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -62,30 +62,48 @@
                <children>
                   <HBox alignment="BOTTOM_CENTER" prefHeight="21.0" prefWidth="157.0">
                      <children>
+                        <Label text="H">
+                           <font>
+                              <Font name="Arimo Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <RadioButton fx:id="homme" mnemonicParsing="false">
+                           <HBox.margin>
+                              <Insets bottom="4.0" />
+                           </HBox.margin></RadioButton>
                         <Label text="F">
                            <font>
                               <Font name="Arimo Bold" size="16.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets left="15.0" right="5.0" />
+                           </HBox.margin>
                         </Label>
-                        <RadioButton mnemonicParsing="false" />
+                        <RadioButton fx:id="femme" mnemonicParsing="false">
+                           <HBox.margin>
+                              <Insets bottom="4.0" />
+                           </HBox.margin></RadioButton>
                      </children>
                   </HBox>
-                  <TextField prefHeight="25.0" prefWidth="64.0" promptText="Votre Age">
+                  <TextField fx:id="age" prefHeight="25.0" prefWidth="64.0" promptText="Votre Age">
                      <font>
                         <Font name="System Italic" size="10.0" />
                      </font>
                   </TextField>
-                  <TextField prefHeight="25.0" prefWidth="64.0" promptText="Votre Taille">
+                  <TextField fx:id="taille" prefHeight="25.0" prefWidth="64.0" promptText="Votre Taille">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </TextField>
-                  <TextField prefHeight="25.0" prefWidth="64.0" promptText="Votre Poids">
+                  <TextField fx:id="poids" prefHeight="25.0" prefWidth="64.0" promptText="Votre Poids">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </TextField>
-                  <TextField prefHeight="25.0" prefWidth="64.0" promptText="Poids souhaité">
+                  <TextField fx:id="poidsSouhaite" prefHeight="25.0" prefWidth="64.0" promptText="Poids souhaité">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -94,16 +112,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="235.0" prefWidth="230.0" spacing="11.0" HBox.hgrow="ALWAYS">
                <children>
-                  <HBox alignment="BOTTOM_CENTER" prefHeight="12.0" prefWidth="159.0">
-                     <children>
-                        <Label text="M">
-                           <font>
-                              <Font name="Arimo Bold" size="16.0" />
-                           </font>
-                        </Label>
-                        <RadioButton mnemonicParsing="false" />
-                     </children>
-                  </HBox>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="12.0" prefWidth="159.0" />
                   <Label text="ans">
                      <font>
                         <Font name="Arimo Italic" size="15.0" />
@@ -148,7 +157,7 @@
                               <Font name="System Italic" size="13.0" />
                            </font>
                         </SplitMenuButton>
-                        <Button alignment="CENTER" mnemonicParsing="false" text="+">
+                        <Button fx:id="plusPrefAlimentaires" alignment="CENTER" mnemonicParsing="false" text="+">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -175,7 +184,7 @@
                               <Font name="System Italic" size="13.0" />
                            </font>
                         </SplitMenuButton>
-                        <Button alignment="CENTER" mnemonicParsing="false" text="+">
+                        <Button fx:id="plusAllergies" alignment="CENTER" mnemonicParsing="false" text="+">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -188,7 +197,7 @@
       </HBox>
       <VBox alignment="CENTER" prefHeight="91.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button mnemonicParsing="false" text="Continuer">
+            <Button fx:id="continuer" mnemonicParsing="false" text="Continuer">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

@@ -43,9 +43,9 @@ abstract class Controller {
     /**
      * affiche le fxml lié au controller dans une nouvelle fenêtre
      */
-    public void showInMyStage(String stageTitile) {
+    public void showInMyStage(String stageTitle) {
         myStage = new Stage();
-        myStage.setTitle(stageTitile);
+        myStage.setTitle(stageTitle);
         myStage.initModality(Modality.WINDOW_MODAL);
         myStage.initOwner(primaryStage);
         Scene scene = new Scene(fxml);

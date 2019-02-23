@@ -1,6 +1,6 @@
 package appregime;
 
-import appregime.controller.CreerRegimeController;
+import appregime.controller.ConnexionController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -9,8 +9,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("La meilleure appli de régime");
 
-        CreerRegimeController creerRegimeController = new CreerRegimeController(primaryStage);
-        creerRegimeController.showWithMenu();
+        ConnexionController connexionController = new ConnexionController(primaryStage);
+        connexionController.showInPrimaryStage();
     }
 
     public static void main(String[] args) {

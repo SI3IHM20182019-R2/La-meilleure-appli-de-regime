@@ -1,38 +1,39 @@
 package appregime.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class ConnexionController extends Controller {
     @FXML
-    private Button Connexion;
+    private Button connexion;
     @FXML
-    private Button Inscription;
+    private Button inscription;
     @FXML
-    private Button Return2Users;
+    private Button return2Users;
     @FXML
-    private TextField MailAdressConnexion;
+    private TextField mailAdressConnexion;
     @FXML
-    private PasswordField PassWordConnexion;
+    private PasswordField passWordConnexion;
     @FXML
-    private TextField MailAdressInscription;
+    private TextField mailAdressInscription;
     @FXML
-    private TextField NomUtilisateur;
+    private TextField nomUtilisateurInscription;
     @FXML
-    private PasswordField PassWordRegister;
+    private PasswordField passWordInscription;
     @FXML
-    private PasswordField ConfirmPassWordRegister;
+    private PasswordField confirmPassWordInscription;
 
     public ConnexionController (Stage primaryStage) {
-        super(primaryStage, "/appregime/view/Premiere_conexion.fxml");
-        Inscription.setOnAction(event -> Inscription());
+        super(primaryStage, "/appregime/view/premiere_connexion.fxml");
+        inscription.setOnAction(event -> inscription());
     }
 
-    private void Inscription() {
-        InscriptionController Inscription = new InscriptionController(primaryStage);
-        Inscription.showWithMenu();
+    private void inscription() {
+        InscriptionController inscription = new InscriptionController(primaryStage);
+        inscription.showInPrimaryStage();
     }
 
 }

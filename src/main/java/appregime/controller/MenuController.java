@@ -19,6 +19,7 @@ public class MenuController extends Controller {
 
     public MenuController(Stage primaryStage) {
         super(primaryStage, "/appregime/view/menu_layout.fxml");
+        mesRegimes.setOnAction(event -> setBelowMenuElement(new MesRegimesController(primaryStage).getFxml()));
     }
 
     /**

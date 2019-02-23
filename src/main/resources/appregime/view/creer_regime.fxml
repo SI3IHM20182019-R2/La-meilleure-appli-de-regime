@@ -16,9 +16,9 @@
 
 <AnchorPane prefHeight="557.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button id="retour" fx:id="retour" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" text="Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="13.0" />
-      <TextField id="nomRegime" fx:id="nomRegime" layoutX="304.0" layoutY="13.0" text="Nom du régime" AnchorPane.leftAnchor="304.0" AnchorPane.topAnchor="13.0" />
-      <TextArea id="descriptionRegime" fx:id="descriptionRegime" layoutX="14.0" layoutY="54.0" prefHeight="150.0" prefWidth="518.0" text="Description du régime" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="54.0" />
+      <Button id="retour" fx:id="retour" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" text="&lt; Retour" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="13.0" />
+      <TextField id="nomRegime" fx:id="nomRegime" layoutX="304.0" layoutY="13.0" promptText="Nom du régime" AnchorPane.leftAnchor="304.0" AnchorPane.topAnchor="13.0" />
+      <TextArea id="descriptionRegime" fx:id="descriptionRegime" layoutX="14.0" layoutY="54.0" prefHeight="150.0" prefWidth="518.0" promptText="Description du régime" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="54.0" />
       <AnchorPane layoutX="546.0" layoutY="52.0" prefHeight="154.0" prefWidth="149.0" AnchorPane.leftAnchor="546.0" AnchorPane.topAnchor="52.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="154.0" stroke="BLACK" strokeType="INSIDE" width="195.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

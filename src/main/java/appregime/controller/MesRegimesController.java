@@ -3,6 +3,8 @@ package appregime.controller;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MesRegimesController extends Controller {
@@ -48,5 +50,4 @@ public class MesRegimesController extends Controller {
         CreerRegimeController Creation = new CreerRegimeController(primaryStage);
         Creation.showWithMenu();
     }
-
 }
