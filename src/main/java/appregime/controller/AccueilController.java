@@ -41,7 +41,7 @@ public class AccueilController extends Controller {
     }
 
     private void creerRegime() {
-        po Creation = new CreerRegimeController(primaryStage);
-        Creation.showWithMenu();
+        PoidsMajController poidsMajController = new PoidsMajController(primaryStage);
+        poidsMajController.showInMyStage("Modifie le poids actuel");
     }
 }
