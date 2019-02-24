@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Actualiser le poids">
+         <VBox.margin>
+            <Insets left="150.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Nouveau poids:">
+               <HBox.margin>
+                  <Insets left="10.0" top="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="10.0" top="50.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="Kg">
+               <HBox.margin>
+                  <Insets left="10.0" top="50.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" text="Sauvegarder">
+         <VBox.margin>
+            <Insets left="50.0" />
+         </VBox.margin>
+      </Button>
+      <Button mnemonicParsing="false" text="Annuler">
+         <VBox.margin>
+            <Insets left="220.0" top="-25.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

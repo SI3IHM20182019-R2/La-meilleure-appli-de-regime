@@ -22,6 +22,14 @@ public class MenuController extends Controller {
         fxml.getStylesheets().add("/appregime/css/menu_layout.css");
 
         mesRegimes.setOnMouseClicked(event -> setBelowMenuElement(new MesRegimesController(primaryStage).getFxml()));
+        accueil.setOnMouseClicked(event -> setBelowMenuElement(new AccueilController(primaryStage).getFxml()));
+        monProfil.setOnMouseClicked(event -> setBelowMenuElement(new ProfilController(primaryStage).getFxml()));
+        monEvolution.setOnMouseClicked(event -> setBelowMenuElement(new EvolutionController(primaryStage).getFxml()));
+
+
+
+
+
         deconnexion.setOnMouseClicked(event -> connexion());
     }
 

@@ -6,12 +6,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class EvolutionController extends Controller {
+public class ObjectifsRegimesController extends Controller {
 
 
-
-    public EvolutionController (Stage primaryStage) {
-        super(primaryStage, "/appregime/view/mon_evolution.fxml");
-
+    public ObjectifsRegimesController(Stage primaryStage) {
+        super(primaryStage, "/appregime/view/objectifs_regimes.fxml");
     }
+
 }

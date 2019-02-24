@@ -46,7 +46,10 @@ public class InscriptionController extends Controller {
 
     // à modifier
     private void continuer() {
+        AccueilController accueilController = new AccueilController(primaryStage);
+        accueilController.showWithMenu();
+        /*
         MesRegimesController mesRegimesController = new MesRegimesController(primaryStage);
-        mesRegimesController.showWithMenu();
+        mesRegimesController.showWithMenu();*/
     }
 }
