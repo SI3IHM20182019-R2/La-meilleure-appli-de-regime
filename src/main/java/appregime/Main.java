@@ -1,6 +1,5 @@
 package appregime;
 
-import appregime.controller.ConnexionController;
 import appregime.controller.UtilisateurAcceuilController;
 import javafx.application.Application;
 import javafx.stage.Stage;

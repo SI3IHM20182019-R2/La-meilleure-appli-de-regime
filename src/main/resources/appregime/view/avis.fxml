@@ -22,7 +22,7 @@
             <Button mnemonicParsing="false" prefHeight="100000.0" prefWidth="100000.0" text="Déconnexion" />
          </children>
       </HBox>
-      <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Retourner au régimes">
+      <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Retourner au régime">
          <VBox.margin>
             <Insets left="5.0" />
          </VBox.margin>
