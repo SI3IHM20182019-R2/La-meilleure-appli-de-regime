@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="21.0" prefWidth="549.0" />
       <VBox prefHeight="91.0" prefWidth="600.0">
@@ -111,12 +111,16 @@
                         <Label prefHeight="17.0" prefWidth="125.0" text="Objectifs alimentaires" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ImageView fitHeight="45.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/regime.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Button mnemonicParsing="false" text="Ajouter +">
+                              <Button fx:id="objectifAlimentaire" mnemonicParsing="false">
+                                 <graphic>
+                                    <ImageView fitHeight="45.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/regime.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="ButtonAjouterObjectif" mnemonicParsing="false" text="Ajouter +">
                                  <HBox.margin>
                                     <Insets left="10.0" top="10.0" />
                                  </HBox.margin>
