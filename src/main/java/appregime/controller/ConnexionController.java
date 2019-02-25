@@ -30,6 +30,7 @@ public class ConnexionController extends Controller {
         super(primaryStage, "/appregime/view/premiere_connexion.fxml");
         inscription.setOnAction(event -> inscription());
         return2Users.setOnAction(event -> return2Users());
+        connexion.setOnAction(event -> connexion());
     }
 
     private void inscription() {
@@ -42,4 +43,8 @@ public class ConnexionController extends Controller {
         utilisateur.showInPrimaryStage();
     }
 
+    private void connexion() {
+        AccueilController accueilController = new AccueilController(primaryStage);
+        accueilController.showWithMenu();
+    }
 }
