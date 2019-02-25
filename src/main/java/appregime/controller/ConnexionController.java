@@ -29,11 +29,17 @@ public class ConnexionController extends Controller {
     public ConnexionController (Stage primaryStage) {
         super(primaryStage, "/appregime/view/premiere_connexion.fxml");
         inscription.setOnAction(event -> inscription());
+        return2Users.setOnAction(event -> return2Users());
     }
 
     private void inscription() {
         InscriptionController inscription = new InscriptionController(primaryStage);
         inscription.showInPrimaryStage();
+    }
+
+    private void return2Users() {
+        UtilisateurAcceuilController utilisateur = new UtilisateurAcceuilController(primaryStage);
+        utilisateur.showInPrimaryStage();
     }
 
 }
