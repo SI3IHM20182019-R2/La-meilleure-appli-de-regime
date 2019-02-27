@@ -1,17 +1,19 @@
 package appregime.model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class IngredientList {
 
-    private static List<Ingredient> ingredientList = new ArrayList<Ingredient>();
+    private ObservableList<Ingredient> ingredientList;
 
-    public void initialiser() {
-
+    public IngredientList() {
         // A rajouter les bonnes valeurs des valeurs nutritionnelles et verifier les paths.
-
+        ingredientList = FXCollections.observableList( new ArrayList<>());
         ingredientList.add(new Ingredient("huile d'olive", 0.0, 100.0, 0.0, 0.0, "resources/images/huile_olive"));
         ingredientList.add( new Ingredient("tomate", 18.4, 0.0, 2.26, 0.0, "resources/images/tomate"));
         ingredientList.add(new Ingredient("pomme de terre",  0.0, 0.1, 18.3, 0.0, "resources/images/pomme de terre"));
@@ -43,7 +45,11 @@ public class IngredientList {
 
     }
 
-    public static List<Ingredient> getIngredientList() {
+    public ObservableList<Ingredient> getIngredientList() {
         return ingredientList;
+    }
+
+    public void add(Ingredient ingredient) {
+        ingredientList.add( ingredient );
     }
 }
