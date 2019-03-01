@@ -3,23 +3,17 @@ package appregime.model;
 import javax.print.DocFlavor;
 import java.awt.*;
 
-public class Ingredient {
+public class Modelngredient {
 
     private String name;
-
-    private Double quantite;
-
     private Double calories;
-
     private Double lipides;
-
     private Double glucides;
-
     private Double proteines;
-
     private String imagePath;
 
-    public Ingredient(String name, Double calories, Double lipides, Double glucides, Double proteines, String imagePath) {
+    public Modelngredient(String name, Double calories, Double lipides, Double glucides, Double proteines, String imagePath) {
+        this.name = name;
         this.calories = calories;
         this.lipides = lipides;
         this.glucides = glucides;
@@ -51,4 +45,3 @@ public class Ingredient {
         return name;
     }
 }
-
