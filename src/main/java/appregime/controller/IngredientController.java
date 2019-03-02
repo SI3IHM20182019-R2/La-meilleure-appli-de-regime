@@ -1,6 +1,6 @@
 package appregime.controller;
 
-import appregime.model.Modelngredient;
+import appregime.model.IngredientModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -13,7 +13,7 @@ public class IngredientController extends Controller {
     }
 
 
-    public void setNomIngredient(Modelngredient ingredient) {
+    public void setNomIngredient(IngredientModel ingredient) {
         nomIngredient.setText(ingredient.getName());
     }
 }

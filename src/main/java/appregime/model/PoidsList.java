@@ -4,15 +4,15 @@ import javafx.collections.ObservableList;
 
 public class PoidsList {
 
-    private ObservableList<Poids> poidsObservableList;
+    private ObservableList<PoidsModel> poidsObservableList;
 
     public PoidsList() {
 
     }
 
-    public void add (Poids poids) {}
+    public void add (PoidsModel poids) {}
 
-    public ObservableList<Poids> getPoidsObservableList() {
+    public ObservableList<PoidsModel> getPoidsObservableList() {
         return poidsObservableList;
     }
 }

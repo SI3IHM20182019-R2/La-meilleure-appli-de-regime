@@ -1,12 +1,12 @@
 package appregime.model;
 
-public class PreferenceAlimentaire extends Model {
+public class PreferenceAlimentaireModel extends Model {
     private String libelle;
     private String description;
 
     //CONSTRUCTORS
-    public PreferenceAlimentaire() {}
-    public PreferenceAlimentaire(String libelle, String description) {
+    public PreferenceAlimentaireModel() {}
+    public PreferenceAlimentaireModel(String libelle, String description) {
         this.libelle = libelle;
         this.description = description;
     }

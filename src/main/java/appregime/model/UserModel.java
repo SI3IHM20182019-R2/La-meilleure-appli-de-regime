@@ -1,6 +1,6 @@
 package appregime.model;
 
-public class User extends Model {
+public class UserModel extends Model {
     private String id;
     private String mail;
     private String pseudo;
@@ -12,8 +12,8 @@ public class User extends Model {
     private Integer objectif;
 
     //CONSTRUCTORS
-    public User() {}
-    public User(String id, String mail, String pseudo, String password, String sexe, String age, Double taille, Integer poids, Integer objectif) {
+    public UserModel() {}
+    public UserModel(String id, String mail, String pseudo, String password, String sexe, String age, Double taille, Integer poids, Integer objectif) {
         this.id = id;
         this.mail = mail;
         this.pseudo = pseudo;

@@ -5,6 +5,7 @@ import appregime.view.AjouterIngredientView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 public class AjouterIngredientController extends Controller {
     @FXML
@@ -14,14 +15,20 @@ public class AjouterIngredientController extends Controller {
     @FXML
     private Button ajouter;
     @FXML
+    private TextField quantite;
+    @FXML
     private ListView ingredientsList;
 
-    public AjouterIngredientController() {
+    AjouterIngredientView ajouterIngredientView;
+    CreerPlatController creerPlatController;
+
+    public AjouterIngredientController(CreerPlatController creerPlatController) {
         super("/appregime/view/ajouter_ingredient.fxml");
-        ajouter.setOnAction(event -> myStage.close());
+        this.creerPlatController = creerPlatController;
+        ajouter.setOnAction(event -> ajouter());
         annuler.setOnAction(event -> myStage.close());
         creerIngredient.setOnAction(event -> creerIngredient());
-        AjouterIngredientView ajouterIngredientView = new AjouterIngredientView(this, new IngredientList());
+        ajouterIngredientView = new AjouterIngredientView(this, new IngredientList());
     }
 
     private void creerIngredient() {
@@ -32,5 +39,10 @@ public class AjouterIngredientController extends Controller {
 
     public ListView getIngredientsListView() {
         return ingredientsList;
+    }
+
+    public void ajouter() {
+        creerPlatController.addIngredient(ajouterIngredientView.getSelectedIngredient(), Double.parseDouble(quantite.getCharacters().toString()));
+        myStage.close();
     }
 }

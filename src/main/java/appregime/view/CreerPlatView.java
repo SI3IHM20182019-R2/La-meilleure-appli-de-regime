@@ -1,21 +1,20 @@
 package appregime.view;
 
-import appregime.controller.AjouterIngredientController;
-import appregime.controller.IngredientController;
-import appregime.model.IngredientList;
-import appregime.model.IngredientModel;
+import appregime.controller.CreerPlatController;
+import appregime.controller.IngredientQuantiteController;
+import appregime.model.IngredientQuantiteModel;
+import appregime.model.IngredientsCreerPlatModel;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
 
-public class AjouterIngredientView extends View {
+public class CreerPlatView extends View {
     private ListView ingredients;
 
-    public AjouterIngredientView(AjouterIngredientController ajouterIngredientController, IngredientList listIngredients) {
-        super(ajouterIngredientController, listIngredients);
-        ingredients = ajouterIngredientController.getIngredientsListView();
-        ingredients.setItems(listIngredients.getIngredientList());
-        //call a cell factory and display each observable item in the ListView
+    public CreerPlatView(CreerPlatController creerPlatController, IngredientsCreerPlatModel listIngredients) {
+        super(creerPlatController, listIngredients);
+        ingredients = creerPlatController.getIngredientsListView();
+        ingredients.setItems(listIngredients.getListIngredients());
         adaptItems(ingredients);
     }
 
@@ -38,9 +37,9 @@ public class AjouterIngredientView extends View {
                             protected void updateItem(Object item, boolean empty) {
                                 super.updateItem(item, empty);
                                 if (item != null) {
-                                    IngredientController ingredientController = new IngredientController();
-                                    ingredientController.setNomIngredient((IngredientModel) item);
-                                    setGraphic(ingredientController.getFxml());
+                                    IngredientQuantiteController ingredientQuantiteController = new IngredientQuantiteController();
+                                    ingredientQuantiteController.setIngredient((IngredientQuantiteModel) item);
+                                    setGraphic(ingredientQuantiteController.getFxml());
                                     adaptItems(listView);
                                 }
                             }
@@ -48,9 +47,5 @@ public class AjouterIngredientView extends View {
                         };
                     }
                 });
-    }
-
-    public IngredientModel getSelectedIngredient() {
-        return (IngredientModel) ingredients.getSelectionModel().getSelectedItem();
     }
 }

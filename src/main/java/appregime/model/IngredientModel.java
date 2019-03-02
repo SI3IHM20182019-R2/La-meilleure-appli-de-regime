@@ -1,6 +1,6 @@
 package appregime.model;
 
-public class Modelngredient {
+public class IngredientModel {
 
     private String name;
     private Double calories;
@@ -9,7 +9,7 @@ public class Modelngredient {
     private Double proteines;
     private String imagePath;
 
-    public Modelngredient(String name, Double calories, Double lipides, Double glucides, Double proteines, String imagePath) {
+    public IngredientModel(String name, Double calories, Double lipides, Double glucides, Double proteines, String imagePath) {
         this.name = name;
         this.calories = calories;
         this.lipides = lipides;

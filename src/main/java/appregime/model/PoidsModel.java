@@ -2,12 +2,12 @@ package appregime.model;
 
 import java.util.Date;
 
-public class Poids {
+public class PoidsModel {
 
     private Double poids;
     private Date date;
 
-    public Poids ( Double poids, Date date) {
+    public PoidsModel(Double poids, Date date) {
         this.poids = poids;
         this.date= date;
     }
