@@ -3,19 +3,22 @@ package appregime.view;
 import appregime.controller.CreerPlatController;
 import appregime.controller.IngredientQuantiteController;
 import appregime.model.IngredientQuantiteModel;
-import appregime.model.IngredientsCreerPlatModel;
+import appregime.model.PlatModel;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
 
 public class CreerPlatView extends View {
     private ListView ingredients;
+    CreerPlatController creerPlatController;
 
-    public CreerPlatView(CreerPlatController creerPlatController, IngredientsCreerPlatModel listIngredients) {
-        super(creerPlatController, listIngredients);
+    public CreerPlatView(CreerPlatController creerPlatController, PlatModel platModel) {
+        super(creerPlatController, platModel);
+        this.creerPlatController = creerPlatController;
         ingredients = creerPlatController.getIngredientsListView();
-        ingredients.setItems(listIngredients.getListIngredients());
+        ingredients.setItems(platModel.getListIngredients());
         adaptItems(ingredients);
+        listenToPlat(creerPlatController.getPlatModel());
     }
 
     /**
@@ -47,5 +50,12 @@ public class CreerPlatView extends View {
                         };
                     }
                 });
+    }
+
+    private void listenToPlat(PlatModel platModel) {
+        platModel.getGlucides().addListener((observable, oldValue, newValue) -> creerPlatController.getGlucidesLabel().setText(newValue.toString()));
+        platModel.getProteines().addListener((observable, oldValue, newValue) -> creerPlatController.getProteinesLabel().setText(newValue.toString()));
+        platModel.getLipides().addListener((observable, oldValue, newValue) -> creerPlatController.getLipidesLabel().setText(newValue.toString()));
+        platModel.getCalories().addListener((observable, oldValue, newValue) -> creerPlatController.getCaloriesLabel().setText(newValue.toString()));
     }
 }

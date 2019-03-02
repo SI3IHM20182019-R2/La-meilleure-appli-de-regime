@@ -3,13 +3,13 @@ package appregime.model;
 public class IngredientModel {
 
     private String name;
-    private Double calories;
-    private Double lipides;
-    private Double glucides;
-    private Double proteines;
+    private double calories;
+    private double lipides;
+    private double glucides;
+    private double proteines;
     private String imagePath;
 
-    public IngredientModel(String name, Double calories, Double lipides, Double glucides, Double proteines, String imagePath) {
+    public IngredientModel(String name, double calories, double lipides, double glucides, double proteines, String imagePath) {
         this.name = name;
         this.calories = calories;
         this.lipides = lipides;
@@ -18,19 +18,19 @@ public class IngredientModel {
         this.imagePath = imagePath;
     }
 
-    public Double getCalories() {
+    public double getCalories() {
         return calories;
     }
 
-    public Double getLipides() {
+    public double getLipides() {
         return lipides;
     }
 
-    public Double getGlucides() {
+    public double getGlucides() {
         return glucides;
     }
 
-    public Double getProteines() {
+    public double getProteines() {
         return proteines;
     }
 

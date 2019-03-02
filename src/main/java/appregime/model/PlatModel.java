@@ -1,56 +1,69 @@
 package appregime.model;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class PlatModel {
-
+public class PlatModel extends Model {
     private StringProperty nomPlat;
     private StringProperty cheminImage;
-    private List<IngredientModel> listeIngredient;
-    private List<Double> pourcentageIngredient;
+    private ObservableList<IngredientQuantiteModel> listeIngredient;
+    private IntegerProperty glucides;
+    private IntegerProperty proteines;
+    private IntegerProperty lipides;
+    private IntegerProperty calories;
 
-    public PlatModel(String nomPlat, String cheminImage, List<IngredientModel> listeIngredient, List<Double> pourcentageIngredient) {
+    public PlatModel(String nomPlat, String cheminImage, List<IngredientQuantiteModel> listeIngredient) {
         this.nomPlat = new SimpleStringProperty(nomPlat);
         this.cheminImage = new SimpleStringProperty(cheminImage);
-        this.listeIngredient = listeIngredient;
-        this.pourcentageIngredient = pourcentageIngredient;
+        this.listeIngredient = FXCollections.observableList(listeIngredient);
 
+        for (IngredientQuantiteModel ingredient : listeIngredient) {
+            addInfosNutritionnelles(ingredient);
+        }
+
+        glucides = new SimpleIntegerProperty();
+        proteines = new SimpleIntegerProperty();
+        lipides = new SimpleIntegerProperty();
+        calories = new SimpleIntegerProperty();
     }
 
+    public PlatModel() {
+        this.nomPlat = new SimpleStringProperty();
+        this.cheminImage = new SimpleStringProperty();
+        this.listeIngredient = FXCollections.observableList(new ArrayList<>());
 
-    public Double getCalories() {
-        double quantiteCalories = 0;
-        for (int numIngredient = 0; numIngredient<this.listeIngredient.size(); numIngredient++){
-            quantiteCalories += this.pourcentageIngredient.get(numIngredient) * this.listeIngredient.get(numIngredient).getCalories();
-        }
-        return quantiteCalories;
+        glucides = new SimpleIntegerProperty();
+        proteines = new SimpleIntegerProperty();
+        lipides = new SimpleIntegerProperty();
+        calories = new SimpleIntegerProperty();
     }
 
-    public Double getLipides() {
-        double quantiteLipides = 0;
-        for (int numIngredient = 0; numIngredient<this.listeIngredient.size(); numIngredient++){
-            quantiteLipides += this.pourcentageIngredient.get(numIngredient) * this.listeIngredient.get(numIngredient).getLipides();
-        }
-        return quantiteLipides;
+    public void setName(String nomPlat) {
+        this.nomPlat = new SimpleStringProperty(nomPlat);;
     }
 
-    public Double getGlucides() {
-        double quantiteGlucides = 0;
-        for (int numIngredient = 0; numIngredient<this.listeIngredient.size(); numIngredient++){
-            quantiteGlucides += this.pourcentageIngredient.get(numIngredient) * this.listeIngredient.get(numIngredient).getGlucides();
-        }
-        return quantiteGlucides;
+    public void setCheminImage(String cheminImage) {
+        this.cheminImage = new SimpleStringProperty(cheminImage);;
     }
 
-    public Double getProteines() {
-        double quantiteProteine = 0;
-        for (int numIngredient = 0; numIngredient<this.listeIngredient.size(); numIngredient++){
-            quantiteProteine += this.pourcentageIngredient.get(numIngredient) * this.listeIngredient.get(numIngredient).getProteines();
-        }
-        return quantiteProteine;
+    public void addIngredient(IngredientQuantiteModel ingredient) {
+        listeIngredient.add(ingredient);
+        addInfosNutritionnelles(ingredient);
+    }
+
+    public void addInfosNutritionnelles(IngredientQuantiteModel ingredient) {
+        glucides.setValue(glucides.getValue() + ingredient.getGlucides() * ingredient.getQuantiteGrams());
+        proteines.setValue(proteines.getValue() + ingredient.getProteines() * ingredient.getQuantiteGrams());
+        lipides.setValue(lipides.getValue() + ingredient.getLipides() * ingredient.getQuantiteGrams());
+        calories.setValue(calories.getValue() + ingredient.getCalories() * ingredient.getQuantiteGrams());
+    }
+
+    public ObservableList<IngredientQuantiteModel> getListIngredients() {
+        return listeIngredient;
     }
 
     public StringProperty getImagePath() {
@@ -59,5 +72,21 @@ public class PlatModel {
 
     public StringProperty getName() {
         return this.nomPlat;
+    }
+
+    public IntegerProperty getGlucides() {
+        return glucides;
+    }
+
+    public IntegerProperty getProteines() {
+        return proteines;
+    }
+
+    public IntegerProperty getLipides() {
+        return lipides;
+    }
+
+    public IntegerProperty getCalories() {
+        return calories;
     }
 }
