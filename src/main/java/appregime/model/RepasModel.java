@@ -2,10 +2,6 @@ package appregime.model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.collections.ObservableMap;
-import javafx.scene.image.Image;
 
 import java.util.*;
 
@@ -14,9 +10,9 @@ public class RepasModel {
     private StringProperty NomRepas;
     private StringProperty descriptionrepas;
     private StringProperty PathImage;
-    private ModelPlat[] listOfPlat;
+    private List<PlatModel> listOfPlat;
 
-    public RepasModel(String NomRepas, String descriptionrepas, String PathImage, ModelPlat[] listPlat) {
+    public RepasModel(String NomRepas, String descriptionrepas, String PathImage, List<PlatModel> listPlat) {
         this.NomRepas = new SimpleStringProperty(NomRepas);
         this.descriptionrepas = new SimpleStringProperty(descriptionrepas);
         this.PathImage = new SimpleStringProperty(PathImage);
@@ -32,7 +28,7 @@ public class RepasModel {
         return descriptionrepas;
     }
 
-    public ModelPlat[] getlistOfPlat() {
+    public List<PlatModel> getlistOfPlat() {
         return listOfPlat;
     }
 

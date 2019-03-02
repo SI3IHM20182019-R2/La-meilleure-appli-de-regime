@@ -3,9 +3,10 @@ package appregime.model;
 import javafx.collections.ObservableMap;
 
 public class ListPlats {
+    /*
 
     private ObservableMap<String, PlatModel> platMap;
-/*
+
     public ListPlats() {
         platMap = FXCollections.observableMap(new HashMap<String, PlatModel>() {});
         IngredientList ingredientList = new IngredientList();
@@ -43,5 +44,6 @@ public class ListPlats {
     public void add(String nomPlat, PlatModel plat) {
         platMap.put(nomPlat, plat);
     }
+
     */
 }
