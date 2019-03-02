@@ -1,11 +1,13 @@
 package appregime.model;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
-public class IngredientList {
-
+public class IngredientList extends Model {
     private ObservableMap<String, Modelngredient> ingredientMap;
 
     public IngredientList() {
@@ -50,5 +52,11 @@ public class IngredientList {
 
     public void add(String nomIngredient, Modelngredient ingredient) {
         ingredientMap.put(nomIngredient, ingredient);
+    }
+
+    public ObservableList<Modelngredient> getIngredientList() {
+        ObservableList<Modelngredient> l = FXCollections.observableList(new ArrayList<>());
+        l.addAll(ingredientMap.values());
+        return l;
     }
 }

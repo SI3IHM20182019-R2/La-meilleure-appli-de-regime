@@ -1,5 +1,6 @@
 package appregime.controller;
 
+import appregime.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -8,14 +9,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-abstract class Controller {
+public abstract class Controller {
     protected Stage primaryStage;
     protected Stage myStage;
     protected String fxmlPath;
     protected Pane fxml;
 
-    public Controller(Stage primaryStage, String fxmlPath) {
-        this.primaryStage = primaryStage;
+    public Controller(String fxmlPath) {
+        primaryStage = Main.getPrimaryStage();
         this.fxmlPath = fxmlPath;
         setFxml(fxmlPath);
         fxml.getStylesheets().add("/appregime/css/common.css");
@@ -34,7 +35,7 @@ abstract class Controller {
      * affiche le fxml lié au controller avec la barre de menu
      */
     public void showWithMenu() {
-        MenuController menuController = new MenuController(primaryStage);
+        MenuController menuController = new MenuController();
         Scene scene = new Scene(menuController.getFxml());
         menuController.setBelowMenuElement(this.fxml);
         primaryStage.setScene(scene);
@@ -54,19 +55,14 @@ abstract class Controller {
         myStage.show();
     }
 
-    public String getFxmlPath() {
-        return fxmlPath;
-    }
-
     public Pane getFxml() {
         return fxml;
     }
 
-
     /**
      * charge le fichier fxml et le lie au controller
      */
-    protected void setFxml(String fxmlPath) {
+    private void setFxml(String fxmlPath) {
         FXMLLoader loader = new FXMLLoader();
 
         loader.setController(this);

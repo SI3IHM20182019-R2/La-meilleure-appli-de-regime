@@ -1,13 +1,7 @@
 package appregime.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-
 
 
 public class ObjectifsRegimesController extends Controller{
@@ -18,15 +12,15 @@ public class ObjectifsRegimesController extends Controller{
     @FXML
     private Button continuer;
 
-    public ObjectifsRegimesController(Stage primaryStage) {
-        super(primaryStage, "/appregime/view/objectifs_regimes.fxml");
+    public ObjectifsRegimesController() {
+        super("/appregime/view/objectifs_regimes.fxml");
 
         retour.setOnAction(event -> retour());
         continuer.setOnAction(event -> continuer());
     }
 
     private void continuer() {
-        AccueilController accueilController = new AccueilController(primaryStage);
+        AccueilController accueilController = new AccueilController();
         accueilController.showWithMenu();
         /*
         MesRegimesController mesRegimesController = new MesRegimesController(primaryStage);
@@ -34,7 +28,7 @@ public class ObjectifsRegimesController extends Controller{
     }
 
     private void retour() {
-        InscriptionController inscriptionController = new InscriptionController(primaryStage);
+        InscriptionController inscriptionController = new InscriptionController();
         inscriptionController.showInPrimaryStage();
     }
 

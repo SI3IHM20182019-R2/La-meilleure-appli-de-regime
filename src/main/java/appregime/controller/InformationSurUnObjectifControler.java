@@ -2,9 +2,6 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.stage.Stage;
 
 public class InformationSurUnObjectifControler extends Controller {
 
@@ -20,20 +17,20 @@ public class InformationSurUnObjectifControler extends Controller {
     @FXML
     private Button boutonAjouterAuxObjectifs;
 
-    public InformationSurUnObjectifControler(Stage primaryStage){
-        super(primaryStage, "/appregime/view/InformationSurUnObjectif.fxml");
+    public InformationSurUnObjectifControler(){
+        super("/appregime/view/InformationSurUnObjectif.fxml");
         boutonAjouterUnObjectif.setOnAction(event -> retour());
         boutonAjouterAuxObjectifs.setOnAction(event -> ajouterObjectif());
     }
 
     public void retour(){
-        PageAjouterUnObjectifController controller = new PageAjouterUnObjectifController(primaryStage);
+        PageAjouterUnObjectifController controller = new PageAjouterUnObjectifController();
         controller.showWithMenu();
     }
 
     //A modifier pour ajouter l'objectif et retour au profil
     private void ajouterObjectif() {
-        ProfilController controller = new ProfilController(primaryStage);
+        ProfilController controller = new ProfilController();
         controller.showWithMenu();
     }
 

@@ -2,7 +2,6 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class UtilisateurAcceuilController extends Controller {
     @FXML
@@ -10,19 +9,19 @@ public class UtilisateurAcceuilController extends Controller {
     @FXML
     private Button currentUserButton;
 
-    public UtilisateurAcceuilController (Stage primaryStage) {
-        super(primaryStage, "/appregime/view/utilisateur_acceuil.fxml");
+    public UtilisateurAcceuilController() {
+        super("/appregime/view/utilisateur_acceuil.fxml");
         addUserButton.setOnAction(event -> addUser());
         currentUserButton.setOnAction(event -> clique());
     }
 
     private void addUser() {
-        ConnexionController inscription = new ConnexionController(primaryStage);
+        ConnexionController inscription = new ConnexionController();
         inscription.showInPrimaryStage();
     }
 
     private void clique() {
-        UtilisateurCliqueController clique = new UtilisateurCliqueController(primaryStage);
+        UtilisateurCliqueController clique = new UtilisateurCliqueController();
         clique.showInPrimaryStage();
     }
 }

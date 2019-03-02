@@ -2,7 +2,6 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class ProfilController extends Controller {
 
@@ -12,19 +11,19 @@ public class ProfilController extends Controller {
     @FXML
     private Button objectifAlimentaire;
 
-    public ProfilController(Stage primaryStage){
-        super(primaryStage, "/appregime/view/mon_profil.fxml");
+    public ProfilController(){
+        super("/appregime/view/mon_profil.fxml");
         ButtonAjouterObjectif.setOnAction(event -> ajouterObjectif());
         objectifAlimentaire.setOnAction(event -> voirDetailObjectif());
     }
 
     private void ajouterObjectif(){
-        PageAjouterUnObjectifController controller = new PageAjouterUnObjectifController(primaryStage);
+        PageAjouterUnObjectifController controller = new PageAjouterUnObjectifController();
         controller.showWithMenu();
     }
 
     private void voirDetailObjectif(){
-        InformationSurMonObjectifController controller = new InformationSurMonObjectifController(primaryStage);
+        InformationSurMonObjectifController controller = new InformationSurMonObjectifController();
         controller.showWithMenu();
     }
 }

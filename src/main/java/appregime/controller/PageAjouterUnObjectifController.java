@@ -2,10 +2,7 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
 import javafx.scene.control.SplitMenuButton;
-import javafx.stage.Stage;
 
 public class PageAjouterUnObjectifController extends Controller {
 
@@ -30,26 +27,26 @@ public class PageAjouterUnObjectifController extends Controller {
     @FXML
     private Button detailObjectif;
 
-    public PageAjouterUnObjectifController(Stage primaryStage) {
-        super(primaryStage, "/appregime/view/PageAjouterUnObjectif.fxml");
+    public PageAjouterUnObjectifController() {
+        super("/appregime/view/PageAjouterUnObjectif.fxml");
         boutonMonProfil.setOnAction(event -> retourProfil());
         boutonAjouterAMesObjectifs.setOnAction(event -> ajouterObjectif());
         detailObjectif.setOnAction(event -> voirDetailObjectif());
     }
 
     private void retourProfil(){
-        ProfilController controller = new ProfilController(primaryStage);
+        ProfilController controller = new ProfilController();
         controller.showWithMenu();
     }
 
     //A modifier, il faut ajouter l'objectif a la liste
     private void ajouterObjectif(){
-        ProfilController controller = new ProfilController(primaryStage);
+        ProfilController controller = new ProfilController();
         controller.showWithMenu();
     }
 
     private void voirDetailObjectif(){
-        InformationSurUnObjectifControler controller = new InformationSurUnObjectifControler(primaryStage);
+        InformationSurUnObjectifControler controller = new InformationSurUnObjectifControler();
         controller.showWithMenu();
     }
 }

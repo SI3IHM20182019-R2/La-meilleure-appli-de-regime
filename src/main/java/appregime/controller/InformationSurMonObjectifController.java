@@ -2,9 +2,6 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.stage.Stage;
 
 public class InformationSurMonObjectifController extends Controller {
 
@@ -21,20 +18,20 @@ public class InformationSurMonObjectifController extends Controller {
     private Button boutonSupprimer;
 
 
-    public InformationSurMonObjectifController(Stage primaryStage) {
-        super(primaryStage, "/appregime/view/InformationSurMonObjectif.fxml");
+    public InformationSurMonObjectifController() {
+        super("/appregime/view/InformationSurMonObjectif.fxml");
         boutonMonProfil.setOnAction(event -> retourProfil());
         boutonSupprimer.setOnAction(event -> supprimerObjectif());
     }
 
     //A modifier pour ajouter la suppression
     private void supprimerObjectif() {
-        ProfilController controller = new ProfilController(primaryStage);
+        ProfilController controller = new ProfilController();
         controller.showWithMenu();
     }
 
     private void retourProfil(){
-        ProfilController controller = new ProfilController(primaryStage);
+        ProfilController controller = new ProfilController();
         controller.showWithMenu();
     }
 }

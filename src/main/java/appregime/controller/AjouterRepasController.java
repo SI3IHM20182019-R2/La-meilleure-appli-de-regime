@@ -2,7 +2,6 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class AjouterRepasController extends Controller {
     @FXML
@@ -12,8 +11,8 @@ public class AjouterRepasController extends Controller {
     @FXML
     private Button ajouter;
 
-    public AjouterRepasController(Stage primaryStage) {
-        super(primaryStage, "/appregime/view/ajouter_repas.fxml");
+    public AjouterRepasController() {
+        super("/appregime/view/ajouter_repas.fxml");
         ajouter.setOnAction(event -> myStage.close());
         annuler.setOnAction(event -> myStage.close());
         creerRepas.setOnAction(event -> creerRepas());
@@ -21,7 +20,7 @@ public class AjouterRepasController extends Controller {
 
     private void creerRepas() {
         myStage.close();
-        CreerRepasController creerRepasController = new CreerRepasController(primaryStage);
+        CreerRepasController creerRepasController = new CreerRepasController();
         creerRepasController.showWithMenu();
     }
 }

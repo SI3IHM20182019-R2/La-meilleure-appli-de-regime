@@ -1,8 +1,5 @@
 package appregime.model;
 
-import javax.print.DocFlavor;
-import java.awt.*;
-
 public class Modelngredient {
 
     private String name;

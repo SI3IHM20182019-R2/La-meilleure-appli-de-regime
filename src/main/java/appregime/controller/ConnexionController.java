@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class ConnexionController extends Controller {
     @FXML
@@ -26,25 +25,25 @@ public class ConnexionController extends Controller {
     @FXML
     private PasswordField confirmPassWordInscription;
 
-    public ConnexionController (Stage primaryStage) {
-        super(primaryStage, "/appregime/view/premiere_connexion.fxml");
+    public ConnexionController() {
+        super("/appregime/view/premiere_connexion.fxml");
         inscription.setOnAction(event -> inscription());
         return2Users.setOnAction(event -> return2Users());
         connexion.setOnAction(event -> connexion());
     }
 
     private void inscription() {
-        InscriptionController inscription = new InscriptionController(primaryStage);
+        InscriptionController inscription = new InscriptionController();
         inscription.showInPrimaryStage();
     }
 
     private void return2Users() {
-        UtilisateurAcceuilController utilisateur = new UtilisateurAcceuilController(primaryStage);
+        UtilisateurAcceuilController utilisateur = new UtilisateurAcceuilController();
         utilisateur.showInPrimaryStage();
     }
 
     private void connexion() {
-        AccueilController accueilController = new AccueilController(primaryStage);
+        AccueilController accueilController = new AccueilController();
         accueilController.showWithMenu();
     }
 }

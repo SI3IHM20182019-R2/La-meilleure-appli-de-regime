@@ -3,7 +3,6 @@ package appregime.controller;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
 
 public class MenuController extends Controller {
     @FXML
@@ -17,19 +16,14 @@ public class MenuController extends Controller {
     @FXML
     private Label deconnexion;
 
-    public MenuController(Stage primaryStage) {
-        super(primaryStage, "/appregime/view/menu_layout.fxml");
+    public MenuController() {
+        super("/appregime/view/menu_layout.fxml");
         fxml.getStylesheets().add("/appregime/css/menu_layout.css");
 
-        mesRegimes.setOnMouseClicked(event -> setBelowMenuElement(new MesRegimesController(primaryStage).getFxml()));
-        accueil.setOnMouseClicked(event -> setBelowMenuElement(new AccueilController(primaryStage).getFxml()));
-        monProfil.setOnMouseClicked(event -> setBelowMenuElement(new ProfilController(primaryStage).getFxml()));
-        monEvolution.setOnMouseClicked(event -> setBelowMenuElement(new EvolutionController(primaryStage).getFxml()));
-
-
-
-
-
+        mesRegimes.setOnMouseClicked(event -> setBelowMenuElement(new MesRegimesController().getFxml()));
+        accueil.setOnMouseClicked(event -> setBelowMenuElement(new AccueilController().getFxml()));
+        monProfil.setOnMouseClicked(event -> setBelowMenuElement(new ProfilController().getFxml()));
+        monEvolution.setOnMouseClicked(event -> setBelowMenuElement(new EvolutionController().getFxml()));
         deconnexion.setOnMouseClicked(event -> connexion());
     }
 
@@ -41,7 +35,7 @@ public class MenuController extends Controller {
     }
 
     public void connexion() {
-        ConnexionController connexionController = new ConnexionController(primaryStage);
+        ConnexionController connexionController = new ConnexionController();
         connexionController.showInPrimaryStage();
     }
 }

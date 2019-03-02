@@ -2,7 +2,6 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class AjouterPlatController extends Controller {
     @FXML
@@ -12,8 +11,8 @@ public class AjouterPlatController extends Controller {
     @FXML
     private Button ajouter;
 
-    public AjouterPlatController(Stage primaryStage) {
-        super(primaryStage, "/appregime/view/ajouter_plat.fxml");
+    public AjouterPlatController() {
+        super("/appregime/view/ajouter_plat.fxml");
         ajouter.setOnAction(event -> myStage.close());
         annuler.setOnAction(event -> myStage.close());
         creerPlat.setOnAction(event -> creerPlat());
@@ -21,7 +20,7 @@ public class AjouterPlatController extends Controller {
 
     private void creerPlat() {
         myStage.close();
-        CreerPlatController creerPlatController = new CreerPlatController(primaryStage);
+        CreerPlatController creerPlatController = new CreerPlatController();
         creerPlatController.showWithMenu();
     }
 }

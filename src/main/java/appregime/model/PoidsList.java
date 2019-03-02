@@ -2,11 +2,11 @@ package appregime.model;
 
 import javafx.collections.ObservableList;
 
-public class poidsList {
+public class PoidsList {
 
     private ObservableList<Poids> poidsObservableList;
 
-    public poidsList() {
+    public PoidsList() {
 
     }
 

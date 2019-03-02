@@ -4,8 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
 
 public class AccueilController extends Controller {
 
@@ -35,13 +33,13 @@ public class AccueilController extends Controller {
 
 
 
-    public AccueilController (Stage primaryStage) {
-        super(primaryStage, "/appregime/view/accueil.fxml");
+    public AccueilController() {
+        super("/appregime/view/accueil.fxml");
         actualiser.setOnAction(event -> creerRegime());
     }
 
     private void creerRegime() {
-        PoidsMajController poidsMajController = new PoidsMajController(primaryStage);
+        PoidsMajController poidsMajController = new PoidsMajController();
         poidsMajController.showInMyStage("Modifie le poids actuel");
     }
 }

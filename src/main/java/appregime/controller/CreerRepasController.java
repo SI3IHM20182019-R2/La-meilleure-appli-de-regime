@@ -2,7 +2,6 @@ package appregime.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class CreerRepasController extends Controller {
     @FXML
@@ -12,15 +11,15 @@ public class CreerRepasController extends Controller {
     @FXML
     private Button ajouterPlat;
 
-    public CreerRepasController(Stage primaryStage) {
-        super(primaryStage, "/appregime/view/creer_repas.fxml");
+    public CreerRepasController() {
+        super("/appregime/view/creer_repas.fxml");
         ajouterPlat.setOnAction(event -> afficheAjouterPlat());
         retour.setOnAction(event -> retour());
         terminer.setOnAction(event -> retour());
     }
 
     private void afficheAjouterPlat() {
-        AjouterPlatController ajouterPlatController = new AjouterPlatController(primaryStage);
+        AjouterPlatController ajouterPlatController = new AjouterPlatController();
         ajouterPlatController.showInMyStage("Ajouter un plat");
     }
 
@@ -28,7 +27,7 @@ public class CreerRepasController extends Controller {
      * retour à l'écran "Créer un régime"
      */
     private void retour() {
-        CreerRegimeController creerRegimeController = new CreerRegimeController(primaryStage);
+        CreerRegimeController creerRegimeController = new CreerRegimeController();
         creerRegimeController.showWithMenu();
     }
 }

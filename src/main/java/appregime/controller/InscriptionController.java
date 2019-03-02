@@ -6,7 +6,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
 
 public class InscriptionController extends Controller {
     @FXML
@@ -30,8 +29,8 @@ public class InscriptionController extends Controller {
     @FXML
     private Button plusAllergies;
 
-    public InscriptionController (Stage primaryStage) {
-        super(primaryStage, "/appregime/view/inscription.fxml");
+    public InscriptionController() {
+        super("/appregime/view/inscription.fxml");
         ToggleGroup sexe = new ToggleGroup();
         femme.setToggleGroup(sexe);
         homme.setToggleGroup(sexe);
@@ -40,13 +39,13 @@ public class InscriptionController extends Controller {
     }
 
     private void retour() {
-        ConnexionController connexion = new ConnexionController(primaryStage);
+        ConnexionController connexion = new ConnexionController();
         connexion.showInPrimaryStage();
     }
 
     // à modifier
     private void continuer() {
-        ObjectifsRegimesController objectifsRegimesController = new ObjectifsRegimesController(primaryStage);
+        ObjectifsRegimesController objectifsRegimesController = new ObjectifsRegimesController();
         objectifsRegimesController.showInPrimaryStage();
         /*
         MesRegimesController mesRegimesController = new MesRegimesController(primaryStage);
