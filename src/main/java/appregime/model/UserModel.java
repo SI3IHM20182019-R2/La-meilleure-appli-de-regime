@@ -1,6 +1,6 @@
 package appregime.model;
 
-public class UserModel extends Model {
+public class UserModel {
     private String id;
     private String mail;
     private String pseudo;

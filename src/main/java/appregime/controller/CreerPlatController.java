@@ -17,6 +17,8 @@ public class CreerPlatController extends Controller {
     private Button retour;
     @FXML
     private Button terminer;
+    @FXML
+    private Button supprimer;
 
     @FXML
     private ListView ingredientsList;
@@ -31,14 +33,23 @@ public class CreerPlatController extends Controller {
     private Text calories;
 
     PlatModel plat;
+    CreerPlatView creerPlatView;
 
     public CreerPlatController() {
         super("/appregime/view/creer_plat.fxml");
+
+        plat = new PlatModel();
+        creerPlatView = new CreerPlatView(this, plat);
+
         ajouterIngredient.setOnAction(event -> afficheAjouterIngredient());
         retour.setOnAction(event -> retour());
         terminer.setOnAction(event -> retour());
-        plat = new PlatModel();
-        CreerPlatView creerPlatView = new CreerPlatView(this, plat);
+        supprimer.setOnAction(event -> supprimerUnIngredien());
+    }
+
+    private void supprimerUnIngredien() {
+        int range = creerPlatView.getRangeSelectedIngredient();
+        plat.deleteIngredient(range);
     }
 
     private void afficheAjouterIngredient() {
@@ -58,20 +69,24 @@ public class CreerPlatController extends Controller {
     public ListView getIngredientsListView() {
         return ingredientsList;
     }
-    public Text getGlucidesLabel() {
+    public Text getGlucidesFxml() {
         return glucides;
     }
-    public Text getProteinesLabel() {
+    public Text getProteinesFxml() {
         return proteines;
     }
-    public Text getLipidesLabel() {
+    public Text getLipidesFxml() {
         return lipides;
     }
-    public Text getCaloriesLabel() {
+    public Text getCaloriesFxml() {
         return calories;
     }
 
     public PlatModel getPlatModel() {
         return plat;
+    }
+
+    public void showSupprimerButton(Boolean b) {
+        supprimer.setVisible(b);
     }
 }

@@ -4,31 +4,31 @@ import appregime.controller.CreerPlatController;
 import appregime.controller.IngredientQuantiteController;
 import appregime.model.IngredientQuantiteModel;
 import appregime.model.PlatModel;
+import com.sun.javafx.property.adapter.PropertyDescriptor;
+import javafx.beans.value.ChangeListener;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
 
-public class CreerPlatView extends View {
-    private ListView ingredients;
+public class CreerPlatView {
+    private ListView ingredientsListView;
     CreerPlatController creerPlatController;
+    PlatModel platModel;
+    private int rangeSelectedIngredient = -1;
 
     public CreerPlatView(CreerPlatController creerPlatController, PlatModel platModel) {
-        super(creerPlatController, platModel);
         this.creerPlatController = creerPlatController;
-        ingredients = creerPlatController.getIngredientsListView();
-        ingredients.setItems(platModel.getListIngredients());
-        adaptItems(ingredients);
-        listenToPlat(creerPlatController.getPlatModel());
+        this.platModel = platModel;
+        ingredientsListView = creerPlatController.getIngredientsListView();
+        ingredientsListView.setItems(platModel.getListIngredients());
+        adaptItems();
+        listenToPlat();
+        listenToSelectedIngredient();
     }
 
-    /**
-     * display each item of the ListView
-     * Automatically called if the ModelListCustomers.listOfCustumers is changed
-     * @param listView the element to be filled
-     */
-    private void adaptItems(ListView listView) {
+    private void adaptItems() {
         //Set a new cell factory to use in the ListView.
-        listView.setCellFactory(
+        ingredientsListView.setCellFactory(
                 //  first parameter specifies the type of the object passed in to the call method
                 //  the second parameter specifying the return type of the method.
                 new Callback<ListView, ListCell>() {
@@ -43,7 +43,10 @@ public class CreerPlatView extends View {
                                     IngredientQuantiteController ingredientQuantiteController = new IngredientQuantiteController();
                                     ingredientQuantiteController.setIngredient((IngredientQuantiteModel) item);
                                     setGraphic(ingredientQuantiteController.getFxml());
-                                    adaptItems(listView);
+                                    adaptItems();
+                                }
+                                if (platModel.getListIngredients().size() == 0) {
+                                    creerPlatController.showSupprimerButton(false);
                                 }
                             }
 
@@ -52,10 +55,25 @@ public class CreerPlatView extends View {
                 });
     }
 
-    private void listenToPlat(PlatModel platModel) {
-        platModel.getGlucides().addListener((observable, oldValue, newValue) -> creerPlatController.getGlucidesLabel().setText(newValue.toString()));
-        platModel.getProteines().addListener((observable, oldValue, newValue) -> creerPlatController.getProteinesLabel().setText(newValue.toString()));
-        platModel.getLipides().addListener((observable, oldValue, newValue) -> creerPlatController.getLipidesLabel().setText(newValue.toString()));
-        platModel.getCalories().addListener((observable, oldValue, newValue) -> creerPlatController.getCaloriesLabel().setText(newValue.toString()));
+
+    private void listenToPlat() {
+        platModel.getGlucides().addListener((observable, oldValue, newValue) -> creerPlatController.getGlucidesFxml().setText(newValue.toString()));
+        platModel.getProteines().addListener((observable, oldValue, newValue) -> creerPlatController.getProteinesFxml().setText(newValue.toString()));
+        platModel.getLipides().addListener((observable, oldValue, newValue) -> creerPlatController.getLipidesFxml().setText(newValue.toString()));
+        platModel.getCalories().addListener((observable, oldValue, newValue) -> creerPlatController.getCaloriesFxml().setText(newValue.toString()));
+    }
+
+
+    private void listenToSelectedIngredient() {
+        ingredientsListView.getSelectionModel().selectedItemProperty().addListener(
+                (ChangeListener<IngredientQuantiteModel>) (observable, oldValue, newValue) -> {
+                    rangeSelectedIngredient = platModel.getListIngredients().indexOf(newValue);
+                    creerPlatController.showSupprimerButton(true);
+                });
+    }
+
+
+    public int getRangeSelectedIngredient() {
+        return rangeSelectedIngredient;
     }
 }

@@ -5,7 +5,7 @@ import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 
-public class IngredientsCreerPlatModel extends Model {
+public class IngredientsCreerPlatModel {
     private ObservableList<IngredientQuantiteModel> ingredients;
 
     public IngredientsCreerPlatModel() {

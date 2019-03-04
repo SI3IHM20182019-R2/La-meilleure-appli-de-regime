@@ -7,7 +7,7 @@ import javafx.collections.ObservableList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlatModel extends Model {
+public class PlatModel {
     private StringProperty nomPlat;
     private StringProperty cheminImage;
     private ObservableList<IngredientQuantiteModel> listeIngredient;
@@ -22,7 +22,7 @@ public class PlatModel extends Model {
         this.listeIngredient = FXCollections.observableList(listeIngredient);
 
         for (IngredientQuantiteModel ingredient : listeIngredient) {
-            addInfosNutritionnelles(ingredient);
+            updateInfosNutritionnelles(ingredient, "+");
         }
 
         glucides = new SimpleIntegerProperty();
@@ -48,14 +48,40 @@ public class PlatModel extends Model {
 
     public void addIngredient(IngredientQuantiteModel ingredient) {
         listeIngredient.add(ingredient);
-        addInfosNutritionnelles(ingredient);
+        updateInfosNutritionnelles(ingredient, "+");
     }
 
-    public void addInfosNutritionnelles(IngredientQuantiteModel ingredient) {
-        glucides.setValue(glucides.getValue() + ingredient.getGlucides() * (ingredient.getQuantiteGrams()/100));
-        proteines.setValue(proteines.getValue() + ingredient.getProteines() * (ingredient.getQuantiteGrams()/100));
-        lipides.setValue(lipides.getValue() + ingredient.getLipides() * (ingredient.getQuantiteGrams()/100));
-        calories.setValue(calories.getValue() + ingredient.getCalories() * (ingredient.getQuantiteGrams()/100));
+    public void deleteIngredient(int index) {
+        updateInfosNutritionnelles(listeIngredient.get(index), "-");
+        listeIngredient.remove(index);
+    }
+
+    public void updateInfosNutritionnelles(IngredientQuantiteModel ingredient, String operation) {
+        switch (operation) {
+            case "+":
+                glucides.setValue(glucides.getValue() + ingredient.getGlucides() * ingredient.getQuantiteGrams());
+                proteines.setValue(proteines.getValue() + ingredient.getProteines() * ingredient.getQuantiteGrams());
+                lipides.setValue(lipides.getValue() + ingredient.getLipides() * ingredient.getQuantiteGrams());
+                calories.setValue(calories.getValue() + ingredient.getCalories() * ingredient.getQuantiteGrams());
+                break;
+            case "-":
+                glucides.setValue(glucides.getValue() - ingredient.getGlucides() * ingredient.getQuantiteGrams());
+                proteines.setValue(proteines.getValue() - ingredient.getProteines() * ingredient.getQuantiteGrams());
+                lipides.setValue(lipides.getValue() - ingredient.getLipides() * ingredient.getQuantiteGrams());
+                calories.setValue(calories.getValue()- ingredient.getCalories() * ingredient.getQuantiteGrams());
+        }
+        if (glucides.getValue() < 0) {
+            glucides.setValue(0);
+        }
+        if (proteines.getValue() < 0) {
+            glucides.setValue(0);
+        }
+        if (lipides.getValue() < 0) {
+            glucides.setValue(0);
+        }
+        if (calories.getValue() < 0) {
+            glucides.setValue(0);
+        }
     }
 
     public ObservableList<IngredientQuantiteModel> getListIngredients() {

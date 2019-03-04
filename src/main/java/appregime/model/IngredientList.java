@@ -7,7 +7,7 @@ import javafx.collections.ObservableMap;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class IngredientList extends Model {
+public class IngredientList {
     private ObservableMap<String, IngredientModel> ingredientMap;
 
     public IngredientList() {

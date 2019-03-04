@@ -1,6 +1,6 @@
 package appregime.model;
 
-public class PreferenceAlimentaireModel extends Model {
+public class PreferenceAlimentaireModel {
     private String libelle;
     private String description;
 

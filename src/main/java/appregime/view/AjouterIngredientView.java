@@ -8,11 +8,14 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
 
-public class AjouterIngredientView extends View {
+public class AjouterIngredientView {
     private ListView ingredients;
+    private AjouterIngredientController ajouterIngredientController;
+    private IngredientList listIngredients;
 
     public AjouterIngredientView(AjouterIngredientController ajouterIngredientController, IngredientList listIngredients) {
-        super(ajouterIngredientController, listIngredients);
+        this.ajouterIngredientController = ajouterIngredientController;
+        this.listIngredients = listIngredients;
         ingredients = ajouterIngredientController.getIngredientsListView();
         ingredients.setItems(listIngredients.getIngredientList());
         //call a cell factory and display each observable item in the ListView
