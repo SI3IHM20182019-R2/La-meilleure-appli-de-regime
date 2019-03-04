@@ -1,21 +1,20 @@
 package appregime.controller;
 
 import appregime.Main;
-import appregime.model.User;
-import appregime.view.UserAcceuilView;
+
+import appregime.model.UserModel;
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class UtilisateurAcceuilController extends Controller {
-    private ArrayList<User> userList = new ArrayList<>();
+    private ArrayList<UserModel> userList = new ArrayList<>();
 
     @FXML
     private Button addUserButton;
@@ -39,7 +38,7 @@ public class UtilisateurAcceuilController extends Controller {
             ArrayList json = gson.fromJson(bufferedReader, ArrayList.class);
             for (Object obj : json) {
                 String str = gson.toJson(obj);
-                User user = gson.fromJson(str, User.class);
+                UserModel user = gson.fromJson(str, UserModel.class);
                 userList.add(user);
                 System.out.println("Added --> " + user.toString());
             }

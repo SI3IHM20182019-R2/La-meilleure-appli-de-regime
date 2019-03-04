@@ -1,7 +1,7 @@
 package appregime;
 
 import appregime.controller.UtilisateurAcceuilController;
-import appregime.model.User;
+import appregime.model.UserModel;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import javafx.application.Application;

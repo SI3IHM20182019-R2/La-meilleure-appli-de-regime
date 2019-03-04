@@ -1,7 +1,7 @@
 package appregime.controller;
 
 import appregime.Main;
-import appregime.model.PreferenceAlimentaire;
+import appregime.model.PreferenceAlimentaireModel;
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -72,7 +72,7 @@ public class InscriptionController extends Controller {
             ArrayList json = gson.fromJson(bufferedReader, ArrayList.class);
             for (Object obj : json) {
                 String str = gson.toJson(obj);
-                PreferenceAlimentaire pref = gson.fromJson(str, PreferenceAlimentaire.class);
+                PreferenceAlimentaireModel pref = gson.fromJson(str, PreferenceAlimentaireModel.class);
                 prefs.add(pref.getLibelle());
                 System.out.println("Added --> " + pref.getLibelle());
             }
