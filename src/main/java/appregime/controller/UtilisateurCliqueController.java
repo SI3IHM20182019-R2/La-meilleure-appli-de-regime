@@ -16,6 +16,7 @@ public class UtilisateurCliqueController extends Controller {
 
     public UtilisateurCliqueController() {
         super("/appregime/view/utilisateur_clique.fxml");
+        this.fxml.getStylesheets().add("/appregime/css/acceuil.css");
         addUserButton.setOnAction(event -> addUser());
         connexionButton.setOnAction(event -> connexion());
     }

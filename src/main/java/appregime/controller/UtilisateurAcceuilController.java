@@ -25,7 +25,7 @@ public class UtilisateurAcceuilController extends Controller {
         super("/appregime/view/utilisateur_acceuil.fxml");
 
         initializeUserList();
-
+        this.fxml.getStylesheets().add("/appregime/css/acceuil.css");
         addUserButton.setOnAction(event -> addUser());
         currentUserButton.setOnAction(event -> clique());
     }

@@ -1,0 +1,13 @@
+#currentUserButton {
+    -fx-background-image: url("/appregime/images/avatar/avatar.png");
+    -fx-background-color: white;
+    -fx-background-size: 100%;
+    -fx-background-radius: 50%;
+    -fx-border-width: 0;
+    -fx-border-color: white;
+    -fx-border-radius: 50%;
+}
+
+#currentUserButton:hover {
+    -fx-border-width: 0.3em;
+}
