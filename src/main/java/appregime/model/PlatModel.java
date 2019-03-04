@@ -46,20 +46,16 @@ public class PlatModel extends Model {
         this.nomPlat = new SimpleStringProperty(nomPlat);;
     }
 
-    public void setCheminImage(String cheminImage) {
-        this.cheminImage = new SimpleStringProperty(cheminImage);;
-    }
-
     public void addIngredient(IngredientQuantiteModel ingredient) {
         listeIngredient.add(ingredient);
         addInfosNutritionnelles(ingredient);
     }
 
     public void addInfosNutritionnelles(IngredientQuantiteModel ingredient) {
-        glucides.setValue(glucides.getValue() + ingredient.getGlucides() * ingredient.getQuantiteGrams());
-        proteines.setValue(proteines.getValue() + ingredient.getProteines() * ingredient.getQuantiteGrams());
-        lipides.setValue(lipides.getValue() + ingredient.getLipides() * ingredient.getQuantiteGrams());
-        calories.setValue(calories.getValue() + ingredient.getCalories() * ingredient.getQuantiteGrams());
+        glucides.setValue(glucides.getValue() + ingredient.getGlucides() * (ingredient.getQuantiteGrams()/100));
+        proteines.setValue(proteines.getValue() + ingredient.getProteines() * (ingredient.getQuantiteGrams()/100));
+        lipides.setValue(lipides.getValue() + ingredient.getLipides() * (ingredient.getQuantiteGrams()/100));
+        calories.setValue(calories.getValue() + ingredient.getCalories() * (ingredient.getQuantiteGrams()/100));
     }
 
     public ObservableList<IngredientQuantiteModel> getListIngredients() {
