@@ -32,4 +32,20 @@ public class UserModel extends Model {
     public String getPseudo() {
         return pseudo;
     }
+
+    //TOSTRING
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", mail='" + mail + '\'' +
+                ", pseudo='" + pseudo + '\'' +
+                ", sexe='" + sexe + '\'' +
+                ", age='" + age + '\'' +
+                ", taille=" + taille +
+                ", poids=" + poids +
+                ", objectif=" + objectif +
+                '}';
+    }
 }

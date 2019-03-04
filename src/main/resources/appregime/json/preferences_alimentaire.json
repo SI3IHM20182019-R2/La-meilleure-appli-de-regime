@@ -5,7 +5,8 @@
   },
   {
     "libelle": "ovo-végétarien",
-    "description": "Ne mange pas de viande consomme des œufs mais pas de produits laitiers."}
+    "description": "Ne mange pas de viande consomme des œufs mais pas de produits laitiers."
+  },
   {
     "libelle": "lacto-végétarien",
     "description": "Ne mange pas de viande consomme des produits laitiers mais pas d'œufs."
