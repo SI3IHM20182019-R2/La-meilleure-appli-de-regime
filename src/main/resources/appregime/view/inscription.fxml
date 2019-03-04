@@ -2,10 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -148,15 +147,7 @@
                   </Label>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <SplitMenuButton alignment="CENTER" mnemonicParsing="false" text="choisir une préférence ">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Action 1" />
-                              <MenuItem mnemonicParsing="false" text="Action 2" />
-                           </items>
-                           <font>
-                              <Font name="System Italic" size="13.0" />
-                           </font>
-                        </SplitMenuButton>
+                        <ComboBox fx:id="pref_list" prefWidth="150.0" promptText="Choisir préférence" />
                         <Button fx:id="plusPrefAlimentaires" alignment="CENTER" mnemonicParsing="false" text="+">
                            <font>
                               <Font name="System Bold" size="13.0" />
@@ -175,15 +166,7 @@
                   </Label>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <SplitMenuButton alignment="CENTER" mnemonicParsing="false" text="choisir une allergie">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Action 1" />
-                              <MenuItem mnemonicParsing="false" text="Action 2" />
-                           </items>
-                           <font>
-                              <Font name="System Italic" size="13.0" />
-                           </font>
-                        </SplitMenuButton>
+                        <ComboBox fx:id="allergie_list" prefWidth="150.0" promptText="Choisir allergie" />
                         <Button fx:id="plusAllergies" alignment="CENTER" mnemonicParsing="false" text="+">
                            <font>
                               <Font name="System Bold" size="13.0" />

@@ -1,11 +1,21 @@
 package appregime;
 
 import appregime.controller.UtilisateurAcceuilController;
+import appregime.model.User;
+import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Main extends Application {
     private static Stage primaryStage;
+
     @Override
     public void start(Stage primaryStage) {
         Main.primaryStage = primaryStage;
