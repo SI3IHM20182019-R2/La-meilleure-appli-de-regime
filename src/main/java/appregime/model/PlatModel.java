@@ -74,13 +74,13 @@ public class PlatModel {
             glucides.setValue(0);
         }
         if (proteines.getValue() < 0) {
-            glucides.setValue(0);
+            proteines.setValue(0);
         }
         if (lipides.getValue() < 0) {
-            glucides.setValue(0);
+            lipides.setValue(0);
         }
         if (calories.getValue() < 0) {
-            glucides.setValue(0);
+            calories.setValue(0);
         }
     }
 
