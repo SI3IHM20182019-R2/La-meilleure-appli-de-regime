@@ -91,7 +91,7 @@
                   </VBox>
                </children>
             </VBox>
-            <VBox spacing="5.0">
+            <VBox spacing="5.0" HBox.hgrow="ALWAYS">
                <children>
                   <HBox>
                      <children>
