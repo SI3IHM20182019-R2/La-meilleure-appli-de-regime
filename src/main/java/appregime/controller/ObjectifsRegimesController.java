@@ -24,6 +24,8 @@ public class ObjectifsRegimesController extends Controller{
 
     private void continuer(UserModel user) {
         System.out.println(this.user);
+        UtilisateurAcceuilController utilisateurAcceuilController = new UtilisateurAcceuilController();
+        utilisateurAcceuilController.setCurrentUser(user);
         AccueilController accueilController = new AccueilController(this.user);
         accueilController.showWithMenu(this.user);
         /*
