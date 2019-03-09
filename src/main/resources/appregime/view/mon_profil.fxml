@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox spacing="10.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="CENTER">
          <children>
@@ -126,9 +126,9 @@
                            <children>
                               <Button fx:id="objectifAlimentaire" mnemonicParsing="false">
                                  <graphic>
-                                    <ImageView fitHeight="45.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="60.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../images/regime.jpg" />
+                                          <Image url="@../images/logoMuscle.jpg" />
                                        </image>
                                     </ImageView>
                                  </graphic>

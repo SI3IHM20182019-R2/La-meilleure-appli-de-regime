@@ -44,8 +44,9 @@ public class UserModel {
         this.objectif = null;
         this.allergies = null;
         this.preferences = null;
-        this.regimes = null;
-        this.objectifvise = null;
+        this.regimes = "Natman";
+        this.objectifvise = "prise de muscle";
+
     }
 
     //GETTERS
