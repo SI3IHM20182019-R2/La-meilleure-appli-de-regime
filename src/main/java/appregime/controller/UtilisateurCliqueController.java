@@ -27,7 +27,7 @@ public class UtilisateurCliqueController extends Controller {
     }
 
     private void connexion() {
-        AccueilController acceuil = new AccueilController();
-        acceuil.showWithMenu();
+      //  AccueilController acceuil = new AccueilController();
+      //  acceuil.showWithMenu();
     }
 }

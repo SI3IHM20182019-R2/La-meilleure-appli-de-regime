@@ -3,6 +3,7 @@ package appregime.controller;
 import appregime.Main;
 import appregime.model.PreferenceAlimentaireModel;
 import com.google.gson.Gson;
+import appregime.model.UserModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -38,25 +39,41 @@ public class InscriptionController extends Controller {
     @FXML
     private ComboBox<String> pref_list;
 
-    public InscriptionController() {
+    private UserModel user;
+
+    public InscriptionController(UserModel user) {
         super("/appregime/view/inscription.fxml");
+        this.user = user;
         ToggleGroup sexe = new ToggleGroup();
         femme.setToggleGroup(sexe);
         homme.setToggleGroup(sexe);
         init_pref_list();
         init_allergies_list();
         retour.setOnAction(event -> retour());
-        continuer.setOnAction(event -> continuer()); // à modifier dès que l'écran correspondant (suite de l'inscription) sera disponible
+        continuer.setOnAction(event -> continuer(this.user)); // à modifier dès que l'écran correspondant (suite de l'inscription) sera disponible
     }
 
     private void retour() {
+
+
         ConnexionController connexion = new ConnexionController();
         connexion.showInPrimaryStage();
     }
 
     // à modifier
-    private void continuer() {
-        ObjectifsRegimesController objectifsRegimesController = new ObjectifsRegimesController();
+    private void continuer(UserModel user) {
+
+        //Set the User Model
+        user.setPoids( Double.parseDouble(poids.getText()));
+        user.setPoidsSouhaite( Double.parseDouble(poidsSouhaite.getText()));
+        user.setAge(Integer.parseInt(age.getText()));
+        if (femme.isSelected()) {user.setSexe("femme");} else {user.setSexe("homme");}; ;
+        user.setTaille(Double.parseDouble(taille.getText()));
+        user.setAllergies(allergie_list.getValue());
+        user.setPreferences(pref_list.getValue());
+
+
+        ObjectifsRegimesController objectifsRegimesController = new ObjectifsRegimesController(this.user);
         objectifsRegimesController.showInPrimaryStage();
         /*
         MesRegimesController mesRegimesController = new MesRegimesController(primaryStage);

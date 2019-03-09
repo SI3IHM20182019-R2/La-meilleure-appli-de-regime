@@ -1,5 +1,6 @@
 package appregime.controller;
 
+import appregime.model.UserModel;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -16,13 +17,17 @@ public class MenuController extends Controller {
     @FXML
     private Label deconnexion;
 
-    public MenuController() {
+    private UserModel user;
+
+    public MenuController(UserModel user) {
+
         super("/appregime/view/menu_layout.fxml");
+        this.user = user;
         fxml.getStylesheets().add("/appregime/css/menu_layout.css");
 
-        mesRegimes.setOnMouseClicked(event -> setBelowMenuElement(new MesRegimesController().getFxml()));
-        accueil.setOnMouseClicked(event -> setBelowMenuElement(new AccueilController().getFxml()));
-        monProfil.setOnMouseClicked(event -> setBelowMenuElement(new ProfilController().getFxml()));
+        mesRegimes.setOnMouseClicked(event -> setBelowMenuElement(new MesRegimesController(this.user).getFxml()));
+        accueil.setOnMouseClicked(event -> setBelowMenuElement(new AccueilController(this.user).getFxml()));
+        monProfil.setOnMouseClicked(event -> setBelowMenuElement(new ProfilController(this.user).getFxml()));
         monEvolution.setOnMouseClicked(event -> setBelowMenuElement(new EvolutionController().getFxml()));
         deconnexion.setOnMouseClicked(event -> connexion());
     }

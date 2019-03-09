@@ -3,6 +3,7 @@ package appregime.controller;
 import appregime.model.IngredientModel;
 import appregime.model.IngredientQuantiteModel;
 import appregime.model.PlatModel;
+import appregime.model.UserModel;
 import appregime.view.CreerPlatView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -32,14 +33,17 @@ public class CreerPlatController extends Controller {
     @FXML
     private Text calories;
 
+    private UserModel user;
+
     PlatModel plat;
     CreerPlatView creerPlatView;
 
-    public CreerPlatController() {
+    public CreerPlatController(UserModel user) {
         super("/appregime/view/creer_plat.fxml");
 
         plat = new PlatModel();
         creerPlatView = new CreerPlatView(this, plat);
+        this.user = user;
 
         ajouterIngredient.setOnAction(event -> afficheAjouterIngredient());
         retour.setOnAction(event -> retour());
@@ -58,8 +62,8 @@ public class CreerPlatController extends Controller {
     }
 
     private void retour() {
-        CreerRepasController creerRepasController = new CreerRepasController();
-        creerRepasController.showWithMenu();
+        CreerRepasController creerRepasController = new CreerRepasController(this.user);
+        creerRepasController.showWithMenu(this.user);
     }
 
     public void addIngredient(IngredientModel ingredient, double quantite) {

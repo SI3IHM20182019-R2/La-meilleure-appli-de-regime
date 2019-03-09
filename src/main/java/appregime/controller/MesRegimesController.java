@@ -1,5 +1,6 @@
 package appregime.controller;
 
+import appregime.model.UserModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
@@ -15,13 +16,17 @@ public class MesRegimesController extends Controller {
     @FXML
     private MenuButton triNote;
 
-    public MesRegimesController() {
+    private UserModel user;
+
+    public MesRegimesController(UserModel user) {
+
         super("/appregime/view/mes_regimes.fxml");
+        this.user = user;
         creerRegime.setOnAction(event -> creerRegime());
     }
 
     private void creerRegime() {
-        CreerRegimeController Creation = new CreerRegimeController();
-        Creation.showWithMenu();
+        CreerRegimeController Creation = new CreerRegimeController(this.user);
+        Creation.showWithMenu(this.user);
     }
 }

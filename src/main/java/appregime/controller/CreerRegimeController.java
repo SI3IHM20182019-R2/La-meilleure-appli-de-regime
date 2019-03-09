@@ -1,5 +1,6 @@
 package appregime.controller;
 
+import appregime.model.UserModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -11,8 +12,11 @@ public class CreerRegimeController extends Controller {
     @FXML
     private Button terminer;
 
-    public CreerRegimeController() {
+    private UserModel user;
+
+    public CreerRegimeController(UserModel user) {
         super("/appregime/view/creer_regime.fxml");
+        this.user=user;
         ajouterRepas.setOnAction(event -> afficheAjouterRepas()); // indique au bouton la fonction qu'il doit appeler lorsqu'on appuie dessus
         retour.setOnAction(event -> retour());
         terminer.setOnAction(event -> retour());
@@ -22,12 +26,12 @@ public class CreerRegimeController extends Controller {
      * affiche la fenêtre "Ajouter repas"
      */
     private void afficheAjouterRepas() {
-        AjouterRepasController ajouterRepasController = new AjouterRepasController();
+        AjouterRepasController ajouterRepasController = new AjouterRepasController(this.user);
         ajouterRepasController.showInMyStage("Ajouter un repas");
     }
 
     private void retour() {
-        MesRegimesController mesRegimesController = new MesRegimesController();
-        mesRegimesController.showWithMenu();
+        MesRegimesController mesRegimesController = new MesRegimesController(this.user);
+        mesRegimesController.showWithMenu(this.user);
     }
 }

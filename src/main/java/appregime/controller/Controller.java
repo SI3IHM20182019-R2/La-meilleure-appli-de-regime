@@ -1,6 +1,7 @@
 package appregime.controller;
 
 import appregime.Main;
+import appregime.model.UserModel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -34,8 +35,8 @@ public abstract class Controller {
     /**
      * affiche le fxml lié au controller avec la barre de menu
      */
-    public void showWithMenu() {
-        MenuController menuController = new MenuController();
+    public void showWithMenu(UserModel user) {
+        MenuController menuController = new MenuController(user);
         Scene scene = new Scene(menuController.getFxml());
         menuController.setBelowMenuElement(this.fxml);
         primaryStage.setScene(scene);

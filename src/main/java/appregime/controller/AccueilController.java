@@ -1,5 +1,6 @@
 package appregime.controller;
 
+import appregime.model.UserModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -31,11 +32,17 @@ public class AccueilController extends Controller {
     @FXML
     private Label PoidsVisé;
 
+    private UserModel user;
 
 
-    public AccueilController() {
+
+    public AccueilController(UserModel user) {
         super("/appregime/view/accueil.fxml");
+        this.user = user;
+        this.nom.setText(this.user.getPseudo());
+     //   this.poidsActuel.(this.user.getPoids());
         actualiser.setOnAction(event -> creerRegime());
+
     }
 
     private void creerRegime() {

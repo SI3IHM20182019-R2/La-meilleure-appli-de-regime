@@ -1,6 +1,7 @@
 package appregime.controller;
 
 import appregime.model.IngredientList;
+import appregime.model.UserModel;
 import appregime.view.AjouterIngredientView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,6 +20,8 @@ public class AjouterIngredientController extends Controller {
     @FXML
     private ListView ingredientsList;
 
+    private UserModel user;
+
     AjouterIngredientView ajouterIngredientView;
     CreerPlatController creerPlatController;
 
@@ -33,8 +36,8 @@ public class AjouterIngredientController extends Controller {
 
     private void creerIngredient() {
         myStage.close();
-        CreerIngredientController creerIngredientController = new CreerIngredientController();
-        creerIngredientController.showWithMenu();
+        CreerIngredientController creerIngredientController = new CreerIngredientController(this.user);
+        creerIngredientController.showWithMenu(this.user);
     }
 
     public ListView getIngredientsListView() {
