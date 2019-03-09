@@ -54,8 +54,6 @@ public class InscriptionController extends Controller {
     }
 
     private void retour() {
-
-
         ConnexionController connexion = new ConnexionController();
         connexion.showInPrimaryStage();
     }
@@ -64,20 +62,38 @@ public class InscriptionController extends Controller {
     private void continuer(UserModel user) {
 
         //Set the User Model
-        user.setPoids( Double.parseDouble(poids.getText()));
-        user.setPoidsSouhaite( Double.parseDouble(poidsSouhaite.getText()));
-        user.setAge(Integer.parseInt(age.getText()));
-        if (femme.isSelected()) {user.setSexe("femme");} else {user.setSexe("homme");}; ;
-        user.setTaille(Double.parseDouble(taille.getText()));
-        user.setAllergies(allergie_list.getValue());
-        user.setPreferences(pref_list.getValue());
+        if(poids.getText().trim().isEmpty()) {
+            showPopup();
+        } else if (poidsSouhaite.getText().trim().isEmpty()) {
+            showPopup();
+        } else if (age.getText().trim().isEmpty()) {
+            showPopup();
+        } else if (!femme.isSelected() || !homme.isSelected()) {
+            showPopup();
+        } else if (taille.getText().trim().isEmpty()) {
+            showPopup();
+        } else {
+            user.setPoids(Double.parseDouble(poids.getText()));
+            user.setPoidsSouhaite(Double.parseDouble(poidsSouhaite.getText()));
+            user.setAge(Integer.parseInt(age.getText()));
+            if (femme.isSelected()) {user.setSexe("femme");} else {user.setSexe("homme");}; ;
+            user.setTaille(Double.parseDouble(taille.getText()));
+            user.setAllergies(allergie_list.getValue());
+            user.setPreferences(pref_list.getValue());
+
+            ObjectifsRegimesController objectifsRegimesController = new ObjectifsRegimesController(this.user);
+            objectifsRegimesController.showInPrimaryStage();
+        }
 
 
-        ObjectifsRegimesController objectifsRegimesController = new ObjectifsRegimesController(this.user);
-        objectifsRegimesController.showInPrimaryStage();
         /*
         MesRegimesController mesRegimesController = new MesRegimesController(primaryStage);
         mesRegimesController.showWithMenu();*/
+    }
+
+    private void showPopup() {
+        PopupInscriptionController popup = new PopupInscriptionController();
+        popup.showInMyStage("Warning!");
     }
 
     private void init_pref_list() {
