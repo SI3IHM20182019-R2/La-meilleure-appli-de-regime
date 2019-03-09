@@ -36,7 +36,7 @@ public abstract class Controller {
      * affiche le fxml lié au controller avec la barre de menu
      */
     public void showWithMenu(UserModel user) {
-        MenuController menuController = new MenuController(user);
+        MenuController menuController = new MenuController();
         Scene scene = new Scene(menuController.getFxml());
         menuController.setBelowMenuElement(this.fxml);
         primaryStage.setScene(scene);

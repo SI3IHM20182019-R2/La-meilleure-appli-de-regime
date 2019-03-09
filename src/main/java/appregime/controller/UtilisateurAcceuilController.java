@@ -61,4 +61,8 @@ public class UtilisateurAcceuilController extends Controller {
         UtilisateurCliqueController clique = new UtilisateurCliqueController(this.currentUser);
         clique.showInPrimaryStage();
     }
+
+    public UserModel getCurrentUser() {
+        return currentUser;
+    }
 }

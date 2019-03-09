@@ -19,10 +19,11 @@ public class MenuController extends Controller {
 
     private UserModel user;
 
-    public MenuController(UserModel user) {
+    public MenuController() {
 
         super("/appregime/view/menu_layout.fxml");
-        this.user = user;
+        UtilisateurAcceuilController utilisateurAcceuilController = new UtilisateurAcceuilController();
+        this.user = utilisateurAcceuilController.getCurrentUser();
         fxml.getStylesheets().add("/appregime/css/menu_layout.css");
 
         mesRegimes.setOnMouseClicked(event -> setBelowMenuElement(new MesRegimesController(this.user).getFxml()));
