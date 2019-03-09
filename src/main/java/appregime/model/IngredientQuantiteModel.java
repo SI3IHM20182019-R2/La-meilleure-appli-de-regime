@@ -9,7 +9,7 @@ public class IngredientQuantiteModel extends IngredientModel {
     }
 
     public IngredientQuantiteModel(IngredientModel ingredientModel, double quantiteGrams) {
-        super(ingredientModel.getName(), ingredientModel.getCalories(), ingredientModel.getLipides(), ingredientModel.getGlucides(), ingredientModel.getProteines(), ingredientModel.getImagePath());
+        super(ingredientModel.getName(), ingredientModel.getCaloriesPour100g(), ingredientModel.getLipidesPour100g(), ingredientModel.getGlucidesPour100g(), ingredientModel.getProteinesPour100g(), ingredientModel.getImagePath());
         this.quantiteGrams = quantiteGrams;
     }
 
