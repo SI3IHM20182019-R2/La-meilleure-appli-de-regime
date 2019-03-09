@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="615.0" spacing="5.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="615.0" spacing="5.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" spacing="10.0">
          <children>
@@ -32,7 +32,8 @@
                   </Label>
                   <HBox alignment="CENTER_LEFT" spacing="10.0">
                      <children>
-                        <Label fx:id="PoidsActuel" text="77.5 Kg" />
+                        <Label fx:id="PoidsActuel" prefHeight="17.0" prefWidth="26.0" />
+                        <Label text="Kg" />
                         <Button fx:id="actualiser" mnemonicParsing="false" text="Actualiser" />
                      </children>
                   </HBox>
@@ -46,7 +47,7 @@
                         <Label text="Régime Natman" />
                      </children>
                   </HBox>
-                  <Label fx:id="Jour" text="Jour 70/150">
+                  <Label fx:id="Jour" text="Jour 50/150">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
