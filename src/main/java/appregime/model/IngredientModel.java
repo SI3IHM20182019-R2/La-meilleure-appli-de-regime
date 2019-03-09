@@ -18,20 +18,36 @@ public class IngredientModel {
         this.imagePath = imagePath;
     }
 
-    public double getCalories() {
+    public double getCaloriesPour100g() {
         return calories;
     }
 
-    public double getLipides() {
+    public double getLipidesPour100g() {
         return lipides;
     }
 
-    public double getGlucides() {
+    public double getGlucidesPour100g() {
         return glucides;
     }
 
-    public double getProteines() {
+    public double getProteinesPour100g() {
         return proteines;
+    }
+
+    public double getCaloriesPour1g() {
+        return calories/100;
+    }
+
+    public double getLipidesPour1g() {
+        return lipides/100;
+    }
+
+    public double getGlucidesPour1g() {
+        return glucides/100;
+    }
+
+    public double getProteinesPour1g() {
+        return proteines/100;
     }
 
     public String getImagePath() {
