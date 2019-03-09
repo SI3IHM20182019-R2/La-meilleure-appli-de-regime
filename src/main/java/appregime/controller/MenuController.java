@@ -19,8 +19,6 @@ public class MenuController extends Controller {
     private Label monEvolution;
     @FXML
     private Label deconnexion;
-    @FXML
-    private Pane item;
 
     private UserModel user;
 
