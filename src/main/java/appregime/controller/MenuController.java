@@ -46,7 +46,7 @@ public class MenuController extends Controller {
     }
 
     public void connexion() {
-        ConnexionController connexionController = new ConnexionController();
-        connexionController.showInPrimaryStage();
+        UtilisateurAcceuilController utilisateurAcceuilController = new UtilisateurAcceuilController();
+        utilisateurAcceuilController.showInPrimaryStage();
     }
 }

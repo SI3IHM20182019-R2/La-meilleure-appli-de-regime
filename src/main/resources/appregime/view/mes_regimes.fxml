@@ -65,7 +65,7 @@
       </VBox>
       <HBox alignment="CENTER_RIGHT" VBox.vgrow="ALWAYS">
          <children>
-            <Button fx:id="creerRegime" mnemonicParsing="false" text="Créer Régime" />
+            <Button fx:id="creerRegime" mnemonicParsing="false" text="Créer un régime" />
          </children>
       </HBox>
    </children>
