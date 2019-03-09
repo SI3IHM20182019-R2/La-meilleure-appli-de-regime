@@ -56,7 +56,7 @@ public class UtilisateurCliqueController extends Controller {
         } catch (IOException e) {
             System.out.println(Arrays.toString(e.getStackTrace()));
         }
-        AccueilController acceuil = new AccueilController(this.currentUser);
-        acceuil.showWithMenu(this.currentUser);
+       // AccueilController acceuil = new AccueilController(this.currentUser);
+        //acceuil.showWithMenu(this.currentUser);
     }
 }
