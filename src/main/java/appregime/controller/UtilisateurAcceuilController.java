@@ -15,16 +15,20 @@ import java.util.Arrays;
 
 public class UtilisateurAcceuilController extends Controller {
     private ArrayList<UserModel> userList = new ArrayList<>();
+    private UserModel currentUser;
 
     @FXML
     private Button addUserButton;
     @FXML
     private Button currentUserButton;
 
+
+
     public UtilisateurAcceuilController() {
         super("/appregime/view/utilisateur_acceuil.fxml");
 
         initializeUserList();
+        this.currentUser = this.userList.get(0);
         this.fxml.getStylesheets().add("/appregime/css/acceuil.css");
         addUserButton.setOnAction(event -> addUser());
         currentUserButton.setOnAction(event -> clique());
@@ -54,7 +58,7 @@ public class UtilisateurAcceuilController extends Controller {
     }
 
     private void clique() {
-        UtilisateurCliqueController clique = new UtilisateurCliqueController();
+        UtilisateurCliqueController clique = new UtilisateurCliqueController(this.currentUser);
         clique.showInPrimaryStage();
     }
 }
