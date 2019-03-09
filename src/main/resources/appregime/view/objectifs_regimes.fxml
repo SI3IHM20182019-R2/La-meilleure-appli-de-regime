@@ -27,7 +27,7 @@
                <content>
                   <HBox prefHeight="100.0" prefWidth="599.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="130.0">
+                        <Button fx:id="prisedemuscle" contentDisplay="TOP" mnemonicParsing="false" prefHeight="71.0" prefWidth="130.0" text="Ajouter">
                            <graphic>
                               <ImageView fitHeight="78.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -36,7 +36,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="85.0" prefWidth="113.0">
+                        <Button fx:id="silhouette" contentDisplay="TOP" mnemonicParsing="false" prefHeight="85.0" prefWidth="113.0" text="Ajouter">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -47,6 +47,42 @@
                                  </image>
                               </ImageView>
                            </graphic>
+                        </Button>
+                        <Button fx:id="sain" contentDisplay="TOP" mnemonicParsing="false" prefHeight="107.0" prefWidth="110.0" text="Ajouter">
+                           <graphic>
+                              <ImageView fitHeight="72.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logoBanane.jpg" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="graisse" contentDisplay="TOP" mnemonicParsing="false" prefHeight="71.0" prefWidth="130.0" text="Ajouter">
+                           <graphic>
+                              <ImageView fitHeight="78.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logoFlame.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="stress" contentDisplay="TOP" mnemonicParsing="false" prefHeight="71.0" prefWidth="130.0" text="Ajouter">
+                           <graphic>
+                              <ImageView fitHeight="78.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logoBatterie.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
@@ -66,14 +102,50 @@
          <content>
             <HBox prefHeight="100.0" prefWidth="595.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="117.0" text="Button">
+                  <Button fx:id="natman" contentDisplay="TOP" mnemonicParsing="false" prefHeight="100.0" prefWidth="117.0" text="Ajouter">
                      <graphic>
                         <ImageView fitHeight="85.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/regime2.jpeg" />
+                              <Image url="@../images/regime_Natman.png" />
                            </image>
                         </ImageView>
                      </graphic>
+                  </Button>
+                  <Button fx:id="ventreplat" contentDisplay="TOP" mnemonicParsing="false" prefHeight="100.0" prefWidth="117.0" text="Ajouter">
+                     <graphic>
+                        <ImageView fitHeight="85.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/regime_ventre_plat.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="100.0" prefWidth="117.0" text="Ajouter">
+                     <graphic>
+                        <ImageView fitHeight="85.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/regimes_dash.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="dietetique" contentDisplay="TOP" mnemonicParsing="false" prefHeight="100.0" prefWidth="117.0" text="Ajouter">
+                     <graphic>
+                        <ImageView fitHeight="85.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/regimes_diet.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
                   </Button>
                </children>
             </HBox>

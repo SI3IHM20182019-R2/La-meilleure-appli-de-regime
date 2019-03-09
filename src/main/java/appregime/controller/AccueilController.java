@@ -30,7 +30,13 @@ public class AccueilController extends Controller {
     private Label PoidsDepart;
 
     @FXML
+    private Label regime;
+
+    @FXML
     private Label PoidsVisé;
+
+    @FXML
+    private Label objectif;
 
     private UserModel user;
 
@@ -42,6 +48,8 @@ public class AccueilController extends Controller {
         this.nom.setText(this.user.getPseudo());
        // System.out.println(this.user.getPoids());
         this.PoidsActuel.setText(String.valueOf(this.user.getPoids()));
+        this.regime.setText(this.user.getRegimes());
+        this.objectif.setText(this.user.getObjectifvise());
         actualiser.setOnAction(event -> creerRegime());
 
     }

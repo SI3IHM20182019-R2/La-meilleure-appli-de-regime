@@ -11,8 +11,10 @@ public class UserModel {
     private Double poids;
     private Double poidsSouhaite;
     private Integer objectif;
+    private String objectifvise;
     private String preferences;
     private String allergies;
+    private String regimes;
 
 
     //CONSTRUCTORS
@@ -42,6 +44,8 @@ public class UserModel {
         this.objectif = null;
         this.allergies = null;
         this.preferences = null;
+        this.regimes = null;
+        this.objectifvise = null;
     }
 
     //GETTERS
@@ -69,6 +73,12 @@ public class UserModel {
 
     public Double getPoidsSouhaite() { return poidsSouhaite; }
 
+    public String getRegimes() {return regimes;}
+
+    public String getObjectifvise() {
+        return objectifvise;
+    }
+
     //SETTERS
 
     public void setAge(Integer age) { this.age = age; }
@@ -93,7 +103,12 @@ public class UserModel {
 
     public void setTaille(Double taille) { this.taille = taille; }
 
-    public void setPoidsSouhaite(Double poidsSouhaite) { this.poidsSouhaite = poidsSouhaite; }
+   public void setPoidsSouhaite(Double poidsSouhaite) { this.poidsSouhaite = poidsSouhaite; }
+
+    public void setRegimes (String regimes) {this.regimes = regimes;}
+
+    public void setObjectifvise (String objectifvise) {this.objectifvise = objectifvise;}
+
 
     //TOSTRING
 
