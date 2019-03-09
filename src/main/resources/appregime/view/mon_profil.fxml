@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="104.0" prefWidth="576.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="119.0" fitWidth="174.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="119.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/17004.png" />
                      </image>
@@ -96,7 +96,7 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe:" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER_LEFT" prefWidth="100.0" spacing="10.0">
+                  <VBox alignment="CENTER_LEFT" prefWidth="150.0" spacing="10.0">
                      <children>
                         <Label fx:id="mail" text="mail">
                            <VBox.margin>
@@ -117,12 +117,12 @@
       </VBox>
       <VBox>
          <children>
-            <ScrollPane prefHeight="100.0" VBox.vgrow="ALWAYS">
+            <ScrollPane fitToWidth="true" prefHeight="90.0" VBox.vgrow="ALWAYS">
                <content>
-                  <VBox prefHeight="72.0" prefWidth="548.0">
+                  <VBox spacing="5.0">
                      <children>
-                        <Label prefHeight="17.0" prefWidth="125.0" text="Objectifs alimentaires" />
-                        <HBox prefHeight="100.0" prefWidth="200.0">
+                        <Label text="Objectifs alimentaires" />
+                        <HBox>
                            <children>
                               <Button fx:id="objectifAlimentaire" mnemonicParsing="false">
                                  <graphic>
@@ -146,18 +146,18 @@
             </ScrollPane>
          </children>
       </VBox>
-      <HBox VBox.vgrow="ALWAYS">
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
          <children>
-            <ScrollPane prefHeight="231.0" prefWidth="271.0" HBox.hgrow="ALWAYS">
+            <ScrollPane HBox.hgrow="ALWAYS">
                <content>
-                  <VBox prefHeight="202.0" prefWidth="273.0">
+                  <VBox spacing="10.0">
                      <children>
                         <Label text="Preferences alimentaires" />
-                        <HBox prefHeight="120.0" prefWidth="267.0">
+                        <HBox alignment="CENTER_LEFT">
                            <children>
                               <ImageView fitHeight="104.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
-                                    <Insets top="20.0" />
+                                    <Insets />
                                  </HBox.margin>
                                  <image>
                                     <Image url="@../images/fruits.png" />
@@ -165,30 +165,27 @@
                               </ImageView>
                               <Button mnemonicParsing="false" text="Ajouter +">
                                  <HBox.margin>
-                                    <Insets left="10.0" top="50.0" />
+                                    <Insets left="10.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
                         </HBox>
                      </children>
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
                   </VBox>
                </content>
             </ScrollPane>
-            <ScrollPane prefHeight="231.0" prefWidth="275.0" HBox.hgrow="ALWAYS">
+            <ScrollPane HBox.hgrow="ALWAYS">
                <content>
-                  <VBox prefHeight="200.0" prefWidth="277.0">
+                  <VBox spacing="10.0">
                      <children>
                         <Label text="Allergies">
                            <VBox.margin>
-                              <Insets top="10.0" />
+                              <Insets />
                            </VBox.margin>
                         </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
+                        <HBox alignment="CENTER_LEFT">
                            <VBox.margin>
-                              <Insets top="10.0" />
+                              <Insets />
                            </VBox.margin>
                            <children>
                               <ImageView fitHeight="102.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
@@ -198,7 +195,7 @@
                               </ImageView>
                               <Button mnemonicParsing="false" text="Ajouter +">
                                  <HBox.margin>
-                                    <Insets left="10.0" top="40.0" />
+                                    <Insets left="10.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
