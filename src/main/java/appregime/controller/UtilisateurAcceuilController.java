@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class UtilisateurAcceuilController extends Controller {
-    private ArrayList<UserModel> userList = new ArrayList<>();
-    private UserModel currentUser;
+    private static ArrayList<UserModel> userList = UtilisateurAcceuilController.initializeUserList();
+    private static UserModel currentUser = userList.get(0) ;
 
     @FXML
     private Button addUserButton;
@@ -27,14 +27,14 @@ public class UtilisateurAcceuilController extends Controller {
     public UtilisateurAcceuilController() {
         super("/appregime/view/utilisateur_acceuil.fxml");
 
-        initializeUserList();
-        this.currentUser = this.userList.get(0);
+       // initializeUserList();
         this.fxml.getStylesheets().add("/appregime/css/acceuil.css");
         addUserButton.setOnAction(event -> addUser());
         currentUserButton.setOnAction(event -> clique());
     }
 
-    private void initializeUserList() {
+    private static ArrayList<UserModel> initializeUserList() {
+        ArrayList<UserModel> listTest = new ArrayList<>();
         String path = Main.class.getResource("/appregime/json/users.json").getPath().replaceAll("%20", " ");
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
@@ -43,13 +43,15 @@ public class UtilisateurAcceuilController extends Controller {
             for (Object obj : json) {
                 String str = gson.toJson(obj);
                 UserModel user = gson.fromJson(str, UserModel.class);
-                userList.add(user);
+                listTest.add(user);
                 System.out.println("Added --> " + user.toString());
             }
             bufferedReader.close();
         } catch (IOException e) {
             System.out.println(Arrays.toString(e.getStackTrace()));
         }
+        return listTest;
+
     }
 
     private void addUser() {
@@ -64,5 +66,13 @@ public class UtilisateurAcceuilController extends Controller {
 
     public UserModel getCurrentUser() {
         return currentUser;
+    }
+
+    public ArrayList<UserModel> getUserList() {
+        return userList;
+    }
+
+    public void setCurrentUser(UserModel user){
+        this.currentUser = user;
     }
 }

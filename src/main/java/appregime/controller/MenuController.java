@@ -28,6 +28,7 @@ public class MenuController extends Controller {
 
         super("/appregime/view/menu_layout.fxml");
         UtilisateurAcceuilController utilisateurAcceuilController = new UtilisateurAcceuilController();
+
         this.user = utilisateurAcceuilController.getCurrentUser();
         fxml.getStylesheets().add("/appregime/css/menu_layout.css");
 
