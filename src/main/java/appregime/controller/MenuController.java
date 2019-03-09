@@ -4,6 +4,9 @@ import appregime.model.UserModel;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 
 public class MenuController extends Controller {
     @FXML
@@ -16,6 +19,8 @@ public class MenuController extends Controller {
     private Label monEvolution;
     @FXML
     private Label deconnexion;
+    @FXML
+    private Pane item;
 
     private UserModel user;
 
@@ -37,6 +42,7 @@ public class MenuController extends Controller {
      * affiche la partie de l'écran (représentée ici par la variable node) qui se trouve sous la barre de menu
      */
     public void setBelowMenuElement(Node node) {
+        VBox.setVgrow(node, Priority.ALWAYS); // sert au fonctionnement des écrans qui sont "responsive"
         fxml.getChildren().set(1, node); // insère à l'indice 1 de la VBox principale (élément 0 étant la barre de menu)
     }
 

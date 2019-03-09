@@ -2,14 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="34.0" prefWidth="760.0" style="-fx-border-color: gray;">
+      <HBox style="-fx-border-color: gray;">
          <children>
             <Label fx:id="accueil" styleClass="menuButton" text="Accueil">
                <HBox.margin>
@@ -53,6 +53,6 @@
             </Label>
          </children>
       </HBox>
-      <AnchorPane />
+      <Pane />
    </children>
 </VBox>
