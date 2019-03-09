@@ -12,7 +12,7 @@ public class AccueilController extends Controller {
     private Label nom;
 
     @FXML
-    private Label poidsActuel;
+    private Label PoidsActuel;
 
     @FXML
     private Button actualiser;
@@ -40,7 +40,8 @@ public class AccueilController extends Controller {
         super("/appregime/view/accueil.fxml");
         this.user = user;
         this.nom.setText(this.user.getPseudo());
-     //   this.poidsActuel.(this.user.getPoids());
+       // System.out.println(this.user.getPoids());
+        this.PoidsActuel.setText(String.valueOf(this.user.getPoids()));
         actualiser.setOnAction(event -> creerRegime());
 
     }

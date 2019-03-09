@@ -32,7 +32,7 @@
                   </Label>
                   <HBox alignment="CENTER_LEFT" spacing="10.0">
                      <children>
-                        <Label fx:id="PoidsActuel" prefHeight="17.0" prefWidth="26.0" />
+                        <Label fx:id="PoidsActuel" prefHeight="17.0" prefWidth="26.0" text="77" />
                         <Label text="Kg" />
                         <Button fx:id="actualiser" mnemonicParsing="false" text="Actualiser" />
                      </children>
