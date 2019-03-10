@@ -46,12 +46,12 @@
       </HBox>
       <Button fx:id="saveButton" mnemonicParsing="false" text="Sauvegarder">
          <VBox.margin>
-            <Insets left="50.0" />
+            <Insets left="250.0" />
          </VBox.margin>
       </Button>
       <Button fx:id="cancelButton" mnemonicParsing="false" text="Annuler">
          <VBox.margin>
-            <Insets left="220.0" top="-25.0" />
+            <Insets left="20.0" top="-25.0" />
          </VBox.margin>
       </Button>
    </children>
