@@ -15,7 +15,7 @@ public class ListPlats {
     public ListPlats() {
         platMap = FXCollections.observableMap(new HashMap<String, PlatModel>() {});
         IngredientList ingredientList = new IngredientList();
-        ObservableMap<String, IngredientModel> mapIngredient = ingredientList.getIngredientMap();
+        ObservableMap<String, IngredientModel> mapIngredient = IngredientList.getIngredientMap();
 
         //Declaration du plat soupe tomate
         ArrayList<IngredientQuantiteModel> ingredientQuantiteListSoupeTomate = new ArrayList<IngredientQuantiteModel>();

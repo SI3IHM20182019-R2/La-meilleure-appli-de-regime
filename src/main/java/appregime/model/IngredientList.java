@@ -8,10 +8,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class IngredientList {
-    private ObservableMap<String, IngredientModel> ingredientMap;
+    private static ObservableMap<String, IngredientModel> ingredientMap;
+    private static ObservableList<IngredientModel> list;
 
     public IngredientList() {
-        // A rajouter les bonnes valeurs des valeurs nutritionnelles et verifier les paths.
+        list = FXCollections.observableList(new ArrayList<>());
         ingredientMap = FXCollections.observableMap(new HashMap<String, IngredientModel>() {
         });
         ingredientMap.put("huileOlive", new IngredientModel("huile d'olive", 884.0, 100.0, 0.0, 0.0, "/appregime/images/ingredients/huile_olive.jpg"));
@@ -44,19 +45,18 @@ public class IngredientList {
         ingredientMap.put("sucreVanille", new IngredientModel("sucre vanille", 400.0, 0.0, 0.0, 0.0, "/appregime/images/ingredients/vanille.jpg"));
         ingredientMap.put("laitue", new IngredientModel("laitue", 15.0, 0.2, 2.9, 1.4, "/appregime/images/ingredients/laitue.jpg"));
 
+        list.addAll(ingredientMap.values());
     }
 
-    public ObservableMap<String, IngredientModel> getIngredientMap() {
+    public static ObservableMap<String, IngredientModel> getIngredientMap() {
         return ingredientMap;
     }
 
-    public void add(String nomIngredient, IngredientModel ingredient) {
+    public static void add(String nomIngredient, IngredientModel ingredient) {
         ingredientMap.put(nomIngredient, ingredient);
     }
 
-    public ObservableList<IngredientModel> getIngredientList() {
-        ObservableList<IngredientModel> l = FXCollections.observableList(new ArrayList<>());
-        l.addAll(ingredientMap.values());
-        return l;
+    public static ObservableList<IngredientModel> getIngredientList() {
+        return list;
     }
 }

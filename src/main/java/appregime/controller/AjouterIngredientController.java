@@ -1,12 +1,16 @@
 package appregime.controller;
 
 import appregime.model.IngredientList;
+import appregime.model.IngredientModel;
 import appregime.model.UserModel;
 import appregime.view.AjouterIngredientView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+
+import java.util.Collections;
+import java.util.Comparator;
 
 public class AjouterIngredientController extends Controller {
     @FXML
@@ -17,6 +21,8 @@ public class AjouterIngredientController extends Controller {
     private Button ajouter;
     @FXML
     private TextField quantite;
+    @FXML
+    private Button trierParCalories;
     @FXML
     private ListView ingredientsList;
 
@@ -31,7 +37,8 @@ public class AjouterIngredientController extends Controller {
         ajouter.setOnAction(event -> ajouter());
         annuler.setOnAction(event -> myStage.close());
         creerIngredient.setOnAction(event -> creerIngredient());
-        ajouterIngredientView = new AjouterIngredientView(this, new IngredientList());
+        trierParCalories.setOnAction(event -> trierParCalories());
+        ajouterIngredientView = new AjouterIngredientView(this);
     }
 
     private void creerIngredient() {
@@ -47,5 +54,19 @@ public class AjouterIngredientController extends Controller {
     public void ajouter() {
         creerPlatController.addIngredient(ajouterIngredientView.getSelectedIngredient(), Double.parseDouble(quantite.getCharacters().toString()));
         myStage.close();
+    }
+
+    public void trierParCalories() {
+        IngredientList.getIngredientList().sort((i1, i2) -> {
+            int c = 0;
+            if (i1.getCaloriesPour100g() < i2.getCaloriesPour100g()) {
+                c = -1;
+            } else {
+                if (i1.getCaloriesPour100g() > i2.getCaloriesPour100g()) {
+                    c = 1;
+                }
+            }
+            return c;
+        });
     }
 }

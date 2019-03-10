@@ -12,8 +12,8 @@ import javafx.util.Callback;
 
 public class CreerPlatView {
     private ListView ingredientsListView;
-    CreerPlatController creerPlatController;
-    PlatModel platModel;
+    private CreerPlatController creerPlatController;
+    private PlatModel platModel;
     private int rangeSelectedIngredient = -1;
 
     public CreerPlatView(CreerPlatController creerPlatController, PlatModel platModel) {

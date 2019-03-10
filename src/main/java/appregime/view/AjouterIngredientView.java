@@ -10,14 +10,10 @@ import javafx.util.Callback;
 
 public class AjouterIngredientView {
     private ListView ingredients;
-    private AjouterIngredientController ajouterIngredientController;
-    private IngredientList listIngredients;
 
-    public AjouterIngredientView(AjouterIngredientController ajouterIngredientController, IngredientList listIngredients) {
-        this.ajouterIngredientController = ajouterIngredientController;
-        this.listIngredients = listIngredients;
+    public AjouterIngredientView(AjouterIngredientController ajouterIngredientController) {
         ingredients = ajouterIngredientController.getIngredientsListView();
-        ingredients.setItems(listIngredients.getIngredientList());
+        ingredients.setItems(IngredientList.getIngredientList());
         //call a cell factory and display each observable item in the ListView
         adaptItems(ingredients);
     }
