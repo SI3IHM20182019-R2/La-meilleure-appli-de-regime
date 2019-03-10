@@ -3,17 +3,29 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="97.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="imageIngredient" fitHeight="49.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="0.0" />
-      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="89.0" prefWidth="130.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Label fx:id="nomIngredient" layoutX="60.0" layoutY="1.0" text="Nom" wrapText="true">
+      <ImageView fx:id="imageIngredient" fitHeight="49.0" fitWidth="57.0" layoutY="28.0" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="117.0" AnchorPane.topAnchor="28.0" />
+      <Label fx:id="nomIngredient" layoutX="66.0" layoutY="2.0" prefHeight="23.0" prefWidth="183.0" text="Nom" wrapText="true">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Repas:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="84.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Glucides:" />
+      <Text layoutX="85.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="proteines:" />
+      <Label fx:id="glucides" layoutX="137.0" layoutY="38.0" prefHeight="17.0" prefWidth="17.0" text="Label" />
+      <Label fx:id="proteines" layoutX="143.0" layoutY="61.0" prefHeight="17.0" prefWidth="17.0" text="Label" />
+      <Text layoutX="162.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lipides:" />
+      <Text layoutX="162.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="calories:" />
+      <Label fx:id="lipides" layoutX="205.0" layoutY="38.0" text="lipides" />
+      <Label fx:id="calories" layoutX="213.0" layoutY="60.0" text="calories" />
    </children>
 </AnchorPane>
