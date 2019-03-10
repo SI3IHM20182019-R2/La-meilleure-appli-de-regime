@@ -68,9 +68,9 @@ public class InscriptionController extends Controller {
             showPopup();
         } else if (age.getText().trim().isEmpty()) {
             showPopup();
-        } else if (!femme.isSelected() || !homme.isSelected()) {
+        } /*else if (!femme.isSelected() | !homme.isSelected()) {
             showPopup();
-        } else if (taille.getText().trim().isEmpty()) {
+        }*/ else if (taille.getText().trim().isEmpty()) {
             showPopup();
         } else {
             user.setPoids(Double.parseDouble(poids.getText()));
