@@ -11,8 +11,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         Main.primaryStage = primaryStage;
         primaryStage.setTitle("La meilleure appli de régime");
-        UtilisateurAcceuilController connexionController = new UtilisateurAcceuilController();
-        connexionController.showInPrimaryStage();
+        UtilisateurAcceuilController utilisateurAcceuilController = new UtilisateurAcceuilController();
+        utilisateurAcceuilController.showInPrimaryStage();
     }
 
     public static void main(String[] args) {
