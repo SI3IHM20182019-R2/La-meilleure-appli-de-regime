@@ -79,9 +79,9 @@
                               <Insets top="10.0" />
                            </opaqueInsets>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="261.0">
+                        <VBox prefHeight="223.0" prefWidth="261.0">
                            <children>
-                              <ListView fx:id="platModelListView" prefHeight="199.0" prefWidth="246.0" />
+                              <ListView fx:id="platModelListView" prefHeight="222.0" prefWidth="261.0" />
                            </children>
                         </VBox>
                      </children>
@@ -131,6 +131,10 @@
                         </VBox>
                      </children>
                   </HBox>
+                  <VBox fx:id="calendar" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children></VBox>
                </children>
                <opaqueInsets>
                   <Insets />
