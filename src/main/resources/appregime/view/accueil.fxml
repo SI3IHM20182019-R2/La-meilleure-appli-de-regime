@@ -3,8 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -79,11 +79,11 @@
                               <Insets top="10.0" />
                            </opaqueInsets>
                         </HBox>
-                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
-                           <content>
-                              <VBox prefHeight="200.0" prefWidth="100.0" />
-                           </content>
-                        </ScrollPane>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ListView fx:id="platModelListView" prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -96,7 +96,7 @@
                   <HBox>
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Objectif:" />
-                        <Label fx:id="objectif" text="Perdre du poids ">
+                        <Label fx:id="objectif" text="Prise de muscle">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>

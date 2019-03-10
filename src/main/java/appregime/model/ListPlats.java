@@ -1,6 +1,7 @@
 package appregime.model;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class ListPlats {
         ingredientQuantiteListSoupeTomate.add(new IngredientQuantiteModel(mapIngredient.get("poivre"), 3));
         ingredientQuantiteListSoupeTomate.add(new IngredientQuantiteModel(mapIngredient.get("sel"), 2));
         ingredientQuantiteListSoupeTomate.add(new IngredientQuantiteModel(mapIngredient.get("sucre"), 2));
-        platMap.put("soupeTomate", new PlatModel("Soupe de tomate", "../resources/appregime/images/imagesPlat/soupeTomate.jpg", ingredientQuantiteListSoupeTomate));
+        platMap.put("soupeTomate", new PlatModel("Soupe de tomate", "appregime/images/imagesPlat/soupeTomate.jpg", ingredientQuantiteListSoupeTomate));
 
         //Declaration du plat taboulet
         ArrayList<IngredientQuantiteModel> ingredientQuantiteListTaboulet = new ArrayList<IngredientQuantiteModel>();
@@ -40,7 +41,7 @@ public class ListPlats {
         ingredientQuantiteListTaboulet.add(new IngredientQuantiteModel(mapIngredient.get("poivre"), 1));
         ingredientQuantiteListTaboulet.add(new IngredientQuantiteModel(mapIngredient.get("sel"), 2));
         ingredientQuantiteListTaboulet.add(new IngredientQuantiteModel(mapIngredient.get("semoule"), 30));
-        platMap.put("taboulet", new PlatModel("Taboulet", "../resources/appregime/images/imagesPlat/taboule.jpg", ingredientQuantiteListTaboulet));
+        platMap.put("taboulet", new PlatModel("Taboulet", "appregime/images/imagesPlat/taboule.jpg", ingredientQuantiteListTaboulet));
 
         //Declaration du plat saladeCesar
         ArrayList<IngredientQuantiteModel> ingredientQuantiteListSaladeCesar = new ArrayList<IngredientQuantiteModel>();
@@ -55,7 +56,7 @@ public class ListPlats {
         ingredientQuantiteListSaladeCesar.add(new IngredientQuantiteModel(mapIngredient.get("mayonnaise"), 2));
         ingredientQuantiteListSaladeCesar.add(new IngredientQuantiteModel(mapIngredient.get("sel"), 4));
         ingredientQuantiteListSaladeCesar.add(new IngredientQuantiteModel(mapIngredient.get("poivre"), 4));
-        platMap.put("saladeCesar", new PlatModel("Salade Cesar", "../resources/appregime/images/imagesPlat/SaladeCesar.jpg", ingredientQuantiteListSaladeCesar));
+        platMap.put("saladeCesar", new PlatModel("Salade Cesar", "appregime/images/imagesPlat/SaladeCesar.jpg", ingredientQuantiteListSaladeCesar));
 
         //Declaration du plat hamburgerFrites
         ArrayList<IngredientQuantiteModel> ingredientQuantiteListHamburgerFrites = new ArrayList<IngredientQuantiteModel>();
@@ -69,7 +70,7 @@ public class ListPlats {
         ingredientQuantiteListHamburgerFrites.add(new IngredientQuantiteModel(mapIngredient.get("laitue"), 5));
         ingredientQuantiteListHamburgerFrites.add(new IngredientQuantiteModel(mapIngredient.get("pommeDeTerre"), 30));
         ingredientQuantiteListHamburgerFrites.add(new IngredientQuantiteModel(mapIngredient.get("huileOlive"), 10));
-        platMap.put("hamburgerFrites", new PlatModel("Hamburger frites", "../resources/appregime/images/imagesPlat/hamburgerFrites.jpg", ingredientQuantiteListHamburgerFrites));
+        platMap.put("hamburgerFrites", new PlatModel("Hamburger frites", "appregime/images/imagesPlat/hamburgerFrites.jpg", ingredientQuantiteListHamburgerFrites));
 
 
         //Declaration du plat saladeDeFruits
@@ -78,17 +79,23 @@ public class ListPlats {
         ingredientQuantiteListSaladeDeFruits.add(new IngredientQuantiteModel(mapIngredient.get("framboise"), 30));
         ingredientQuantiteListSaladeDeFruits.add(new IngredientQuantiteModel(mapIngredient.get("myrtille"), 30));
         ingredientQuantiteListSaladeDeFruits.add(new IngredientQuantiteModel(mapIngredient.get("citron"), 10));
-        platMap.put("saladeDeFruits", new PlatModel("Salade de fruits", "../resources/appregime/images/imagesPlat/saldeDeFruits.jpg", ingredientQuantiteListSaladeDeFruits));
+        platMap.put("saladeDeFruits", new PlatModel("Salade de fruits", "appregime/images/imagesPlat/saldeDeFruits.jpg", ingredientQuantiteListSaladeDeFruits));
 
         //Declaration du plat mousseAuChocolat
         ArrayList<IngredientQuantiteModel> ingredientQuantiteListMouseAuChocolat = new ArrayList<IngredientQuantiteModel>();
         ingredientQuantiteListMouseAuChocolat.add(new IngredientQuantiteModel(mapIngredient.get("oeuf"), 65));
         ingredientQuantiteListMouseAuChocolat.add(new IngredientQuantiteModel(mapIngredient.get("chocolat"), 35));
-        platMap.put("mousseAuChocolat", new PlatModel("Mousse au chocolat", "../resources/appregime/images/imagesPlat/mousseChocolat.jpg", ingredientQuantiteListMouseAuChocolat));
+        platMap.put("mousseAuChocolat", new PlatModel("Mousse au chocolat", "appregime/images/imagesPlat/mousseChocolat.jpg", ingredientQuantiteListMouseAuChocolat));
     }
 
     public ObservableMap<String, PlatModel> getPlatMap() {
         return platMap;
+    }
+
+    public ObservableList<PlatModel> getPlatList() {
+        ObservableList<PlatModel> l = FXCollections.observableList(new ArrayList<>());
+        l.addAll(platMap.values());
+        return l;
     }
 
     public void add(String nomPlat, PlatModel plat) {

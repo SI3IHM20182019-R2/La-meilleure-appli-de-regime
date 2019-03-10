@@ -29,6 +29,7 @@ public class PlatModel {
         proteines = new SimpleIntegerProperty();
         lipides = new SimpleIntegerProperty();
         calories = new SimpleIntegerProperty();
+
     }
 
     public PlatModel() {
@@ -57,9 +58,12 @@ public class PlatModel {
     }
 
     public void updateInfosNutritionnelles(IngredientQuantiteModel ingredient, String operation) {
+        /*
         switch (operation) {
+
             case "+":
-                glucides.setValue(glucides.getValue() + ingredient.getGlucidesPour1g() * ingredient.getQuantiteGrams());
+
+               glucides.setValue(glucides.getValue() + ingredient.getGlucidesPour1g() * ingredient.getQuantiteGrams());
                 proteines.setValue(proteines.getValue() + ingredient.getProteinesPour1g() * ingredient.getQuantiteGrams());
                 lipides.setValue(lipides.getValue() + ingredient.getLipidesPour1g() * ingredient.getQuantiteGrams());
                 calories.setValue(calories.getValue() + ingredient.getCaloriesPour1g() * ingredient.getQuantiteGrams());
@@ -69,6 +73,7 @@ public class PlatModel {
                 proteines.setValue(proteines.getValue() - ingredient.getProteinesPour100g()/100 * ingredient.getQuantiteGrams());
                 lipides.setValue(lipides.getValue() - ingredient.getLipidesPour100g()/100 * ingredient.getQuantiteGrams());
                 calories.setValue(calories.getValue()- ingredient.getCaloriesPour100g()/100 * ingredient.getQuantiteGrams());
+
         }
         if (glucides.getValue() < 0) {
             glucides.setValue(0);
@@ -81,7 +86,8 @@ public class PlatModel {
         }
         if (calories.getValue() < 0) {
             calories.setValue(0);
-        }
+        }*/
+
     }
 
     public ObservableList<IngredientQuantiteModel> getListIngredients() {
