@@ -1,8 +1,15 @@
 package appregime.controller;
 
 import appregime.model.UserModel;
+import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+
+import java.awt.*;
+import java.awt.event.MouseEvent;
 
 
 public class ObjectifsRegimesController extends Controller{
@@ -40,26 +47,70 @@ public class ObjectifsRegimesController extends Controller{
     @FXML
     private Button dash;
 
+    @FXML
+    private HBox hbox;
+
+    @FXML
+    private HBox box;
+
     private UserModel user;
+
+    private String objectifSelectionne;
+    private String regimeSelectionne;
+
 
     public ObjectifsRegimesController(UserModel user) {
         super("/appregime/view/objectifs_regimes.fxml");
         this.user = user;
         retour.setOnAction(event -> retour());
-        prisedemuscle.setOnAction(event -> addOBjectifs("Prise de muscle"));
-        sain.setOnAction(event -> addOBjectifs("Manger plus sain"));
-        stress.setOnAction(event -> addOBjectifs("Reduire le stress"));
-        silhouette.setOnAction(event -> addOBjectifs("Affiner la silhouette"));
-        graisse.setOnAction(event -> addOBjectifs("Bruler les graisses"));
-        natman.setOnAction(event -> addRegimes("Natman"));
-        ventreplat.setOnAction(event -> addRegimes("Ventre plat"));
-        dietetique.setOnAction( event -> addRegimes("dietetique"));
-//        dash.setOnAction(event -> addRegimes("dash"));
+        prisedemuscle.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
 
-        continuer.setOnAction(event -> continuer(this.user));
+               // addOBjectifs("Prise de muscle", prisedemuscle);
+                objectifSelectionne = "Prise de muscle";
+                hbox.getChildren().remove(prisedemuscle);
+            }
+        });
+        sain.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+                objectifSelectionne = "Manger plus sain";
+                hbox.getChildren().remove(sain);
+            }
+        });
+
+        stress.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                objectifSelectionne = "Reduire le stress";
+                hbox.getChildren().remove(stress);
+
+            }
+        });
+      //  silhouette.setOnAction(event -> addOBjectifs("Affiner la silhouette"));
+        //graisse.setOnAction(event -> addOBjectifs("Bruler les graisses"));
+
+
+        natman.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                regimeSelectionne = "Natman";
+                box.getChildren().remove(natman);
+
+            }
+        });
+      //  ventreplat.setOnAction(event -> addRegimes("Ventre plat"));
+        //dietetique.setOnAction( event -> addRegimes("dietetique"));*/
+//        dash.setOnAction(event -> addRegimes("dash"));*/
+        //this.addRegimes(objectifSelectionne);
+
+        continuer.setOnAction(event -> bienAjoutePoppup());
+        //continuer.setOnAction(event -> continuer(this.user));
     }
 
-    private void continuer(UserModel user) {
+   /* private void continuer(UserModel user) {
         System.out.println(this.user);
         UtilisateurAcceuilController utilisateurAcceuilController = new UtilisateurAcceuilController();
         utilisateurAcceuilController.setCurrentUser(user);
@@ -67,16 +118,26 @@ public class ObjectifsRegimesController extends Controller{
         accueilController.showWithMenu(this.user);
         /*
         MesRegimesController mesRegimesController = new MesRegimesController(primaryStage);
-        mesRegimesController.showWithMenu();*/
-    }
+        mesRegimesController.showWithMenu();
+    }*/
 
     private void retour() {
         InscriptionController inscriptionController = new InscriptionController(this.user);
         inscriptionController.showInPrimaryStage();
     }
 
+    private void bienAjoutePoppup() {
+        this.addRegimes(regimeSelectionne);
+        this.addOBjectifs(objectifSelectionne);
+        BienAjouteController bienAjouteController = new BienAjouteController(objectifSelectionne, regimeSelectionne, this.user);
+        bienAjouteController.set(objectifSelectionne, regimeSelectionne);
+        bienAjouteController.showInMyStage("Confirmation de choix");
+    }
+
     private void addOBjectifs (String objectif) {
         this.user.setObjectifvise(objectif);
+
+
     }
 
     private void addRegimes (String regimes) {
