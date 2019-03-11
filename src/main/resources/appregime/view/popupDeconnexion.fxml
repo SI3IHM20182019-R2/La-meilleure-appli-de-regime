@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="appregime.view.PopupDeconnexion"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="197.0" prefWidth="336.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="9.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etes-vous sûr de vouloir vous deconnecter?">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="oui" layoutX="61.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Oui" />
+      <Button fx:id="non" layoutX="198.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Non" />
+   </children>
 </AnchorPane>
