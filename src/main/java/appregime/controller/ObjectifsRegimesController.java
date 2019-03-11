@@ -89,9 +89,22 @@ public class ObjectifsRegimesController extends Controller{
 
             }
         });
-      //  silhouette.setOnAction(event -> addOBjectifs("Affiner la silhouette"));
-        //graisse.setOnAction(event -> addOBjectifs("Bruler les graisses"));
+        silhouette.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                objectifSelectionne = "Affiner la silhouette";
+                hbox.getChildren().remove(silhouette);
 
+            }
+        });
+        graisse.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                objectifSelectionne = "Bruler les graisses";
+                hbox.getChildren().remove(graisse);
+
+            }
+        });
 
         natman.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -101,25 +114,28 @@ public class ObjectifsRegimesController extends Controller{
 
             }
         });
-      //  ventreplat.setOnAction(event -> addRegimes("Ventre plat"));
-        //dietetique.setOnAction( event -> addRegimes("dietetique"));*/
-//        dash.setOnAction(event -> addRegimes("dash"));*/
+       ventreplat.setOnAction(new EventHandler<ActionEvent>() {
+           @Override
+           public void handle(ActionEvent event) {
+               regimeSelectionne = "ventre plat";
+               box.getChildren().remove(ventreplat);
+
+           }
+       });
+        dietetique.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                regimeSelectionne = "dietetique";
+                box.getChildren().remove(dietetique);
+
+            }
+        });
+       // dash.setOnAction(event -> addRegimes("dash"));
         //this.addRegimes(objectifSelectionne);
 
         continuer.setOnAction(event -> bienAjoutePoppup());
-        //continuer.setOnAction(event -> continuer(this.user));
     }
 
-   /* private void continuer(UserModel user) {
-        System.out.println(this.user);
-        UtilisateurAcceuilController utilisateurAcceuilController = new UtilisateurAcceuilController();
-        utilisateurAcceuilController.setCurrentUser(user);
-        AccueilController accueilController = new AccueilController(this.user);
-        accueilController.showWithMenu(this.user);
-        /*
-        MesRegimesController mesRegimesController = new MesRegimesController(primaryStage);
-        mesRegimesController.showWithMenu();
-    }*/
 
     private void retour() {
         InscriptionController inscriptionController = new InscriptionController(this.user);
