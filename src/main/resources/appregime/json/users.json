@@ -1,0 +1,46 @@
+[
+  {
+    "id": "Martin_Durand",
+    "mail": "martin.durand@fakemail.fr",
+    "pseudo": "martinez",
+    "password": "0000",
+    "sexe": "homme",
+    "age": 28,
+    "taille": 1.75,
+    "poids": 85,
+    "objectif": 80
+  },
+  {
+    "id": "Marie_Dumont",
+    "mail": "marie.dumont@fakemail.fr",
+    "pseudo": "marie lou",
+    "password": "0000",
+    "sexe": "femme",
+    "age": 42,
+    "taille": 1.65,
+    "poids": 80,
+    "objectif": 65
+  },
+  {
+    "id": "Bernard_Coupet",
+    "mail": "bernard.coupet@fakemail.fr",
+    "pseudo": "bernadou",
+    "password": "0000",
+    "sexe": "homme",
+    "age": 48,
+    "taille": 1.73,
+    "poids": 78,
+    "objectif": 70
+  },
+  {
+    "id": "Anthoine_Beret",
+    "mail": "anthoine.beret@fakemail.fr",
+    "pseudo": "anthony",
+    "password": "0000",
+    "sexe": "homme",
+    "age": 21,
+    "taille": 1.82,
+    "poids": 79,
+    "objectif": 80
+  }
+]

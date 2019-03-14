@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="retour" mnemonicParsing="false" text="&lt; Retour">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <HBox alignment="CENTER" prefHeight="73.0" prefWidth="600.0">
+         <children>
+            <Label text="Complétez vos informations">
+               <font>
+                  <Font name="Ebrima Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="235.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER_RIGHT" prefHeight="235.0" prefWidth="260.0" spacing="8.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" lineSpacing="5.0" text="Sexe">
+                     <font>
+                        <Font name="Ebrima Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" lineSpacing="5.0" text="Age">
+                     <font>
+                        <Font name="Ebrima Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" lineSpacing="5.0" text="Taille">
+                     <font>
+                        <Font name="Ebrima Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" lineSpacing="5.0" text="Poids">
+                     <font>
+                        <Font name="Ebrima Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" lineSpacing="5.0" text="Poids souhaité">
+                     <font>
+                        <Font name="Ebrima Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" fillWidth="false" prefHeight="235.0" prefWidth="179.0" spacing="3.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="21.0" prefWidth="157.0">
+                     <children>
+                        <Label text="H">
+                           <font>
+                              <Font name="Arimo Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <RadioButton fx:id="homme" mnemonicParsing="false">
+                           <HBox.margin>
+                              <Insets bottom="4.0" />
+                           </HBox.margin></RadioButton>
+                        <Label text="F">
+                           <font>
+                              <Font name="Arimo Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <RadioButton fx:id="femme" mnemonicParsing="false">
+                           <HBox.margin>
+                              <Insets bottom="4.0" />
+                           </HBox.margin></RadioButton>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="age" prefHeight="25.0" prefWidth="64.0" promptText="Votre Age">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="taille" prefHeight="25.0" prefWidth="64.0" promptText="Votre Taille">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="poids" prefHeight="25.0" prefWidth="64.0" promptText="Votre Poids">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="poidsSouhaite" prefHeight="25.0" prefWidth="64.0" promptText="Poids souhaité">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="235.0" prefWidth="230.0" spacing="11.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="12.0" prefWidth="159.0" />
+                  <Label text="ans">
+                     <font>
+                        <Font name="Arimo Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="cm">
+                     <font>
+                        <Font name="Arimo Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="kg">
+                     <font>
+                        <Font name="Arimo Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="kg">
+                     <font>
+                        <Font name="Arimo Italic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="122.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="122.0" prefWidth="301.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Préférences alimentaires">
+                     <font>
+                        <Font name="Ebrima Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="pref_list" prefWidth="150.0" promptText="Choisir préférence" />
+                        <Button fx:id="plusPrefAlimentaires" alignment="CENTER" mnemonicParsing="false" text="+">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="122.0" prefWidth="301.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Allergies, restrictions">
+                     <font>
+                        <Font name="Ebrima Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="allergie_list" prefWidth="150.0" promptText="Choisir allergie" />
+                        <Button fx:id="plusAllergies" alignment="CENTER" mnemonicParsing="false" text="+">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="91.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="continuer" mnemonicParsing="false" text="Continuer">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</VBox>

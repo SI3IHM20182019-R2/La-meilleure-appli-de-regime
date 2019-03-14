@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="5.0" style="-fx-background-color: Cornsilk;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="19.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="100000.0" prefWidth="100000.0" text="Acceuil" />
+            <Button mnemonicParsing="false" prefHeight="100000.0" prefWidth="100000.0" text="Mon profil" />
+            <Button mnemonicParsing="false" prefHeight="100000.0" prefWidth="100000.0" text="Mes régimes" />
+            <Button mnemonicParsing="false" prefHeight="100000.0" prefWidth="100000.0" text="Mon évolution" />
+            <Button mnemonicParsing="false" prefHeight="100000.0" prefWidth="100000.0" text="Déconnexion" />
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Retourner au régime">
+         <VBox.margin>
+            <Insets left="5.0" />
+         </VBox.margin>
+         <graphic>
+            <ImageView fitHeight="13.0" fitWidth="13.0">
+               <image>
+                  <Image url="@backspace-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: lightgrey; -fx-border-width: 5; -fx-border-radius: 5;" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="600.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <Label text="Avis des utilisateurs">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Trier par note" />
+                        <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Trier par date" />
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </HBox>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="303.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox prefHeight="97.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox prefHeight="2.0" prefWidth="578.0" spacing="5.0">
+                                 <children>
+                                    <ImageView fitHeight="36.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@user-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Utilisateur">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="58.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@note.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <Label text="Date de publication" />
+                              <TextArea minHeight="-Infinity" prefHeight="120.0" prefWidth="578.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare rhoncus risus nec venenatis. Nam eget suscipit turpis. Duis finibus molestie turpis, sit amet dictum urna tristique nec. Duis sed magna non orci elementum tristique a a mi. Suspendisse potenti. Donec vestibulum sit amet augue lobortis vulputate. Maecenas rhoncus magna nisi, ac tempor velit elementum in. Mauris vitae lacinia magna. Nunc vehicula porttitor consectetur. Phasellus eleifend id neque et pharetra. Donec sed nisi eget nunc porta posuere vitae nec est. " wrapText="true" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox prefHeight="2.0" prefWidth="578.0" spacing="5.0">
+                                 <children>
+                                    <ImageView fitHeight="36.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@user-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Utilisateur">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="58.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@note.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <Label text="Date de publication" />
+                              <TextArea minHeight="-Infinity" prefHeight="120.0" prefWidth="578.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare rhoncus risus nec venenatis. Nam eget suscipit turpis. Duis finibus molestie turpis, sit amet dictum urna tristique nec. Duis sed magna non orci elementum tristique a a mi. Suspendisse potenti. Donec vestibulum sit amet augue lobortis vulputate. Maecenas rhoncus magna nisi, ac tempor velit elementum in. Mauris vitae lacinia magna. Nunc vehicula porttitor consectetur. Phasellus eleifend id neque et pharetra. Donec sed nisi eget nunc porta posuere vitae nec est. " wrapText="true" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox prefHeight="2.0" prefWidth="578.0" spacing="5.0">
+                                 <children>
+                                    <ImageView fitHeight="36.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@user-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Utilisateur">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="58.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@note.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <Label text="Date de publication" />
+                              <TextArea minHeight="-Infinity" prefHeight="120.0" prefWidth="578.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare rhoncus risus nec venenatis. Nam eget suscipit turpis. Duis finibus molestie turpis, sit amet dictum urna tristique nec. Duis sed magna non orci elementum tristique a a mi. Suspendisse potenti. Donec vestibulum sit amet augue lobortis vulputate. Maecenas rhoncus magna nisi, ac tempor velit elementum in. Mauris vitae lacinia magna. Nunc vehicula porttitor consectetur. Phasellus eleifend id neque et pharetra. Donec sed nisi eget nunc porta posuere vitae nec est. " wrapText="true" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+         <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+         </VBox.margin>
+      </VBox>
+      <VBox prefHeight="90.0" prefWidth="579.0" spacing="5.0" style="-fx-border-color: lightgrey; -fx-border-width: 5; -fx-background-color: lightgrey; -fx-border-radius: 5; -fx-background-radius: 5;">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="600.0" spacing="5.0">
+               <children>
+                  <Label text="Votre note :">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <ImageView fitHeight="18.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@étoile-notation.PNG" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="158.0" text="Poster votre avis">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </HBox>
+            <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Saisissez vos impressions ici" wrapText="true" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>
