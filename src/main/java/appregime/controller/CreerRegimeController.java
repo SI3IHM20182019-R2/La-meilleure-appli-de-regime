@@ -19,7 +19,7 @@ public class CreerRegimeController extends Controller {
         this.user=user;
         ajouterRepas.setOnAction(event -> afficheAjouterRepas()); // indique au bouton la fonction qu'il doit appeler lorsqu'on appuie dessus
         retour.setOnAction(event -> retour());
-        terminer.setOnAction(event -> retour());
+        terminer.setOnAction(event -> demandePartage());
     }
 
     /**
@@ -30,6 +30,11 @@ public class CreerRegimeController extends Controller {
         ajouterRepasController.showInMyStage("Ajouter un repas");
     }
 
+    public void demandePartage() {
+        PopupPartageRegmieController popupPartageRegmieController = new PopupPartageRegmieController(this.user);
+        popupPartageRegmieController.showInMyStage("Demande partage");
+
+    }
     private void retour() {
         MesRegimesController mesRegimesController = new MesRegimesController(this.user);
         mesRegimesController.showWithMenu(this.user);

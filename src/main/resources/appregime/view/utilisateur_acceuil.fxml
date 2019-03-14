@@ -86,7 +86,7 @@
                                  <children>
                                     <TextFlow>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mega Fat Burger" wrappingWidth="334.25390625">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Friendly Burger" wrappingWidth="334.25390625">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -95,7 +95,7 @@
                                     </TextFlow>
                                     <TextFlow>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calories : 10k cal." wrappingWidth="334.25390625" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calories : 458 kcal." wrappingWidth="334.25390625" />
                                        </children>
                                     </TextFlow>
                                  </children>
@@ -117,7 +117,7 @@
                                  <children>
                                     <TextFlow>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Super salade hyper gourmande" wrappingWidth="334.25390625">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salade gourmande" wrappingWidth="334.25390625">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -126,7 +126,7 @@
                                     </TextFlow>
                                     <TextFlow>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calories : 10k cal." wrappingWidth="334.25390625" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calories : 162 cal." wrappingWidth="334.25390625" />
                                        </children>
                                     </TextFlow>
                                  </children>
@@ -148,7 +148,7 @@
                                  <children>
                                     <TextFlow>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Giga mini gateau ultra calorique" wrappingWidth="334.25390625">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mini Cupcake" wrappingWidth="334.25390625">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -157,7 +157,7 @@
                                     </TextFlow>
                                     <TextFlow>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calories : 10k cal." wrappingWidth="334.25390625" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calories : 106 kcal." wrappingWidth="334.25390625" />
                                        </children>
                                     </TextFlow>
                                  </children>

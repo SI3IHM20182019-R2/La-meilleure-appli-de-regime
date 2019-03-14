@@ -46,7 +46,8 @@ public class MenuController extends Controller {
     }
 
     public void connexion() {
-        UtilisateurAcceuilController utilisateurAcceuilController = new UtilisateurAcceuilController();
-        utilisateurAcceuilController.showInPrimaryStage();
+        DeconnexionController deconnexionController = new DeconnexionController();
+        deconnexionController.showInMyStage("Deconnexion");
+
     }
 }

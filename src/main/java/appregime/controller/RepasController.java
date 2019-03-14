@@ -2,6 +2,7 @@ package appregime.controller;
 
 import appregime.model.IngredientQuantiteModel;
 import appregime.model.PlatModel;
+import appregime.model.RepasModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -24,6 +25,15 @@ public class RepasController extends Controller {
     private Label calories;
 
     @FXML
+    private Label plat1;
+
+    @FXML
+    private Label plat2;
+
+    @FXML
+    private Label plat3;
+
+    @FXML
     private ImageView imageIngredient;
 
     public RepasController() {
@@ -31,13 +41,18 @@ public class RepasController extends Controller {
     }
 
 
-    public void setRepas(PlatModel plat) {
-        System.out.println(plat.getImagePath().getValue());
-        nomIngredient.setText(plat.getName().getValue());
-        proteines.setText(String.valueOf(plat.getProteines().getValue()));
-        glucides.setText(String.valueOf(plat.getGlucides().getValue()));
-        lipides.setText(String.valueOf(plat.getLipides().getValue()));
-        calories.setText(String.valueOf(plat.getCalories().getValue()));
-        imageIngredient.setImage(new Image(plat.getImagePath().getValue()));
+    public void setRepas(RepasModel repas) {
+        System.out.println(repas.getNomRepas());
+        nomIngredient.setText(repas.getNomRepas().getValue());
+        plat1.setText(repas.getlistOfPlat().get(0).getName().getValue());
+        plat2.setText(repas.getlistOfPlat().get(1).getName().getValue());
+        plat3.setText(repas.getlistOfPlat().get(2).getName().getValue());
+        imageIngredient.setImage(new Image(repas.getImagePath().getValue()));
+
+
+        proteines.setText(String.valueOf(repas.getlistOfPlat().get(0).getProteines().getValue()));
+        glucides.setText(String.valueOf(repas.getlistOfPlat().get(0).getGlucides().getValue()));
+        lipides.setText(String.valueOf(repas.getlistOfPlat().get(0).getLipides().getValue()));
+        calories.setText(String.valueOf(repas.getlistOfPlat().get(0).getCalories().getValue()));
     }
 }
