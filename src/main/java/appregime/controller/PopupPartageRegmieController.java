@@ -14,31 +14,17 @@ public class PopupPartageRegmieController extends Controller {
     @FXML
     private Button non;
 
-    @FXML
-    private Label partageEffectuer;
-
     private UserModel user;
 
     public PopupPartageRegmieController(UserModel user) {
         super("/appregime/view/popUpPartageRegime.fxml");
-        this.partageEffectuer.setVisible(false);
         this.user=user;
         non.setOnMouseClicked(event -> retour());
-        oui.setOnMouseClicked(event -> partage());
-    }
-
-    public void partage() {
-        this.partageEffectuer.setVisible(true);
-            try {
-            sleep(2000);
-        }catch (Exception e){}
-        this.retour();
+        oui.setOnMouseClicked(event -> retour());
     }
     public void retour() {
         myStage.close();
         MesRegimesController mesRegimesController = new MesRegimesController(this.user);
         mesRegimesController.showWithMenu(this.user);
     }
-
-
 }
