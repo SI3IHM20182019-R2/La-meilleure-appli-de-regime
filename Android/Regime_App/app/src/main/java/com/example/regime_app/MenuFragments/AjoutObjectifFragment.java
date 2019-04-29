@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ListView;
@@ -17,6 +20,8 @@ import android.widget.Toast;
 import com.example.regime_app.MainActivity;
 import com.example.regime_app.MenuManagmentActivity;
 import com.example.regime_app.R;
+
+import java.util.ArrayList;
 
 public class AjoutObjectifFragment extends Fragment {
 
@@ -31,7 +36,7 @@ public class AjoutObjectifFragment extends Fragment {
         return view;
     }
 
-    private void setSingleEvent(GridLayout gridLayout, ListView listInfoComplementaire, int idCardSelect, ListView listView){
+    private void setSingleEvent(final GridLayout gridLayout, final ListView listInfoComplementaire, int idCardSelect, ListView listView){
         for (int i = 0; i<gridLayout.getChildCount(); i++){
 
             final CardView cardView = (CardView)gridLayout.getChildAt(i);
@@ -40,14 +45,24 @@ public class AjoutObjectifFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(view.getContext(),"kkkk"+ idGridView, Toast.LENGTH_SHORT).show();
-                    if (cardView.getCardBackgroundColor().getDefaultColor() == -1){
-                        cardView.setCardBackgroundColor(45);
+                    for (int i = 0; i<gridLayout.getChildCount(); i++) {
+                        CardView cardView = (CardView) gridLayout.getChildAt(i);
+                        cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                     }
+                    cardView.setCardBackgroundColor(Color.parseColor("#CECECE"));
+    //                ArrayList<String> arrayList=new ArrayList<>();
+      //              arrayList.add("fffff");
+        //            arrayList.add("" + idGridView);
+          //          ArrayAdapter arrayAdapter = new ArrayAdapter(view.getContext(), R.layout.card_ajout_objectif, arrayList);
+            //        listInfoComplementaire.setAdapter(arrayAdapter);
+
                     //Probleme pour onclick complexe
                 }
             });
         }
     }
-
-
 }
+
+
+
+
