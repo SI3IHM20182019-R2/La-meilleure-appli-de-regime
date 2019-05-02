@@ -6,17 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/myContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <android.support.design.widget.TabLayout
-        app:tabTextAppearance="@style/MenuTabTextAppearance"
-        android:background="@drawable/barre_menu_back"
-        android:id="@+id/menu"
+        app:tabTextAppearance="@style/RegimesTabTextAppearance"
+        android:id="@+id/regimesMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/myRegimesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/regimesMenu" />
+
 </android.support.constraint.ConstraintLayout>
