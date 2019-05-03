@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bienvenue_green1"
-    tools:context=".WelcomeActivity">
+    tools:context=".WelcomeView.WelcomeActivity">
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"

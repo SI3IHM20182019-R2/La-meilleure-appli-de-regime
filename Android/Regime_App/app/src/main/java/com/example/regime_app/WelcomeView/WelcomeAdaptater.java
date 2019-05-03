@@ -1,4 +1,4 @@
-package com.example.regime_app;
+package com.example.regime_app.WelcomeView;
 
 import android.content.Context;
 import android.graphics.Color;

@@ -1,4 +1,4 @@
-package com.example.regime_app;
+package com.example.regime_app.WelcomeView;
 
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.example.regime_app.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
