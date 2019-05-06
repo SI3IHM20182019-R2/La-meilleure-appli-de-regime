@@ -5,9 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.regime_app.MenuFragments.AccueilFragment;
-import com.example.regime_app.MenuFragments.AjoutObjectifFragment;
 import com.example.regime_app.MenuFragments.EvolutionFragment;
-import com.example.regime_app.MenuFragments.ObjectifsFragment;
+import com.example.regime_app.MenuFragments.ObjectifsFragment.ObjectifsFragment;
 import com.example.regime_app.MenuFragments.ProfilFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesManagmentFragment;
 

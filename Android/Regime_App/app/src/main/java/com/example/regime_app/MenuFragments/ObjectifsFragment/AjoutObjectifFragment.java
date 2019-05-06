@@ -1,4 +1,4 @@
-package com.example.regime_app.MenuFragments;
+package com.example.regime_app.MenuFragments.ObjectifsFragment;
 
 import android.content.Intent;
 import android.graphics.Color;
