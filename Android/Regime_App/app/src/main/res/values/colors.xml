@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="bienvenue_green1">#4caf50</color>
+    <color name="bienvenue_green2">#8bc34a</color>
+
+    <color name="activeDot">#ECECEC</color>
+    <color name="inactiveDot">#8E8E8E</color>
 </resources>
