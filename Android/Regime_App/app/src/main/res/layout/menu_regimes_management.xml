@@ -10,14 +10,14 @@
         app:tabTextAppearance="@style/RegimesTabTextAppearance"
         android:id="@+id/regimesMenu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_height="@dimen/tablayout_height"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.regime_app.NonSwipeableViewPager
         android:id="@+id/myRegimesContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/regimesMenu" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/tablayout_height"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
