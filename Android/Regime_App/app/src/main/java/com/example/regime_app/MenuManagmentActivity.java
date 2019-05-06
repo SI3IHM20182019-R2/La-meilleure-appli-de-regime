@@ -9,13 +9,15 @@ import android.os.Bundle;
 import com.example.regime_app.Adapters.PagerAdapter;
 
 public class MenuManagmentActivity extends AppCompatActivity {
+
     private PagerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_managment);
 
-        final ViewPager viewPager = findViewById(R.id.myContainer);
+        final NonSwipeableViewPager viewPager = findViewById(R.id.myContainer);
         TabLayout tabLayout = findViewById(R.id.menu);
 
         tabLayout.addTab(tabLayout.newTab().setText("Accueil").setIcon(R.drawable.accueil));

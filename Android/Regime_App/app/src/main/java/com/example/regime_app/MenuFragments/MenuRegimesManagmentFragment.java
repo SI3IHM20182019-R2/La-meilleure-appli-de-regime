@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.regime_app.Adapters.RegimesPagerAdapter;
+import com.example.regime_app.NonSwipeableViewPager;
 import com.example.regime_app.R;
 
 public class MenuRegimesManagmentFragment extends Fragment {
@@ -18,7 +19,7 @@ public class MenuRegimesManagmentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.menu_regimes_management, container, false);
 
-        final ViewPager viewPager = view.findViewById(R.id.myRegimesContainer);
+        final NonSwipeableViewPager viewPager = view.findViewById(R.id.myRegimesContainer);
         TabLayout tabLayout = view.findViewById(R.id.regimesMenu);
 
         tabLayout.addTab(tabLayout.newTab().setText("Mes régimes"));

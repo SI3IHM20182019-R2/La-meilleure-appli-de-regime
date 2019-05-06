@@ -1,19 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#f2f2f2">
+    android:weightSum="20">
 
-    <android.support.v7.widget.RecyclerView
+    <!--Titre page-->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"
-        android:orientation="horizontal">
+        android:layout_weight="2"
+        android:layout_height="0dp">
 
-    </android.support.v7.widget.RecyclerView>
+        <TextView
+            android:text="Mes Objéctifs"
+            android:textSize ="32sp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <!--RecyclerView des objectifs-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:layout_height="0dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView"
+            android:orientation="horizontal">
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+    <!--Bar de progression objectif-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp">
+        <TextView
+            android:text="Barre de progression"
+            android:textSize="10dp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <!--But de l'objectif-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:layout_height="0dp">
+        <TextView
+            android:text="But de l'objectif"
+            android:textSize="10dp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <!--Conseil du coach-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:layout_height="0dp">
+        <TextView
+            android:text="Conseil du coach"
+            android:textSize="10dp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <!--Bouton supprimer un objectif-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <Button
+            android:text="Supprimer de mes objectifs"
+            android:textSize="10dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/color_button_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</LinearLayout>

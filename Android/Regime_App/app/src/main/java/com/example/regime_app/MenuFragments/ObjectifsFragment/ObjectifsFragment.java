@@ -1,4 +1,4 @@
-package com.example.regime_app.MenuFragments;
+package com.example.regime_app.MenuFragments.ObjectifsFragment;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.example.regime_app.Adapters.RecyclerViewAdapter;
 import com.example.regime_app.R;
 
 import java.util.ArrayList;
@@ -20,6 +21,9 @@ public class ObjectifsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.objectifs, container, false);
+
+        mImageUrls.add(R.drawable.add_circular_button);
+        mNames.add("Ajouter un objectif");
 
         mImageUrls.add(R.drawable.prise_muscle);
         mNames.add("Prise de muscle");

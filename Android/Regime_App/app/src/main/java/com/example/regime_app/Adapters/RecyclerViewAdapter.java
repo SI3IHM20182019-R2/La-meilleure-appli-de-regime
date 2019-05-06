@@ -1,18 +1,19 @@
-package com.example.regime_app.MenuFragments;
+package com.example.regime_app.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.regime_app.R;
 
 import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by User on 2/12/2018.
@@ -28,6 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mNames = names;
         mImageUrls = imageUrls;
         mContext = context;
+        LinearLayout row_linearlayout;
     }
 
     @Override
@@ -37,12 +39,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         int identifier = mImageUrls.get(position);
         holder.image.setImageResource(identifier);
         holder.name.setText(mNames.get(position));
-
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

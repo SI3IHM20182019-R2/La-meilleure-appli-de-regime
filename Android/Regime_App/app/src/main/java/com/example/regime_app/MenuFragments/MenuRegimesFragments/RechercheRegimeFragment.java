@@ -28,7 +28,7 @@ public class RechercheRegimeFragment extends Fragment {
         List<Regime> regimes = new ArrayList<>();
 
         regimes.add(new Regime("Régime 1", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime1"));
-        regimes.add(new Regime("Régime 2", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime2"));
+        regimes.add(new Regime("Régime 2", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime8"));
         regimes.add(new Regime("Régime 3", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime3"));
         regimes.add(new Regime("Régime 4", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime4"));
         regimes.add(new Regime("Régime 5", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime5"));
