@@ -1,14 +1,11 @@
 package com.example.regime_app.Adapters;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.regime_app.R;
@@ -29,7 +26,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mNames = names;
         mImageUrls = imageUrls;
         mContext = context;
-        LinearLayout row_linearlayout;
     }
 
     @Override

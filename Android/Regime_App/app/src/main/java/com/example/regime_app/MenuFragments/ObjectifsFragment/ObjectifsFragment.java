@@ -25,7 +25,7 @@ public class ObjectifsFragment extends Fragment {
         mImageUrls.add(R.drawable.add_circular_button);
         mNames.add("Ajouter un objectif");
 
-        mImageUrls.add(R.drawable.prise_muscle);
+        mImageUrls.add(R.drawable.prise_de_muscle);
         mNames.add("Prise de muscle");
 
         mImageUrls.add(R.drawable.amelioration_silhouette);
