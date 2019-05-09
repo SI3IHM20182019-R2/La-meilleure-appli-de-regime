@@ -1,4 +1,4 @@
-package com.example.regime_app.MenuFragments;
+package com.example.regime_app.MenuFragments.ObjectifsFragment.InfoObjectifFragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 
 import com.example.regime_app.R;
 
-public class AccueilFragment extends Fragment {
+public class MangerSainFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragmentplatsdujour, container, false);
+        final View view = inflater.inflate(R.layout.manger_sain, container, false);
         return view;
     }
 }

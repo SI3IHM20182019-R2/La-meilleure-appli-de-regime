@@ -1,323 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bienvenue_green2">
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="212dp"
-        android:layout_height="154dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/new_user" />
-
-    <TextView
-        android:id="@+id/email-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Email :"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <EditText
-        android:id="@+id/email-input"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/white"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email-label" />
+        android:layout_height="match_parent"/>
 
-    <TextView
-        android:id="@+id/pseudo-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Pseudo :"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email-input" />
-
-    <EditText
-        android:id="@+id/pseudo-input"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="1dp"
+        android:alpha=".5"
+        android:layout_above="@+id/prev_button"
         android:background="@android:color/white"
-        android:inputType="textPersonName|text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pseudo-label" />
+        android:layout_marginBottom="15dp"/>
 
-    <TextView
-        android:id="@+id/pwd-label"
+    <Button
+        android:id="@+id/prev_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Mot de passe :"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pseudo-input" />
-
-    <EditText
-        android:id="@+id/pwd-input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/white"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwd-label" />
-
-    <TextView
-        android:id="@+id/confirm-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Confirmation du mot de passe :"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwd-input" />
-
-    <EditText
-        android:id="@+id/confirm-input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/white"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirm-label" />
-
-    <TextView
-        android:id="@+id/age-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Votre âge :"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirm-input" />
-
-    <EditText
-        android:id="@+id/age-input"
-        android:layout_width="131dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/white"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age-label" />
-
-    <RadioGroup
-        android:id="@+id/sexe-form-group"
-        android:layout_width="254dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-
-        app:layout_constraintBottom_toTopOf="@+id/poids-label"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirm-input"
-        app:layout_constraintVertical_bias="0.842">
-
-        <RadioButton
-            android:id="@+id/homme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:buttonTint="@android:color/white"
-            android:text="Homme"
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
-
-        <RadioButton
-            android:id="@+id/femme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:buttonTint="@android:color/white"
-            android:text="Femme"
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/taille-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Votre taille (cm):"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age-input" />
-
-    <EditText
-        android:id="@+id/taille-input"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/white"
-        android:inputType="number|numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taille-label" />
-
-    <TextView
-        android:id="@+id/poids-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Votre poids (kg):"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/taille-label"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
-        app:layout_constraintStart_toEndOf="@+id/taille-label"
-        app:layout_constraintTop_toBottomOf="@+id/age-input"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/poids-input"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/white"
-        android:inputType="number|numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/taille-input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/taille-input"
-        app:layout_constraintTop_toBottomOf="@+id/poids-label"
-        app:layout_constraintVertical_bias="0.111" />
-
-    <TextView
-        android:id="@+id/objectif-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Poids souhaité (kg) :"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taille-input" />
-
-    <EditText
-        android:id="@+id/objectif-input"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/white"
-        android:inputType="number|numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/objectif-label" />
-
-    <TextView
-        android:id="@+id/deadline-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Deadline :"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toEndOf="@+id/objectif-label"
-        app:layout_constraintTop_toBottomOf="@+id/poids-input" />
-
-    <ImageButton
-        android:id="@+id/calendar"
-        android:layout_width="23dp"
-        android:layout_height="23dp"
-        android:layout_marginEnd="8dp"
-        android:adjustViewBounds="true"
+        android:text="Prev."
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/deadline-input"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/deadline-label"
-        app:layout_constraintTop_toBottomOf="@+id/deadline-label"
-        app:srcCompat="@drawable/calendar_icon" />
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"
+        />
 
-    <TextView
-        android:id="@+id/deadline-input"
-        android:layout_width="164dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deadline-label" />
-
-    <ImageButton
-        android:id="@+id/letsgo"
+    <Button
+        android:id="@+id/next_button"
         android:layout_width="wrap_content"
-        android:layout_height="88dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:adjustViewBounds="true"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:background="@android:color/transparent"
-        android:padding="10dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/objectif-input"
-        app:srcCompat="@drawable/letsgo" />
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"
+        />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/continue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"
+        />
+
+</RelativeLayout>

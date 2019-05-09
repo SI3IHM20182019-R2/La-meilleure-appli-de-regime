@@ -4,16 +4,12 @@
 
     <application
         android:allowBackup="true"
-        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Donner_Avis"></activity>
-        <activity android:name=".DetailsRegimeActivity" />
-        <activity android:name=".WelcomeView.WelcomeActivity" />
-        <activity android:name=".WelcomeView.InscriptionActivity" />
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:fullBackupContent="true">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +19,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuManagmentActivity" />
+        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo" />
+        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartOne" />
+        <activity android:name=".WelcomeView.WelcomePart.WelcomeActivity" />
+        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivity" />
+
+        <service android:name=".Services.NotifyTestService" />
     </application>
 
 </manifest>

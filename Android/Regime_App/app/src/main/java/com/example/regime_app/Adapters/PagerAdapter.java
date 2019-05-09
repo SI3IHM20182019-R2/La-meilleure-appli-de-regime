@@ -9,6 +9,7 @@ import com.example.regime_app.MenuFragments.EvolutionFragment;
 import com.example.regime_app.MenuFragments.ObjectifsFragment.ObjectifsFragment;
 import com.example.regime_app.MenuFragments.ProfilFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesManagmentFragment;
+import com.example.regime_app.PlatsAccueilFragment;
 
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
@@ -23,7 +24,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int i) {
         Fragment fragment = new AccueilFragment();
         switch (i){
-            case 0 : fragment = new AccueilFragment(); break;
+            case 0 : fragment =  new PlatsAccueilFragment(); break;
             case 1 : fragment = new ProfilFragment(); break;
             case 2 : fragment = new MenuRegimesManagmentFragment(); break;
             case 3 : fragment = new ObjectifsFragment(); break;
