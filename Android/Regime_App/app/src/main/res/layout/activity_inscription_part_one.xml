@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/bienvenue_green1"
+    tools:context=".WelcomeView.InscriptionPart.InscriptionActivityPartOne">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@null"
+        android:layout_above="@+id/hr">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="212dp"
+            android:layout_height="154dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/new_user"/>
+
+        <EditText
+            android:id="@+id/email-input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:background="@android:color/white"
+            android:inputType="textEmailAddress"
+            android:hint="Email"/>
+
+        <EditText
+            android:id="@+id/pseudo-input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:background="@android:color/white"
+            android:inputType="textPersonName|text"
+            android:hint="Pseudo"/>
+
+        <EditText
+            android:id="@+id/pwd-input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:background="@android:color/white"
+            android:inputType="textPassword"
+            android:hint="Mot de passe"/>
+
+        <EditText
+            android:id="@+id/confirm-input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:background="@android:color/white"
+            android:inputType="textPassword"
+            android:hint="Confirmer le mot de passe"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/hr"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:alpha=".5"
+        android:layout_above="@+id/cancel_button"
+        android:background="@android:color/white"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Annuler"
+        android:textSize="16sp"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"
+        />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Suivant"
+        android:textSize="16sp"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"
+        />
+
+</RelativeLayout>

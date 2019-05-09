@@ -11,21 +11,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="212dp"
         android:layout_marginEnd="8dp"
-        android:text="Connexion"
+        android:text="connexion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/slider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Slider"
+        android:layout_marginTop="32dp"
+        android:text="slider"
         app:layout_constraintEnd_toEndOf="@+id/connexion"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="@+id/connexion"
-        app:layout_constraintTop_toBottomOf="@+id/connexion"/>
+        app:layout_constraintTop_toBottomOf="@+id/connexion" />
+
+    <Button
+        android:id="@+id/notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="notification"
+        app:layout_constraintEnd_toEndOf="@+id/slider"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/slider"
+        app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+    <Button
+        android:id="@+id/smart_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="smart_notification"
+        app:layout_constraintEnd_toEndOf="@+id/notification"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/notification"
+        app:layout_constraintTop_toBottomOf="@+id/notification" />
 
 </android.support.constraint.ConstraintLayout>
