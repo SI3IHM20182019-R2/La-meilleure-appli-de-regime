@@ -37,7 +37,7 @@ public class MenuManagmentActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 } else {
-                    viewPager.setCurrentItem(tab.getPosition());
+                    viewPager.setCurrentItem(tab.getPosition(), false);
                 }
             }
 

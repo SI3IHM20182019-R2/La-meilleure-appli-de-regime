@@ -16,7 +16,7 @@ public class PlatsAccueilActivity extends AppCompatActivity {
 
     String pageData[];          //Stores the text to swipe.
     LayoutInflater inflater;    //Used to create individual pages
-    ViewPager vp;
+    NonSwipeableViewPager vp;
 
     //Reference to class to swipe views
     @Override
@@ -28,7 +28,7 @@ public class PlatsAccueilActivity extends AppCompatActivity {
         //get an inflater to be used to create single pages
         inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //Reference ViewPager defined in activity
-        vp=(ViewPager)findViewById(R.id.viewPager);
+        vp=findViewById(R.id.viewPager);
         //set the adapter that will create the individual pages
         vp.setAdapter(new PlatsAccueilAdapter());
     }

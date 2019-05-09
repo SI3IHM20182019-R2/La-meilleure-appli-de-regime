@@ -1,7 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <RelativeLayout
+            android:id="@+id/regime_photo_block"
+            android:layout_marginTop="20dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp">
+            <ImageView
+                android:id="@+id/modifier_regime_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke2px"
+                android:contentDescription="Photo"/>
+            <TextView
+                android:id="@+id/modifier_regime_photo_texte"
+                android:text="Ajouter une photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/modifier_regime_photo"
+                android:layout_marginTop="75dp"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <EditText
+            android:id="@+id/modifier_regime_nom"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/stroke2px"
+            android:hint="Nom du régime"/>
+        <EditText
+            android:id="@+id/modifier_regime_description"
+            android:gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="150sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/stroke2px"
+            android:hint="Description du régime"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/jours_regime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+        <Button
+            android:id="@+id/new_item"
+            android:text="Ajouter un jour"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/ButtonTextAppearance"/>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

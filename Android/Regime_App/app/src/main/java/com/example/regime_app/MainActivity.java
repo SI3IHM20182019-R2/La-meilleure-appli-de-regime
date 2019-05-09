@@ -1,6 +1,8 @@
 package com.example.regime_app;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,22 +21,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonSlider = (Button) findViewById(R.id.slider);
-        buttonSlider.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), InscriptionActivity.class);
-                startActivity(intent);
-            }
+        buttonSlider = findViewById(R.id.slider);
+        buttonSlider.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), InscriptionActivity.class);
+            startActivity(intent);
         });
 
         buttonConnexion = findViewById(R.id.connexion);
-        buttonConnexion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MenuManagmentActivity.class);
-                startActivity(intent);
-            }
+        buttonConnexion.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), MenuManagmentActivity.class);
+            startActivity(intent);
         });
     }
 }

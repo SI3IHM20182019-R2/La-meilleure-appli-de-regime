@@ -10,13 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".WelcomeView.WelcomeActivity" />
-        <activity android:name=".WelcomeView.InscriptionActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeView.WelcomeActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".WelcomeView.InscriptionActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
