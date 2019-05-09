@@ -10,8 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:fullBackupContent="true">
-        <activity android:name=".WelcomeView.WelcomeActivity"></activity>
-        <activity android:name=".WelcomeView.InscriptionActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +19,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuManagmentActivity" />
+        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo" />
+        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartOne" />
+        <activity android:name=".WelcomeView.WelcomePart.WelcomeActivity" />
+        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivity" />
+
+        <service android:name=".Services.NotifyTestService" />
     </application>
 
 </manifest>
