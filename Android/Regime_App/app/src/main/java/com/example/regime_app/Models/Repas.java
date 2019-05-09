@@ -5,10 +5,12 @@ public class Repas {
     private Plat plat;
     private Plat dessert;
     private String pathImage;
-    public Repas( Plat entree, Plat plat, Plat dessert, String pathImage) {
+    private String heure;
+    public Repas( Plat entree, Plat plat, Plat dessert, String pathImage, String heure) {
         this.entree = entree;
         this.plat = plat;
         this.dessert = dessert;
+        this.heure = heure;
 
     }
 
@@ -26,5 +28,9 @@ public class Repas {
 
     public String getPathImage() {
         return pathImage;
+    }
+
+    public String getHeure() {
+        return heure;
     }
 }
