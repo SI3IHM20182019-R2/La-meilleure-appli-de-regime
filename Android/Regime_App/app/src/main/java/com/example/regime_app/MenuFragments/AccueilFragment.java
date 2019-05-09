@@ -13,7 +13,7 @@ public class AccueilFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.accueil, container, false);
+        final View view = inflater.inflate(R.layout.fragmentplatsdujour, container, false);
         return view;
     }
 }

@@ -12,6 +12,8 @@
         android:fullBackupContent="true">
         <activity android:name=".WelcomeView.WelcomeActivity"></activity>
         <activity android:name=".WelcomeView.InscriptionActivity"></activity>
+        <activity android:name=".PlatsAccueilActivity"></activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

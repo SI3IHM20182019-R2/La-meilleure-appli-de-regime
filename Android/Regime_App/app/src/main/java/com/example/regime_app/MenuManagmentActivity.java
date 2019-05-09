@@ -36,9 +36,12 @@ public class MenuManagmentActivity extends AppCompatActivity {
                 if (tab.getPosition() == 5) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
-                } else {
-                    viewPager.setCurrentItem(tab.getPosition());
                 }
+
+                     else{
+                        viewPager.setCurrentItem(tab.getPosition());
+                    }
+
             }
 
             @Override

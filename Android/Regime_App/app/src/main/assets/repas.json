@@ -1,0 +1,97 @@
+{ "listrepas": [
+  {
+    "repas": [
+      { "nom": "salade ceaser",
+
+        "ingredients": {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {"nom": "riz au poulet",
+
+        "ingredients": {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "nom": "creme brulee",
+
+        "ingredients": {
+          "glucides": "70",
+          "proteines": 80,
+          "lipides": "90",
+          "calories": 60
+        }
+      }
+    ],
+    "heure": "08",
+    "image": "regime1.jpg"
+  },
+  {
+    "repas2": [
+      {
+        "salade ceasar": {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "pates carbonara": {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "salade de fruits": {
+          "gratins de pomme de terre": "70",
+          "proteines": 80,
+          "lipides": "90",
+          "calories": 60
+        }
+      }
+    ],
+    "heure": "12",
+    "image": "regime2.jpg"
+  },
+  {
+    "repas": [
+      {
+        "salade ceasar": {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "petits pois": {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "creme glacee": {
+          "gratins de pomme de terre": "70",
+          "proteines": 80,
+          "lipides": "90",
+          "calories": 60
+        }
+      }
+    ],
+    "heure": "20",
+    "image": "regime3.jpg"
+  }
+]
+}
