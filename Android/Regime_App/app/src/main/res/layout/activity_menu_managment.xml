@@ -6,10 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
+    <com.example.regime_app.NonSwipeableViewPager
         android:id="@+id/myContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/tablayout_height"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.TabLayout
@@ -17,6 +18,6 @@
         android:background="@drawable/barre_menu_back"
         android:id="@+id/menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/tablayout_height"
         app:layout_constraintBottom_toBottomOf="parent" />
 </android.support.constraint.ConstraintLayout>

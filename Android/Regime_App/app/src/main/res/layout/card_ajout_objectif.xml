@@ -10,8 +10,6 @@
         android:layout_width="160dp"
         android:layout_height="120dp"
         app:cardCornerRadius="4dp"
-        app:cardMaxElevation="2dp"
-        app:cardElevation="1dp"
         android:layout_centerInParent="true">
 
         <LinearLayout
