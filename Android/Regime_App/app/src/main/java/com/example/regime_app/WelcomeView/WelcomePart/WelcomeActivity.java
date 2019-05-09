@@ -1,5 +1,6 @@
-package com.example.regime_app.WelcomeView;
+package com.example.regime_app.WelcomeView.WelcomePart;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,7 @@ import com.example.regime_app.R;
 public class WelcomeActivity extends AppCompatActivity {
 
     private ViewPager my_pager;
-    private int[] layouts = {R.layout.option_inscription_view_1, R.layout.option_inscription_view_2, R.layout.option_inscription_view_3};
+    private Fragment[] fragments = {new WelcomeSlide1(), new WelcomeSlide2(), new WelcomeSlide3()};
     private WelcomeAdaptater welcomeAdaptater;
 
     private LinearLayout dotLayout;
@@ -25,7 +26,7 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         my_pager = (ViewPager)findViewById(R.id.viewPager);
-        welcomeAdaptater = new WelcomeAdaptater(layouts, this);
+        welcomeAdaptater = new WelcomeAdaptater(getSupportFragmentManager(), fragments);
         my_pager.setAdapter(welcomeAdaptater);
 
         dotLayout = (LinearLayout)findViewById(R.id.dotsLayout);
@@ -51,8 +52,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void createDots(int current_position) {
         if (dotLayout != null) dotLayout.removeAllViews();
-        dots = new ImageView[layouts.length];
-        for (int i = 0 ; i < layouts.length ; ++i) {
+        dots = new ImageView[fragments.length];
+        for (int i = 0; i < fragments.length ; ++i) {
             dots[i] = new ImageView(this);
             if (i == current_position) {
                 dots[i].setImageDrawable(ContextCompat.getDrawable(this, R.drawable.active_dots));

@@ -9,6 +9,8 @@
     <string name="email" id="email"> mariedurand@yahoo.fr </string>
 
     <string name="test" id="test"> Test</string>
+    <string name="channel_test">CHANNEL_TEST</string>
+    <string name="channel_test_description">CHANNEL_TEST_DESCRIPTION</string>
 
     <string-array name="desserts">
         <item>Cupcake</item>
@@ -24,7 +26,6 @@
         <item>Marshmallow</item>
         <item>Nougat</item>
     </string-array>
-
 
 
 </resources>

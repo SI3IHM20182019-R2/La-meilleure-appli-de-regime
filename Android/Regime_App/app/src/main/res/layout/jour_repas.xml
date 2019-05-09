@@ -8,12 +8,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dropdown" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -26,10 +20,11 @@
                 android:layout_height="wrap_content"
                 android:text="matin" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/repasmatin"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
         </LinearLayout>
 
@@ -45,10 +40,12 @@
                 android:layout_height="wrap_content"
                 android:text="midi" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/repasmidi"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -63,10 +60,12 @@
                 android:layout_height="wrap_content"
                 android:text="soir" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/repassoir"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

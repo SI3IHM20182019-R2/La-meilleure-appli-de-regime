@@ -1,0 +1,105 @@
+{ "listrepas": [
+  {
+    "repas": [
+      { "nom": "salade ceaser",
+
+        "ingredients": {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {"nom": "riz au poulet",
+
+        "ingredients": {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "nom": "creme brulee",
+
+        "ingredients": {
+          "glucides": "70",
+          "proteines": 80,
+          "lipides": "90",
+          "calories": 60
+        }
+      }
+    ],
+    "heure": "08h00",
+    "image": "regime1.jpg"
+  },
+  {
+    "repas": [
+      {
+        "nom": "avocats",
+          "ingredients":{
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "nom": "pates carbonara",
+      "ingredients":
+      {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "nom":"salade de fruits",
+        "ingredients":{
+          "glucides": "70",
+          "proteines": 80,
+          "lipides": "90",
+          "calories": 60
+        }
+      }
+    ],
+    "heure": "12h00",
+    "image": "regime2.jpg"
+  },
+  {
+    "repas": [
+      {
+        "nom":"salade ceasar",
+          "ingredients":{
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+       "nom": "petits pois",
+      "ingredients":
+      {
+          "glucides": "10",
+          "proteines": 20,
+          "lipides": "50",
+          "calories": 60
+        }
+      },
+      {
+        "nom":"creme glacee",
+      "ingredients":{
+          "glucides": "70",
+          "proteines": 80,
+          "lipides": "90",
+          "calories": 60
+        }
+      }
+    ],
+    "heure": "19h00",
+    "image": "regime3.jpg"
+  }
+]
+}

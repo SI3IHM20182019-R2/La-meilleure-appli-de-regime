@@ -56,6 +56,7 @@ import android.widget.LinearLayout;
 
 import com.example.regime_app.Adapters.MesRegimesAdapter;
 import com.example.regime_app.Adapters.RechercheRegimeTicketAdapter;
+import com.example.regime_app.Models.Avis;
 import com.example.regime_app.Models.Regime;
 import com.example.regime_app.R;
 
@@ -70,6 +71,7 @@ public class MesRegimesFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.LayoutManager layoutManager1;
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.mes_regimes, container, false);
@@ -79,7 +81,7 @@ public class MesRegimesFragment extends Fragment {
 
 
 
-        regimes.add(new Regime("Régime 1", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime1"));
+        regimes.add(new Regime("Régime 1", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime1" , new Avis("SABRI" , 1 , "Yooooooooo" , "2019") ));
         regimes.add(new Regime("Régime 2", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime2"));
         regimes.add(new Regime("Régime 3", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime3"));
         regimes.add(new Regime("Régime 4", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime4"));
@@ -91,8 +93,18 @@ public class MesRegimesFragment extends Fragment {
         recyclerView2 = view.findViewById(R.id.RegActuel);
         recyclerView1.setHasFixedSize(true);
         recyclerView2.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(view.getContext());
-        layoutManager1 = new LinearLayoutManager(view.getContext());
+        layoutManager = new LinearLayoutManager(view.getContext()) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+        layoutManager1 = new LinearLayoutManager(view.getContext()) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
         recyclerView1.setLayoutManager(layoutManager);
         recyclerView2.setLayoutManager(layoutManager1);
         mAdapter = new MesRegimesAdapter(regimes);

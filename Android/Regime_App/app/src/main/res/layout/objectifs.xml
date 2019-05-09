@@ -55,12 +55,14 @@
         android:layout_width="match_parent"
         android:layout_weight="4"
         android:layout_height="0dp">
+
         <TextView
-            android:text="But de l'objectif"
-            android:textSize="10dp"
-            android:layout_centerInParent="true"
+            android:id="@+id/butObjectif"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="But de l'objectif"
+            android:textSize="10dp" />
     </RelativeLayout>
 
     <!--Conseil du coach-->
@@ -68,12 +70,14 @@
         android:layout_width="match_parent"
         android:layout_weight="4"
         android:layout_height="0dp">
+
         <TextView
-            android:text="Conseil du coach"
-            android:textSize="10dp"
-            android:layout_centerInParent="true"
+            android:id="@+id/conseilCoach"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Conseil du coach"
+            android:textSize="10dp" />
     </RelativeLayout>
 
     <!--Bouton supprimer un objectif-->
@@ -81,13 +85,15 @@
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="0dp">
+
         <Button
-            android:text="Supprimer de mes objectifs"
-            android:textSize="10dp"
+            android:id="@+id/boutonSupprimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="@drawable/color_button_red"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="Supprimer de mes objectifs"
+            android:textSize="10dp" />
     </RelativeLayout>
 
 </LinearLayout>

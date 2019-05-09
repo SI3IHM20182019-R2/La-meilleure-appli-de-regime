@@ -83,6 +83,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 
 import com.example.regime_app.Models.Regime;
 import com.example.regime_app.R;
@@ -106,12 +107,16 @@ public class MesRegimesAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
-        ((MesRegimesHolder) viewHolder).bindData(regimes.get(position));
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position ) {
+        ((MesRegimesHolder) viewHolder).bindData(regimes.get(position) ,this.regimes , this);
     }
 
     @Override
     public int getItemCount() {
         return regimes.size();
+    }
+
+    public void setnotification () {
+        this.notifyDataSetChanged();
     }
 }
