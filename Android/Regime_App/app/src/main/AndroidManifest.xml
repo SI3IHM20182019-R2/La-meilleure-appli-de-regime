@@ -10,6 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".Donner_Avis"></activity>
+        <activity android:name=".DetailsRegimeActivity" />
         <activity android:name=".WelcomeView.WelcomeActivity" />
         <activity android:name=".WelcomeView.InscriptionActivity" />
         <activity android:name=".MainActivity">
