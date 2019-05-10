@@ -9,12 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.regime_app.Adapters.RegimesPagerAdapter;
-import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.OnNextClicked;
-import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.OnRetourClicked;
+import com.example.regime_app.FragmentSwitcher;
 import com.example.regime_app.NonSwipeableViewPager;
 import com.example.regime_app.R;
 
-public class MenuRegimesManagmentFragment extends Fragment implements OnNextClicked, OnRetourClicked {
+public class MenuRegimesManagmentFragment extends Fragment implements FragmentSwitcher {
     private RegimesPagerAdapter adapter;
     private NonSwipeableViewPager viewPager;
     @Override
@@ -28,7 +27,7 @@ public class MenuRegimesManagmentFragment extends Fragment implements OnNextClic
         tabLayout.addTab(tabLayout.newTab().setText("Recherche régime"));
         tabLayout.addTab(tabLayout.newTab().setText("Création régime"));
 
-        adapter = new RegimesPagerAdapter(getFragmentManager(), 6, this);
+        adapter = new RegimesPagerAdapter(getFragmentManager(), this);
         viewPager.setAdapter(adapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
@@ -47,12 +46,7 @@ public class MenuRegimesManagmentFragment extends Fragment implements OnNextClic
     }
 
     @Override
-    public void onNextClicked() {
-        viewPager.setCurrentItem(viewPager.getCurrentItem()+1, false);
-    }
-
-    @Override
-    public void onRetourClicked() {
-        viewPager.setCurrentItem(viewPager.getCurrentItem()-1, false);
+    public void fragmentSwitch(int i) {
+        viewPager.setCurrentItem(i, false);
     }
 }
