@@ -100,18 +100,12 @@
             </LinearLayout>
             <Button
                 android:id="@+id/ajouter_repas_heure"
-                android:text="Heure:"
+                android:text="Heure du repas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/ButtonTextAppearance"
                 android:layout_gravity="center"
                 android:layout_marginStart="80dp"/>
-            <TextView
-                android:id="@+id/ajouter_repas_heure_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"/>
         </LinearLayout>
         <Button
             android:gravity="center_horizontal"

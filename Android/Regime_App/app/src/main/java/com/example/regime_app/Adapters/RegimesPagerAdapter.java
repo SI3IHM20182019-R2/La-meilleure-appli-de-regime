@@ -13,7 +13,14 @@ import com.example.regime_app.MenuFragments.MenuRegimesFragments.MesRegimesFragm
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.RechercheRegimeFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesManagmentFragment;
 
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_JOUR;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_REPAS;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREATION_REGIME;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_INGREDIENT;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.MES_REGIMES;
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.NB_PAGES;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.RECHERCHE_REGIME;
 
 
 public class RegimesPagerAdapter extends FragmentPagerAdapter {
@@ -28,25 +35,25 @@ public class RegimesPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int i) {
         Fragment fragment = new MesRegimesFragment();
         switch (i) {
-            case 0 : fragment = new MesRegimesFragment(); break;
-            case 1 : fragment = new RechercheRegimeFragment(); break;
-            case 2 :
+            case MES_REGIMES : fragment = new MesRegimesFragment(); break;
+            case RECHERCHE_REGIME : fragment = new RechercheRegimeFragment(); break;
+            case CREATION_REGIME :
                 fragment = new CreationRegimeFragment();
                 ((CreationRegimeFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
-            case 3 :
+            case AJOUTER_JOUR :
                 fragment = new AjouterJourFragment();
                 ((AjouterJourFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
-            case 4 :
+            case AJOUTER_REPAS :
                 fragment = new AjouterRepasFragment();
                 ((AjouterRepasFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
-            case 5 :
+            case CREER_PLAT :
                 fragment = new CreerPlatFragment();
                 ((CreerPlatFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
-            case 6 :
+            case CREER_INGREDIENT :
                 fragment = new CreerIngredientFragment();
                 ((CreerIngredientFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;

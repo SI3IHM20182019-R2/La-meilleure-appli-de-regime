@@ -30,14 +30,13 @@ public class AjouterRepasFragment extends FragmentSwitchable {
         setSwitches(s1,s2);
 
         Button heure = view.findViewById(R.id.ajouter_repas_heure);
-        TextView heureText = view.findViewById(R.id.ajouter_repas_heure_text);
         heure.setOnClickListener(v -> {
             Calendar mcurrentTime = Calendar.getInstance();
             int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
             int minute = mcurrentTime.get(Calendar.MINUTE);
             TimePickerDialog mTimePicker;
             mTimePicker = new TimePickerDialog(this.getContext(), (timePicker, selectedHour, selectedMinute) ->
-                    heureText.setText(selectedHour + ":" + selectedMinute), hour, minute, true);
+                    heure.setText(selectedHour + ":" + selectedMinute), hour, minute, true);
             mTimePicker.setTitle("Select Time");
             mTimePicker.show();
         });
