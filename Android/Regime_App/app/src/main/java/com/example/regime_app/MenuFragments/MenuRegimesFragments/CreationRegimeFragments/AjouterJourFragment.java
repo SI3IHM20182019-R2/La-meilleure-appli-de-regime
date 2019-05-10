@@ -12,10 +12,8 @@ import com.example.regime_app.FragmentSwitchable;
 import com.example.regime_app.R;
 import com.example.regime_app.Switch;
 
-import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_JOUR;
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_REPAS;
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREATION_REGIME;
-import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT;
 
 
 public class AjouterJourFragment extends FragmentSwitchable {

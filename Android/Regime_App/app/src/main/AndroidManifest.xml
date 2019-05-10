@@ -9,19 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".WelcomeView.WelcomeActivity"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".WelcomeView.InscriptionActivity"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".MainActivity"
-            android:configChanges="orientation|screenSize">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuManagmentActivity" />
+        <activity android:name=".MenuManagmentActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".DetailsRegimeActivity" />
+        <activity android:name=".Donner_Avis" />
         <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo" />
         <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartOne" />
         <activity android:name=".WelcomeView.WelcomePart.WelcomeActivity" />

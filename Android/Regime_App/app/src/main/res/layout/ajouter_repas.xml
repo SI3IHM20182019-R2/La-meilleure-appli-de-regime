@@ -5,18 +5,26 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent">        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:layout_gravity="center">
         <ImageButton
             android:id="@+id/ajouter_repas_retour"
             android:src="@drawable/retour"
             android:background="@null"
-            android:layout_marginTop="20dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_margin="10dp"
-            android:layout_gravity="start"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"/>
+        <TextView
+            android:text="Jours du régime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

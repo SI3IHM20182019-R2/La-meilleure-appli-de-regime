@@ -8,7 +8,8 @@ import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeF
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.AjouterJourFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.AjouterRepasFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.CreerIngredientFragment;
-import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.CreerPlatFragment;
+import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.CreerPlat1Fragment;
+import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.CreerPlat2Fragment;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.MesRegimesFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.RechercheRegimeFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesManagmentFragment;
@@ -17,7 +18,8 @@ import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constant
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_REPAS;
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREATION_REGIME;
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_INGREDIENT;
-import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT1;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT2;
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.MES_REGIMES;
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.NB_PAGES;
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.RECHERCHE_REGIME;
@@ -49,9 +51,13 @@ public class RegimesPagerAdapter extends FragmentPagerAdapter {
                 fragment = new AjouterRepasFragment();
                 ((AjouterRepasFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
-            case CREER_PLAT :
-                fragment = new CreerPlatFragment();
-                ((CreerPlatFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
+            case CREER_PLAT1:
+                fragment = new CreerPlat1Fragment();
+                ((CreerPlat1Fragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
+                break;
+            case CREER_PLAT2:
+                fragment = new CreerPlat2Fragment();
+                ((CreerPlat2Fragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
             case CREER_INGREDIENT :
                 fragment = new CreerIngredientFragment();

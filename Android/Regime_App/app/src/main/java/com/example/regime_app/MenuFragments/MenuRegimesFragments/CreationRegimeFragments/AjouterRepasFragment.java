@@ -9,14 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.example.regime_app.FragmentSwitchable;
 import com.example.regime_app.R;
 import com.example.regime_app.Switch;
 
 import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_JOUR;
-import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT1;
 
 public class AjouterRepasFragment extends FragmentSwitchable {
     @Override
@@ -26,7 +25,7 @@ public class AjouterRepasFragment extends FragmentSwitchable {
         ImageButton retour = view.findViewById(R.id.ajouter_repas_retour);
         Button creerPlat = view.findViewById(R.id.creer_plat);
         Switch s1 = new Switch(retour, AJOUTER_JOUR);
-        Switch s2 = new Switch(creerPlat, CREER_PLAT);
+        Switch s2 = new Switch(creerPlat, CREER_PLAT1);
         setSwitches(s1,s2);
 
         Button heure = view.findViewById(R.id.ajouter_repas_heure);
