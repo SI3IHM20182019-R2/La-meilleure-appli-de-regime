@@ -14,6 +14,7 @@ import com.example.regime_app.R;
 public class AvisUtilisateursHolder  extends RecyclerView.ViewHolder {
     private Context context;
     private TextView nom;
+    private TextView note;
     private TextView commentaire;
     private TextView DatedePublication;
 
@@ -21,6 +22,7 @@ public class AvisUtilisateursHolder  extends RecyclerView.ViewHolder {
         super(itemView);
         DatedePublication = itemView.findViewById(R.id.DatedePublication);
         nom = itemView.findViewById(R.id.nom);
+        note = itemView.findViewById(R.id.noote);
         commentaire = itemView.findViewById(R.id.commentaire);
         this.context = context;
     }
@@ -29,5 +31,6 @@ public class AvisUtilisateursHolder  extends RecyclerView.ViewHolder {
         nom.setText(avis.getNom());
         commentaire.setText(avis.getCommentaire());
         DatedePublication.setText(avis.getDate());
+        note.setText(Integer.toString(avis.getNote()));
     }
 }
