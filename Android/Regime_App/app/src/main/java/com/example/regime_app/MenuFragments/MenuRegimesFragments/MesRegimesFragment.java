@@ -52,17 +52,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.regime_app.Adapters.MesRegimesAdapter;
-import com.example.regime_app.Adapters.RechercheRegimeTicketAdapter;
-import com.example.regime_app.Models.Avis;
-import com.example.regime_app.Models.Regime;
-import com.example.regime_app.Models.RegimesMocks;
+import com.example.regime_app.Models.Mocks;
 import com.example.regime_app.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MesRegimesFragment extends Fragment {
     private RecyclerView recyclerView1;
@@ -95,8 +88,8 @@ public class MesRegimesFragment extends Fragment {
         };
         recyclerView1.setLayoutManager(layoutManager);
         recyclerView2.setLayoutManager(layoutManager1);
-        mAdapter = new MesRegimesAdapter(RegimesMocks.regimes);
-        mAdapter2 = new MesRegimesAdapter(RegimesMocks.regimes2);
+        mAdapter = new MesRegimesAdapter(Mocks.regimes);
+        mAdapter2 = new MesRegimesAdapter(Mocks.regimes2);
         recyclerView1.setAdapter(mAdapter);
         recyclerView2.setAdapter(mAdapter2);
 

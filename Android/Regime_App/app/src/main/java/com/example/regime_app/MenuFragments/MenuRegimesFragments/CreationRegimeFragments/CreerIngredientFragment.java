@@ -1,22 +1,32 @@
 package com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.regime_app.Exec;
 import com.example.regime_app.FragmentSwitchable;
+import com.example.regime_app.Models.Ingredient;
+import com.example.regime_app.Models.Mocks;
 import com.example.regime_app.R;
 import com.example.regime_app.Switch;
 
@@ -26,6 +36,7 @@ public class CreerIngredientFragment extends FragmentSwitchable {
     ImageView ajouterPhoto;
     TextView ajouterPhotoText;
     RelativeLayout ajouterPhotoBlock;
+    Bitmap ingredientPhoto;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,8 +44,35 @@ public class CreerIngredientFragment extends FragmentSwitchable {
 
         ImageButton retour = view.findViewById(R.id.creer_ingredient_retour);
         Button confirmer = view.findViewById(R.id.ingredient_confirmer);
-        Switch s1 = new Switch(retour, CREER_PLAT1);
+
+        EditText nom = view.findViewById(R.id.modifier_ingredient_nom);
+        EditText description = view.findViewById(R.id.modifier_ingredient_description);
+
+        TextView champsNonRemplis = view.findViewById(R.id.creer_ingredient_champs_non_remplis);
+
+        EditText glucides = view.findViewById(R.id.creer_ingredient_glucides);
+        EditText lipides = view.findViewById(R.id.creer_ingredient_lipides);
+        EditText proteines = view.findViewById(R.id.creer_ingredient_proteines);
+        EditText calories = view.findViewById(R.id.creer_ingredient_calories);
+
+        Switch s1 = new Switch(retour, CREER_PLAT1, true);
         Switch s2 = new Switch(confirmer, CREER_PLAT1);
+        Exec exec = (() -> {
+            if (!nom.getText().toString().equals("") && !glucides.getText().toString().equals("") && !lipides.getText().toString().equals("") && !proteines.getText().toString().equals("") && !calories.getText().toString().equals("")) {
+                s2.setReadyToSwitch(true);
+                getFragmentManager().beginTransaction().remove(this).commit();
+                Mocks.addIngredient(new Ingredient(nom.getText().toString(), description.getText().toString(), ingredientPhoto, Float.parseFloat(glucides.getText().toString())/100, Float.parseFloat(lipides.getText().toString())/100, Float.parseFloat(proteines.getText().toString())/100, Float.parseFloat(calories.getText().toString())/100));
+            } else {
+                champsNonRemplis.setAlpha(1.0f);
+                nom.setBackground(getContext().getResources().getDrawable(R.drawable.red_square, getContext().getTheme()));
+                glucides.setBackground(getContext().getResources().getDrawable(R.drawable.red_square, getContext().getTheme()));
+                lipides.setBackground(getContext().getResources().getDrawable(R.drawable.red_square, getContext().getTheme()));
+                proteines.setBackground(getContext().getResources().getDrawable(R.drawable.red_square, getContext().getTheme()));
+                glucides.setBackground(getContext().getResources().getDrawable(R.drawable.red_square, getContext().getTheme()));
+                calories.setBackground(getContext().getResources().getDrawable(R.drawable.red_square, getContext().getTheme()));
+            }
+        });
+        s2.setExec(exec);
         setSwitches(s1, s2);
 
         ajouterPhotoBlock = view.findViewById(R.id.ingredient_photo_block);
@@ -52,16 +90,19 @@ public class CreerIngredientFragment extends FragmentSwitchable {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Bitmap photo = (Bitmap) data.getExtras().get("data");
-        int orientation = getResources().getConfiguration().orientation;
-        Bitmap resultBmp;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            resultBmp = Bitmap.createBitmap(photo.getHeight(), photo.getHeight(), Bitmap.Config.ARGB_8888);
-        } else {
-            resultBmp = Bitmap.createBitmap(photo.getWidth(), photo.getWidth(), Bitmap.Config.ARGB_8888);
+        if (data != null) {
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            int orientation = getResources().getConfiguration().orientation;
+            Bitmap resultBmp;
+            if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                resultBmp = Bitmap.createBitmap(photo.getHeight(), photo.getHeight(), Bitmap.Config.ARGB_8888);
+            } else {
+                resultBmp = Bitmap.createBitmap(photo.getWidth(), photo.getWidth(), Bitmap.Config.ARGB_8888);
+            }
+            new Canvas(resultBmp).drawBitmap(photo, 0, 0, null);
+            this.ingredientPhoto = resultBmp;
+            this.ajouterPhoto.setImageBitmap(resultBmp);
+            this.ajouterPhotoText.setAlpha(0.0f);
         }
-        new Canvas(resultBmp).drawBitmap(photo, 0, 0, null);
-        this.ajouterPhoto.setImageBitmap(resultBmp);
-        this.ajouterPhotoText.setAlpha(0.0f);
     }
 }

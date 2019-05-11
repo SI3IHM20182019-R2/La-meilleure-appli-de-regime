@@ -31,7 +31,7 @@ public class CreationRegimeFragment extends FragmentSwitchable {
         final View view = inflater.inflate(R.layout.creation_regime, container, false);
 
         Button ajouterJour = view.findViewById(R.id.ajouter_jour);
-        Switch s = new Switch(ajouterJour, AJOUTER_JOUR);
+        Switch s = new Switch(ajouterJour, AJOUTER_JOUR, true);
         setSwitches(s);
 
         ajouterPhotoBlock = view.findViewById(R.id.regime_photo_block);

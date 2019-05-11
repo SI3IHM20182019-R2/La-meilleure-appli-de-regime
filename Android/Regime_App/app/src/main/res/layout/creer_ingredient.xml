@@ -94,6 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <EditText
+                        android:id="@+id/creer_ingredient_glucides"
                         android:layout_marginStart="6dp"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
@@ -109,6 +110,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <EditText
+                        android:id="@+id/creer_ingredient_lipides"
                         android:layout_marginStart="15dp"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
@@ -130,6 +132,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <EditText
+                        android:id="@+id/creer_ingredient_proteines"
                         android:layout_marginStart="15dp"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
@@ -145,6 +148,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <EditText
+                        android:id="@+id/creer_ingredient_calories"
                         android:layout_marginStart="5dp"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
@@ -159,6 +163,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/ButtonTextAppearance"/>
+
+        <TextView
+            android:id="@+id/creer_ingredient_champs_non_remplis"
+            android:alpha="0"
+            android:textColor="@color/champNonRempli"
+            android:text="Veuillez remplir tous les champs demandés"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
