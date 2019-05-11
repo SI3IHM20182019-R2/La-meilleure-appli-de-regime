@@ -52,6 +52,7 @@ public class MesRegimesHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 Intent intent = new Intent(context , DetailsRegimeActivity.class ) ;
                 intent.putExtra("regime" , regime) ;
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                 context.startActivity(intent) ;
             }
         });

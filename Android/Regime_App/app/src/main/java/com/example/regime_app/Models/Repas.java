@@ -11,6 +11,7 @@ public class Repas {
         this.plat = plat;
         this.dessert = dessert;
         this.heure = heure;
+        this.pathImage = pathImage ;
 
     }
 

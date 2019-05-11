@@ -12,10 +12,10 @@ public class Regime implements Parcelable {
     private String note;
     private String description;
     private String imageName;
-    private ArrayList<JourRepas> listrepas = new ArrayList<JourRepas>() {{
-        add(new JourRepas("aaaaaaaa" ,"aaaaaaaaaa" , "aaaaaaaaa" ));
-        add(new JourRepas("aaaaaaaa" ,"aaaaaaaaaa" , "aaaaaaaaa" ));
-        add(new JourRepas("aaaaaaaa" ,"aaaaaaaaaa" , "aaaaaaaaa" ));
+    private ArrayList<Repas> listrepas = new ArrayList<Repas>() {{
+        add(new Repas(new Plat("jus", 1 ,1 ,1 , 1) ,new Plat("café", 1 ,1 ,1 , 1) , new Plat("croissant", 1 ,1 ,1 ,1) , "repas1" , " 8h30"));
+        add(new Repas(new Plat("Salade", 1 ,1 ,1 , 1) ,new Plat("Salade", 1 ,1 ,1 , 1) , new Plat("Salade", 1 ,1 ,1 ,1) , "repas2" , " 12h30"));
+        add(new Repas(new Plat("cake", 1 ,1 ,1 , 1) ,new Plat("bannane", 1 ,1 ,1 , 1) , new Plat("salade friut", 1 ,1 ,1 ,1) , "repas3" , " 20h30"));
     }};
     private ArrayList<Avis> listavis = new ArrayList<>();
 
@@ -65,7 +65,7 @@ public class Regime implements Parcelable {
         return note;
     }
 
-    public ArrayList<JourRepas> getListrepas() {
+    public ArrayList<Repas> getListrepas() {
         return listrepas;
     }
 

@@ -21,6 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DetailsRegimeActivity" />
+        <activity android:name=".Donner_Avis" />
         <activity android:name=".MenuManagmentActivity" />
         <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo" />
         <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartOne" />

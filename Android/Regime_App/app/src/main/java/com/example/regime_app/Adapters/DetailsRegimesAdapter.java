@@ -88,11 +88,13 @@ package com.example.regime_app.Adapters;
         import android.view.ViewGroup;
         import android.widget.ArrayAdapter;
         import android.widget.BaseExpandableListAdapter;
+        import android.widget.ImageView;
         import android.widget.Spinner;
         import android.widget.TextView;
 
         import com.example.regime_app.Models.JourRepas;
         import com.example.regime_app.Models.Regime;
+        import com.example.regime_app.Models.Repas;
         import com.example.regime_app.R;
         import com.example.regime_app.ViewHolders.DetailsRegimesHolder;
         import com.example.regime_app.ViewHolders.MesRegimesHolder;
@@ -105,9 +107,9 @@ public class DetailsRegimesAdapter extends BaseExpandableListAdapter {
     private Regime regime;
     private Context context ;
     private List<String> lisheader ;
-    private HashMap<String , List<JourRepas>> listhash ;
+    private HashMap<String , List<Repas>> listhash ;
 
-    public DetailsRegimesAdapter(Regime regime, Context context, List<String> lisheader, HashMap<String, List<JourRepas>> listhash) {
+    public DetailsRegimesAdapter(Regime regime, Context context, List<String> lisheader, HashMap<String, List<Repas>> listhash) {
         this.regime = regime;
         this.context = context;
         this.lisheader = lisheader;
@@ -192,17 +194,21 @@ public class DetailsRegimesAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 
-        final JourRepas childText = (JourRepas) getChild(groupPosition , childPosition);
+        final Repas childText = (Repas) getChild(groupPosition , childPosition);
         if(convertView == null ){
             LayoutInflater inflater = (LayoutInflater)this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.jour_repas , null);
         }
-        TextView repasmatin = (TextView) convertView.findViewById(R.id.repasmatin);
-        TextView repasmidi = (TextView) convertView.findViewById(R.id.repasmidi);
-        TextView repassoir = (TextView) convertView.findViewById(R.id.repassoir);
-        repasmatin.setText(childText.getRapsmidi());
-        repasmidi.setText(childText.getRepasmatin());
-        repassoir.setText(childText.getRapsmidi());
+        TextView entree = (TextView)convertView.findViewById(R.id.entree);
+        TextView plat = (TextView)convertView.findViewById(R.id.plat);
+        TextView dessert = (TextView)convertView.findViewById(R.id.dessert);
+        TextView Heure = (TextView)convertView.findViewById(R.id.Heure);
+        ImageView repasimage = (ImageView)convertView.findViewById(R.id.repasimage);
+        entree.setText(childText.getEntree().getNom());
+        plat.setText(childText.getPlat().getNom());
+        dessert.setText(childText.getDessert().getNom());
+        Heure.setText(childText.getHeure());
+        repasimage.setImageResource(context.getResources().getIdentifier(childText.getPathImage(), "drawable", context.getPackageName()));
 
         return convertView;
     }
@@ -211,4 +217,5 @@ public class DetailsRegimesAdapter extends BaseExpandableListAdapter {
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
     }
+
 }

@@ -22,24 +22,28 @@ import java.util.List;
 
 public class DetailsRegimesHolder extends RecyclerView.ViewHolder {
     private Context context;
-    ;
-    private TextView repasmatin ;
-    private TextView repasmidi ;
-    private TextView repassoir ;
+    private TextView entree ;
+    private TextView plat ;
+    private TextView dessert ;
+    private TextView Heure ;
+    private ImageView repasimage ;
 
 
     public DetailsRegimesHolder(@NonNull View itemView, Context context) {
         super(itemView);
-        repasmatin = (TextView)itemView.findViewById(R.id.repasmatin);
-        repasmidi = (TextView)itemView.findViewById(R.id.repasmidi);
-        repassoir = (TextView)itemView.findViewById(R.id.repassoir);
+        entree = (TextView)itemView.findViewById(R.id.entree);
+        plat = (TextView)itemView.findViewById(R.id.plat);
+        dessert = (TextView)itemView.findViewById(R.id.dessert);
+        Heure = (TextView)itemView.findViewById(R.id.Heure);
+        repasimage = (ImageView)itemView.findViewById(R.id.repasimage);
+
         this.context = context;
     }
 
-    public void bindData(final Regime regime ) {
+   /* public void bindData(final Regime regime ) {
         repasmidi.setText(regime.getNom());
         repasmatin.setText(regime.getDescription());
         repassoir.setText(regime.getDescription());
 
-    }
+    }*/
 }
