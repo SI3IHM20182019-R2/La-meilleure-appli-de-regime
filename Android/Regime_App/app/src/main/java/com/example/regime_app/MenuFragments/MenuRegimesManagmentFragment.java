@@ -27,7 +27,7 @@ public class MenuRegimesManagmentFragment extends Fragment implements FragmentSw
         tabLayout.addTab(tabLayout.newTab().setText("Recherche régime"));
         tabLayout.addTab(tabLayout.newTab().setText("Création régime"));
 
-        adapter = new RegimesPagerAdapter(getFragmentManager(), this);
+        adapter = new RegimesPagerAdapter(getChildFragmentManager(), this);
         viewPager.setAdapter(adapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
