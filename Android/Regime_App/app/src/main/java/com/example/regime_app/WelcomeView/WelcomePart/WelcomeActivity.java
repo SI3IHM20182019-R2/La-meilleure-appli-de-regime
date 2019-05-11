@@ -1,5 +1,6 @@
 package com.example.regime_app.WelcomeView.WelcomePart;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.regime_app.MenuManagmentActivity;
 import com.example.regime_app.R;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -65,5 +67,12 @@ public class WelcomeActivity extends AppCompatActivity {
             params.setMargins(4,0,4,0);
             dotLayout.addView(dots[i], params);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MenuManagmentActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
