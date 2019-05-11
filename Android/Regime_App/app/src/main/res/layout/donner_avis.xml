@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#dbe5d7"
     android:layout_height="match_parent">
 
     <ScrollView
@@ -22,18 +23,26 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"
+                    android:textColor="#3b7229"
+                    android:layout_margin="5dp"
+                    android:textSize="26dp"
+                    android:text="Votre avis" />
+
                 <LinearLayout
+                    android:id="@+id/me"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
+                    android:background="#ffff"
+                    android:layout_margin="4dp"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="votre avis" />
 
                     <EditText
                         android:id="@+id/commentaire"
@@ -55,10 +64,12 @@
                         android:id="@+id/subbmit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="26dp"
+                        android:background="@drawable/buttonstyle2"
                         android:gravity="center"
-                        android:text="valider" />
+                        android:text="Valider"
+                        android:textColor="#000" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -74,6 +85,11 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|center_horizontal"
                         android:gravity="center_horizontal|center_vertical"
+                        android:fontFamily="cursive"
+                        android:textStyle="bold"
+                        android:textColor="#3b7229"
+                        android:layout_margin="5dp"
+                        android:textSize="26dp"
                         android:text="Avis des utilisateurs" />
 
                     <android.support.v7.widget.RecyclerView

@@ -17,7 +17,7 @@
 
             <ImageView
                 android:id="@+id/imageavis"
-                android:layout_width="340px"
+                android:layout_width="320px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:background="#d8e2c9"
+                android:background="#b2c1a0"
                 android:orientation="vertical">
 
                 <LinearLayout
