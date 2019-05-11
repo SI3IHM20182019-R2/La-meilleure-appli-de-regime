@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.example.regime_app.Models.Mocks;
 import com.example.regime_app.WelcomeView.InscriptionPart.InscriptionActivity;
+import com.example.regime_app.WelcomeView.InscriptionPart.InscriptionActivityPartOne;
 
 public class MainActivity extends AppCompatActivity {
 
