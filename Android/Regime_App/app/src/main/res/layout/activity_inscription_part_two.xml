@@ -10,6 +10,7 @@
     tools:context=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo">
 
     <LinearLayout
+        android:id="@+id/sexe_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -173,14 +174,15 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/calendar_icon" />
 
-            <TextView
+            <EditText
                 android:id="@+id/date_display"
                 android:layout_width="136dp"
                 android:layout_height="24dp"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center"
                 android:background="@android:color/white"
-                android:gravity="center" />
+                android:gravity="center"
+                android:editable="false"/>
 
         </LinearLayout>
 

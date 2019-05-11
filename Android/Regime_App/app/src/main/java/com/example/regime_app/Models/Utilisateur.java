@@ -1,16 +1,16 @@
 package com.example.regime_app.Models;
 
 public class Utilisateur {
-    private String nom;
-    private String prenom;
-    private String mail;
-    private String pwd;
-    private String sexe;
-    private int age;
-    private int taille;
-    private float poids;
-    private float obectif;
-    private String deadline;
+    private String nom = null;
+    private String prenom = null;
+    private String mail = null;
+    private String pwd = null;
+    private String sexe = null;
+    private Integer age = null;
+    private Integer taille = null;
+    private Float poids = null;
+    private Float obectif = null;
+    private String deadline = null;
 
     private Utilisateur() {}
 
@@ -24,6 +24,12 @@ public class Utilisateur {
         this.nom = null;
         this.prenom = null;
         this.mail = null;
+        this.pwd = null;
+        this.sexe = null;
+        this.age = null;
+        this.taille = null;
+        this.poids = null;
+        this.deadline = null;
     }
 
     //SETTER
