@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonSlider = findViewById(R.id.slider);
         buttonSlider.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), InscriptionActivity.class);
+            Intent intent = new Intent(getApplicationContext(), InscriptionActivityPartOne.class);
             startActivity(intent);
         });
 
