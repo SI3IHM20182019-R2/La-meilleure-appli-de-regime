@@ -9,4 +9,6 @@
 
     <color name="activeDot">#ECECEC</color>
     <color name="inactiveDot">#8E8E8E</color>
+
+    <color name="champNonRempli">#ff7272</color>
 </resources>

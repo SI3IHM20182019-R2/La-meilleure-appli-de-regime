@@ -10,12 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.regime_app.Adapters.RechercheRegimeTicketAdapter;
-import com.example.regime_app.Models.Regime;
-import com.example.regime_app.Models.RegimesMocks;
+import com.example.regime_app.Models.Mocks;
 import com.example.regime_app.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class RechercheRegimeFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -30,7 +26,7 @@ public class RechercheRegimeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new RechercheRegimeTicketAdapter(RegimesMocks.regimes);
+        mAdapter = new RechercheRegimeTicketAdapter(Mocks.regimes);
         recyclerView.setAdapter(mAdapter);
 
         return view;

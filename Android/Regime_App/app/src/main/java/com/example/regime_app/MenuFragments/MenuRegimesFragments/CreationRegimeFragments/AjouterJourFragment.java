@@ -23,8 +23,8 @@ public class AjouterJourFragment extends FragmentSwitchable {
 
         ImageButton retour = view.findViewById(R.id.ajouter_jour_retour);
         Button ajouterRepas = view.findViewById(R.id.ajouter_repas);
-        Switch s1 = new Switch(ajouterRepas, AJOUTER_REPAS);
-        Switch s2 = new Switch(retour, CREATION_REGIME);
+        Switch s1 = new Switch(ajouterRepas, AJOUTER_REPAS, true);
+        Switch s2 = new Switch(retour, CREATION_REGIME, true);
         setSwitches(s1,s2);
 
         return view;

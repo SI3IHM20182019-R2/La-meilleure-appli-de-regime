@@ -9,11 +9,15 @@ public class FragmentSwitchable extends Fragment {
         for (int i = 0; i < switches.length; i++) {
             int j = i;
             switches[i].getButton().setOnClickListener(v -> {
-                fragmentSwitcher.fragmentSwitch(switches[j].getPageNumber());
+                if (switches[j].getExec() != null) {
+                    switches[j].getExec().execute();
+                }
+                if (switches[j].readyToSwitch()) {
+                    fragmentSwitcher.fragmentSwitch(switches[j].getPageNumber());
+                }
             });
         }
     }
-
     public void setFragmentSwitcher(FragmentSwitcher fragmentSwitcher) {
         this.fragmentSwitcher = fragmentSwitcher;
     }

@@ -34,9 +34,9 @@ public class CreerPlat2Fragment extends FragmentSwitchable {
         ImageButton retour = view.findViewById(R.id.creer_plat2_retour);
         ImageView etapePrecedente = view.findViewById(R.id.creer_plat2_etape_precedente);
         ImageView confirmer = view.findViewById(R.id.creer_plat2_confirmer);
-        Switch s1 = new Switch(etapePrecedente, CREER_PLAT1);
-        Switch s2 = new Switch(retour, AJOUTER_REPAS);
-        Switch s3 = new Switch(confirmer, AJOUTER_REPAS);
+        Switch s1 = new Switch(etapePrecedente, CREER_PLAT1, true);
+        Switch s2 = new Switch(retour, AJOUTER_REPAS, true);
+        Switch s3 = new Switch(confirmer, AJOUTER_REPAS, true);
         setSwitches(s1, s2, s3);
 
         ajouterPhotoBlock = view.findViewById(R.id.plat_photo_block);
