@@ -58,6 +58,7 @@ import com.example.regime_app.Adapters.MesRegimesAdapter;
 import com.example.regime_app.Adapters.RechercheRegimeTicketAdapter;
 import com.example.regime_app.Models.Avis;
 import com.example.regime_app.Models.Regime;
+import com.example.regime_app.Models.RegimesMocks;
 import com.example.regime_app.R;
 
 import java.util.ArrayList;
@@ -75,19 +76,6 @@ public class MesRegimesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.mes_regimes, container, false);
-
-        List<Regime> regimes = new ArrayList<>();
-        List<Regime> regimes2 = new ArrayList<>();
-
-
-
-        regimes.add(new Regime("Régime 1", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime1" , new Avis("SABRI" , 1 , "Yooooooooo" , "2019") ));
-        regimes.add(new Regime("Régime 2", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime2"));
-        regimes.add(new Regime("Régime 3", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime3"));
-        regimes.add(new Regime("Régime 4", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime4"));
-        regimes.add(new Regime("Régime 5", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime5"));
-        regimes.add(new Regime("Régime 6", "C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial ! C'est un régime génial !", "regime6"));
-        regimes2.add(regimes.get(0));
 
         recyclerView1 = view.findViewById(R.id.RegFavoris);
         recyclerView2 = view.findViewById(R.id.RegActuel);
@@ -107,8 +95,8 @@ public class MesRegimesFragment extends Fragment {
         };
         recyclerView1.setLayoutManager(layoutManager);
         recyclerView2.setLayoutManager(layoutManager1);
-        mAdapter = new MesRegimesAdapter(regimes);
-        mAdapter2 = new MesRegimesAdapter(regimes2);
+        mAdapter = new MesRegimesAdapter(RegimesMocks.regimes);
+        mAdapter2 = new MesRegimesAdapter(RegimesMocks.regimes2);
         recyclerView1.setAdapter(mAdapter);
         recyclerView2.setAdapter(mAdapter2);
 

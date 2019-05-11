@@ -1,4 +1,4 @@
-package com.example.regime_app.MenuFragments.MenuRegimesFragments;
+package com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,24 +20,26 @@ import com.example.regime_app.FragmentSwitchable;
 import com.example.regime_app.R;
 import com.example.regime_app.Switch;
 
-import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_JOUR;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT1;
 
-public class CreationRegimeFragment extends FragmentSwitchable {
+public class CreerIngredientFragment extends FragmentSwitchable {
     ImageView ajouterPhoto;
     TextView ajouterPhotoText;
     RelativeLayout ajouterPhotoBlock;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.creation_regime, container, false);
+        final View view = inflater.inflate(R.layout.creer_ingredient, container, false);
 
-        Button ajouterJour = view.findViewById(R.id.ajouter_jour);
-        Switch s = new Switch(ajouterJour, AJOUTER_JOUR);
-        setSwitches(s);
+        ImageButton retour = view.findViewById(R.id.creer_ingredient_retour);
+        Button confirmer = view.findViewById(R.id.ingredient_confirmer);
+        Switch s1 = new Switch(retour, CREER_PLAT1);
+        Switch s2 = new Switch(confirmer, CREER_PLAT1);
+        setSwitches(s1, s2);
 
-        ajouterPhotoBlock = view.findViewById(R.id.regime_photo_block);
-        ajouterPhoto = view.findViewById(R.id.modifier_regime_photo);
-        ajouterPhotoText = view.findViewById(R.id.modifier_regime_photo_texte);
+        ajouterPhotoBlock = view.findViewById(R.id.ingredient_photo_block);
+        ajouterPhoto = view.findViewById(R.id.modifier_ingredient_photo);
+        ajouterPhotoText = view.findViewById(R.id.modifier_ingredient_photo_texte);
 
         ajouterPhoto.setOnClickListener(v -> {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

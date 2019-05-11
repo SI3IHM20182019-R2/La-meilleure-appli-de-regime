@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.regime_app.Models.RegimesMocks;
 import com.example.regime_app.WelcomeView.InscriptionPart.InscriptionActivity;
 import com.example.regime_app.WelcomeView.InscriptionPart.InscriptionActivityPartOne;
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        RegimesMocks.init();
         notificationManagerCompat = NotificationManagerCompat.from(this);
         createNotificationChannelTest();
         setContentView(R.layout.activity_main);

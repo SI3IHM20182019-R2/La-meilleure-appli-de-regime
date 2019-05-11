@@ -7,20 +7,29 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.AjouterJourFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.AjouterRepasFragment;
-import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.CreerUnPlat;
+import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.CreerIngredientFragment;
+import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.CreerPlat1Fragment;
+import com.example.regime_app.MenuFragments.MenuRegimesFragments.CreationRegimeFragments.CreerPlat2Fragment;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.MesRegimesFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesFragments.RechercheRegimeFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesManagmentFragment;
-import com.example.regime_app.NonSwipeableViewPager;
+
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_JOUR;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.AJOUTER_REPAS;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREATION_REGIME;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_INGREDIENT;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT1;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.CREER_PLAT2;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.MES_REGIMES;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.NB_PAGES;
+import static com.example.regime_app.MenuFragments.MenuRegimesFragments.Constants.RECHERCHE_REGIME;
 
 
 public class RegimesPagerAdapter extends FragmentPagerAdapter {
-    private int nbPages;
-    MenuRegimesManagmentFragment menuRegimesManagmentFragment;
+    private MenuRegimesManagmentFragment menuRegimesManagmentFragment;
 
-    public RegimesPagerAdapter(FragmentManager fm, int nbPages, MenuRegimesManagmentFragment menuRegimesManagmentFragment) {
+    public RegimesPagerAdapter(FragmentManager fm, MenuRegimesManagmentFragment menuRegimesManagmentFragment) {
         super(fm);
-        this.nbPages = nbPages;
         this.menuRegimesManagmentFragment = menuRegimesManagmentFragment;
     }
 
@@ -28,35 +37,38 @@ public class RegimesPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int i) {
         Fragment fragment = new MesRegimesFragment();
         switch (i) {
-            case 0 : fragment = new MesRegimesFragment(); break;
-            case 1 : fragment = new RechercheRegimeFragment(); break;
-            case 2 :
+            case MES_REGIMES : fragment = new MesRegimesFragment(); break;
+            case RECHERCHE_REGIME : fragment = new RechercheRegimeFragment(); break;
+            case CREATION_REGIME :
                 fragment = new CreationRegimeFragment();
-                ((CreationRegimeFragment) fragment).setOnNextClickedListener(menuRegimesManagmentFragment);
+                ((CreationRegimeFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
-            case 3 :
+            case AJOUTER_JOUR :
                 fragment = new AjouterJourFragment();
-                ((AjouterJourFragment) fragment).setOnNextClickedListener(menuRegimesManagmentFragment);
-                ((AjouterJourFragment) fragment).setOnRetourClickedCallback(menuRegimesManagmentFragment);
+                ((AjouterJourFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
-            case 4 :
+            case AJOUTER_REPAS :
                 fragment = new AjouterRepasFragment();
-                ((AjouterRepasFragment) fragment).setOnNextClickedListener(menuRegimesManagmentFragment);
-                ((AjouterRepasFragment) fragment).setOnRetourClickedCallback(menuRegimesManagmentFragment);
+                ((AjouterRepasFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
-            case 5 :
-                fragment = new CreerUnPlat();
-                ((CreerUnPlat) fragment).setOnNextClickedListener(menuRegimesManagmentFragment);
-                ((CreerUnPlat) fragment).setOnRetourClickedCallback(menuRegimesManagmentFragment);
+            case CREER_PLAT1:
+                fragment = new CreerPlat1Fragment();
+                ((CreerPlat1Fragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
+                break;
+            case CREER_PLAT2:
+                fragment = new CreerPlat2Fragment();
+                ((CreerPlat2Fragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
+                break;
+            case CREER_INGREDIENT :
+                fragment = new CreerIngredientFragment();
+                ((CreerIngredientFragment) fragment).setFragmentSwitcher(menuRegimesManagmentFragment);
                 break;
         }
-        System.out.println("Page " + i);
-        System.out.println("Fragment " + fragment);
         return fragment;
     }
 
     @Override
     public int getCount() {
-        return nbPages;
+        return NB_PAGES;
     }
 }
