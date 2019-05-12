@@ -10,8 +10,8 @@ public class Repas {
         this.entree = entree;
         this.plat = plat;
         this.dessert = dessert;
-        this.heure = heure;
         this.pathImage = pathImage ;
+        this.heure = heure;
 
     }
 
@@ -30,8 +30,8 @@ public class Repas {
     public String getPathImage() {
         return pathImage;
     }
-
-    public String getHeure() {
+    public String getHeure ()    {
         return heure;
     }
+
 }
