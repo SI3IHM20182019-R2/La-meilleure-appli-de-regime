@@ -1,6 +1,10 @@
 package com.example.regime_app;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +44,11 @@ public class DetailsRegimeActivity extends AppCompatActivity {
         donneravis = (Button)  findViewById(R.id.avis);
         Bundle bun = getIntent().getExtras() ;
         final Regime regime =(Regime) bun.get("regime") ;
-        imageregime.setImageResource(this.getResources().getIdentifier(regime.getImageName(), "drawable", this.getPackageName()));
+        //imageregime.setImageResource();
+        Bitmap bit = BitmapFactory.decodeResource(getResources() , this.getResources().getIdentifier(regime.getImageName(), "drawable", this.getPackageName())) ;
+        RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(getResources() , bit) ;
+        roundedBitmapDrawable.setCircular(true);
+        imageregime.setImageDrawable(roundedBitmapDrawable);
         title.setText(regime.getNom());
         description.setText(regime.getDescription());
         /*Spinner spinerrepas = findViewById(R.id.spinnerreaps) ;

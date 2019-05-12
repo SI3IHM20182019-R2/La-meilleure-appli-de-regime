@@ -17,18 +17,18 @@
 
             <ImageView
                 android:id="@+id/imageavis"
-                android:layout_width="320px"
+                android:layout_width="600px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@null"
-                app:srcCompat="@drawable/person" />
+                android:background="#FFFF"
+                app:srcCompat="@drawable/person_pin" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:background="#b2c1a0"
+                android:background="#d8e2c9"
                 android:orientation="vertical">
 
                 <LinearLayout

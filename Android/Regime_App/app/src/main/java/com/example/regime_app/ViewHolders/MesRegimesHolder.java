@@ -2,8 +2,12 @@ package com.example.regime_app.ViewHolders;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
@@ -37,7 +41,11 @@ public class MesRegimesHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindData(final Regime regime , final List<Regime> regimes , final MesRegimesAdapter ad) {
-        imageregime.setImageResource(context.getResources().getIdentifier(regime.getImageName(), "drawable", context.getPackageName()));
+        //imageregime.setImageResource(context.getResources().getIdentifier(regime.getImageName(), "drawable", context.getPackageName()));
+        Bitmap bit = BitmapFactory.decodeResource(context.getResources() , context.getResources().getIdentifier(regime.getImageName(), "drawable", context.getPackageName())) ;
+        RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(context.getResources() , bit) ;
+        roundedBitmapDrawable.setCircular(true);
+        imageregime.setImageDrawable(roundedBitmapDrawable);
         title.setText(regime.getNom());
         description.setText(regime.getDescription());
         deleteimage.setOnClickListener(new View.OnClickListener() {

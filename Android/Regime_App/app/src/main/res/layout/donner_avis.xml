@@ -66,6 +66,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="26dp"
+                        android:layout_marginBottom="2dp"
                         android:background="@drawable/buttonstyle2"
                         android:gravity="center"
                         android:text="Valider"
@@ -88,7 +89,7 @@
                         android:fontFamily="cursive"
                         android:textStyle="bold"
                         android:textColor="#3b7229"
-                        android:layout_margin="5dp"
+                        android:layout_margin="10dp"
                         android:textSize="26dp"
                         android:text="Avis des utilisateurs" />
 
