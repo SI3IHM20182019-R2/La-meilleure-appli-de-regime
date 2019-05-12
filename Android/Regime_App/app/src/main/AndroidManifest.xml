@@ -8,36 +8,47 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">w
-        <activity android:name=".MainActivity"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".WelcomeView.WelcomePart.SelectionAllergies"/>
+        <activity android:name=".WelcomeView.WelcomePart.SelectionPreferencesAlimentaires"/>
+        <activity
+            android:name=".MainActivity"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailsRegimeActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".Donner_Avis"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".MenuManagmentActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartOne"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".WelcomeView.WelcomePart.WelcomeActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".WelcomeView.InscriptionPart.InscriptionActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name=".DetailsRegimeActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Donner_Avis"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".MenuManagmentActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartOne"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".WelcomeView.WelcomePart.WelcomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".WelcomeView.InscriptionPart.InscriptionActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
 
         <service android:name=".Services.NotifyTestService" />
     </application>
