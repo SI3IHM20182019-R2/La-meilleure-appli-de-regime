@@ -1,6 +1,11 @@
 package com.example.regime_app.Models;
 
-public class Utilisateur {
+import android.support.v7.app.AppCompatActivity;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Utilisateur extends AppCompatActivity {
     private String nom = null;
     private String prenom = null;
     private String mail = null;
@@ -11,8 +16,15 @@ public class Utilisateur {
     private Float poids = null;
     private Float obectif = null;
     private String deadline = null;
+    private Map<String, Boolean> preference;
+    private Map<String, Boolean> allergies;
 
-    private Utilisateur() {}
+    private Utilisateur() {
+        resetPreferences();
+        System.out.println("------------------------------------------------------------------------------------------" + preference.size());
+        resetAllergies();
+        System.out.println("------------------------------------------------------------------------------------------" + allergies.size());
+    }
 
     private static Utilisateur INSTANCE = new Utilisateur();
 
@@ -30,6 +42,24 @@ public class Utilisateur {
         this.taille = null;
         this.poids = null;
         this.deadline = null;
+        resetPreferences();
+        resetAllergies();
+    }
+
+    private void resetPreferences() {
+        preference = new HashMap<>();
+        String[] prefSoft = {"ovo-lacto-végétarien", "ovo-végétarien", "lacto-végétarien", "pesco-végétariens", "vegetalien"};
+        for (String str : prefSoft) {
+            preference.put(str, false);
+        }
+    }
+
+    private void resetAllergies() {
+        allergies = new HashMap<>();
+        String[] allergieSoft = {"gluten", "glucose", "oeuf", "arachide", "moutarde", "poisson", "soja"};
+        for (String str : allergieSoft) {
+            allergies.put(str, false);
+        }
     }
 
     //SETTER
@@ -74,6 +104,22 @@ public class Utilisateur {
         this.deadline = deadline;
     }
 
+    public void activePref(String pref) {
+        this.preference.put(pref, true);
+    }
+
+    public void desactivePref(String pref) {
+        this.preference.put(pref, false);
+    }
+
+    public void activeAllegie(String allergie) {
+        this.allergies.put(allergie, true);
+    }
+
+    public void desactiveAllergie(String allergie) {
+        this.allergies.put(allergie, false);
+    }
+
     //GETTER
 
     public String getNom() {
@@ -114,6 +160,14 @@ public class Utilisateur {
 
     public String getDeadline() {
         return deadline;
+    }
+
+    public Map<String, Boolean> getPreference() {
+        return preference;
+    }
+
+    public Map<String, Boolean> getAllergies() {
+        return allergies;
     }
 
     @Override

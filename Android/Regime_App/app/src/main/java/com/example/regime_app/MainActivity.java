@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.regime_app.Models.Mocks;
+import com.example.regime_app.Models.Utilisateur;
 import com.example.regime_app.WelcomeView.InscriptionPart.InscriptionActivity;
 import com.example.regime_app.WelcomeView.InscriptionPart.InscriptionActivityPartOne;
 

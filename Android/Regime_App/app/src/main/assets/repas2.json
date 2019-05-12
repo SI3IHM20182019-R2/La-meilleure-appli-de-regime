@@ -1,7 +1,7 @@
 { "listrepas": [
   {
     "repas": [
-      { "nom": "salade ceaser",
+      { "nom": "salade niçoise",
 
         "ingredients": {
           "glucides": "10",
@@ -30,7 +30,6 @@
         }
       }
     ],
-    "heure": "08h00",
     "image": "regime1.jpg"
   },
   {
@@ -70,7 +69,7 @@
   {
     "repas": [
       {
-        "nom":"salade ceasar",
+        "nom":"Taboulé",
           "ingredients":{
           "glucides": "10",
           "proteines": 20,
@@ -89,8 +88,8 @@
         }
       },
       {
-        "nom":"creme glacee",
-      "ingredients":{
+        "nom":"fruits",
+        "ingredients":{
           "glucides": "70",
           "proteines": 80,
           "lipides": "90",
@@ -98,7 +97,6 @@
         }
       }
     ],
-    "heure": "19h00",
     "image": "regime3.jpg"
   }
 ]

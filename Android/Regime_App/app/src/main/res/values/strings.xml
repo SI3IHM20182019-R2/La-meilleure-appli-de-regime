@@ -27,5 +27,11 @@
         <item>Nougat</item>
     </string-array>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialog_msg_preference_alimentaire">Choisissez vos preferences alimentaires :</string>
+    <string name="soumettre">Soumettre</string>
+    <string name="annuler">Annuler</string>
+
 
 </resources>

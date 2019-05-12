@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.regime_app.Commom.Commom;
+import com.example.regime_app.Interface.ObjectifInterface;
 import com.example.regime_app.Interface.ObjectifsClickListener;
 import com.example.regime_app.Models.ObjectifsModel.Objectif;
 import com.example.regime_app.R;
@@ -16,14 +17,14 @@ import com.example.regime_app.ViewHolders.MesObjectifsViewHolder;
 
 import java.util.ArrayList;
 
-public class MesObjectifsAdapter extends RecyclerView.Adapter<MesObjectifsViewHolder> {
+public class ListObjectifsAdapter extends RecyclerView.Adapter<MesObjectifsViewHolder> {
 
-    ArrayList<Objectif> objectifs;
+    ArrayList<ObjectifInterface> objectifs;
     private Context mContext;
 
     int row_index = -1;
 
-    public MesObjectifsAdapter(Context context, ArrayList<Objectif> objectifs) {
+    public ListObjectifsAdapter(Context context, ArrayList<ObjectifInterface> objectifs) {
         this.objectifs = objectifs;
         mContext = context;
     }
@@ -37,8 +38,8 @@ public class MesObjectifsAdapter extends RecyclerView.Adapter<MesObjectifsViewHo
     @Override
     public void onBindViewHolder(final MesObjectifsViewHolder holder, final int position) {
 
-        holder.image.setImageResource(this.objectifs.get(position).getTypeObjectif().getImage());
-        holder.name.setText(this.objectifs.get(position).getTypeObjectif().toString());
+        holder.image.setImageResource(this.objectifs.get(position).getImage());
+        holder.name.setText(this.objectifs.get(position).toString());
 
         holder.setObjectifClickLiscter(new ObjectifsClickListener() {
             @Override

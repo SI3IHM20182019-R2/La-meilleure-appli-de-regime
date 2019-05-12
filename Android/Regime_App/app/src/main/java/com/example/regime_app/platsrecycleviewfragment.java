@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class platsrecycleviewfragment extends Fragment {
     private RecyclerView recyclerView;
@@ -29,54 +30,12 @@ public class platsrecycleviewfragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.platsrecycleview, container, false);
 
-        List <Repas> repas = new ArrayList<>();
-        String json = null;
-        try {
-            InputStream is = getActivity().getAssets().open("repas.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        try {
-            JSONObject obj = new JSONObject(json);
-            String image; String heure;
-            for (int j= 0; j<3; j++ ) {
-                List<Plat> plats = new ArrayList<>();
-
-                image = obj.getJSONArray("listrepas").getJSONObject(j).getString("image");
-                 heure = obj.getJSONArray("listrepas").getJSONObject(j).getString("heure");
+        List <Repas> repasdujour = new ArrayList<>();
+        repasdujour.add(getRepas("repas1.json", "08h00"));
+        repasdujour.add(getRepas("repas2.json", "12h00"));
+        repasdujour.add(getRepas("repas3.json","20h00"));
 
 
-                JSONArray m_jArry = obj.getJSONArray("listrepas").getJSONObject(j).getJSONArray("repas");
-                System.out.println("Added2 --> " + m_jArry);
-
-                for (int i = 0; i < m_jArry.length(); i++) {
-                    JSONObject jo_inside = m_jArry.getJSONObject(i);
-                    System.out.println("Added3 --> " + jo_inside);
-
-                    Plat plat1 = new Plat(jo_inside.getString("nom"),
-                            jo_inside.getJSONObject("ingredients").getInt("glucides"),
-                            jo_inside.getJSONObject("ingredients").getInt("proteines"),
-                            jo_inside.getJSONObject("ingredients").getInt("lipides"),
-                            jo_inside.getJSONObject("ingredients").getInt("calories")
-                    );
-
-                    plats.add(plat1);
-                    System.out.println("Added --> " + plat1);
-                }
-                Repas  repas1 = new Repas(plats.get(0), plats.get(1), plats.get(2), image, heure);
-                repas.add(repas1);
-
-            }
-        } catch(JSONException e)
-        {
-            e.printStackTrace();
-        }
 
         recyclerView = (RecyclerView) view.findViewById(R.id.new_recycle);
         recyclerView.setHasFixedSize(true);
@@ -89,9 +48,63 @@ public class platsrecycleviewfragment extends Fragment {
 
         //puis créer un MyAdapter, lui fournir notre liste de villes.
         //cet adapter servira à remplir notre recyclerview
-        recyclerView.setAdapter(new PlatsAccueilAdapter(repas));
+        recyclerView.setAdapter(new PlatsAccueilAdapter(repasdujour));
         return view;
 
     }
 
+    private void addCalendar () {
+
+    }
+
+    private Repas getRepas(String file, String heure) {
+        String json = null;
+        List<Plat> plats = new ArrayList<>();
+        String image = "";
+
+        try {
+            InputStream is = getActivity().getAssets().open(file);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        try {
+            JSONObject obj = new JSONObject(json);
+            int i = 0 + (int)(Math.random() * 2);
+
+                image = obj.getJSONArray("listrepas").getJSONObject(i).getString("image");
+
+                JSONArray m_jArry = obj.getJSONArray("listrepas").getJSONObject(i).getJSONArray("repas");
+                System.out.println("Added2 --> " + m_jArry);
+
+                for (int j = 0; j < m_jArry.length(); j++) {
+                    JSONObject jo_inside = m_jArry.getJSONObject(j);
+                    System.out.println("Added3 --> " + jo_inside);
+
+                    Plat plat1 = new Plat(jo_inside.getString("nom"),
+                            jo_inside.getJSONObject("ingredients").getInt("glucides"),
+                            jo_inside.getJSONObject("ingredients").getInt("proteines"),
+                            jo_inside.getJSONObject("ingredients").getInt("lipides"),
+                            jo_inside.getJSONObject("ingredients").getInt("calories")
+                    );
+
+                    plats.add(plat1);
+                    System.out.println("Added --> " + plat1);
+                }
+
+
+        } catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+
+        Repas  repas = new Repas(plats.get(0), plats.get(1), plats.get(2), image,heure);
+        return repas;
+
+    }
 }
