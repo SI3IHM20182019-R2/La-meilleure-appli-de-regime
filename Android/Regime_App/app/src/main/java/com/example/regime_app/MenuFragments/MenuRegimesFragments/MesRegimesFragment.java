@@ -89,7 +89,7 @@ public class MesRegimesFragment extends Fragment {
         recyclerView1.setLayoutManager(layoutManager);
         recyclerView2.setLayoutManager(layoutManager1);
         mAdapter = new MesRegimesAdapter(Mocks.regimes);
-        mAdapter2 = new MesRegimesAdapter(Mocks.regimes2);
+        mAdapter2 = new MesRegimesAdapter(Mocks.regimeActuel);
         recyclerView1.setAdapter(mAdapter);
         recyclerView2.setAdapter(mAdapter2);
 

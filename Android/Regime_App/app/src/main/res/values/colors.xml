@@ -11,4 +11,14 @@
     <color name="inactiveDot">#8E8E8E</color>
 
     <color name="champNonRempli">#ff7272</color>
+
+    <color name="creationRegimeBackground">#ff7272</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="tab_background_selected1">#cbe2bc</color>
+    <color name="tab_background_unselected1">#d9f2c9</color>
+
+    <color name="tab_background_selected2">#d4e2c9</color>
+    <color name="tab_background_unselected2">#e4f4d9</color>
 </resources>
