@@ -19,6 +19,12 @@
         android:background="@null"
         android:layout_above="@+id/hr">
 
+        <ImageView
+            android:layout_width="326dp"
+            android:layout_height="203dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/men_women" />
+
         <RadioGroup
             android:id="@+id/sexe-form-group"
             android:layout_width="254dp"
