@@ -32,6 +32,8 @@
     <string name="dialog_msg_preference_alimentaire">Choisissez vos preferences alimentaires :</string>
     <string name="soumettre">Soumettre</string>
     <string name="annuler">Annuler</string>
+    <string name="channel_notification">Notification deadline</string>
+    <string name="channel_notification_description">Channel alloué pour envoyer des notification en fonction du temps restant avant la deadline</string>
 
 
 </resources>

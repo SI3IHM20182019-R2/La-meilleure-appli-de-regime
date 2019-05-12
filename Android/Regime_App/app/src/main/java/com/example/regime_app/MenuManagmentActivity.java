@@ -7,8 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.regime_app.Adapters.PagerAdapter;
+import com.example.regime_app.Models.Utilisateur;
+import com.example.regime_app.Services.NotifyDeadlineService;
 
 public class MenuManagmentActivity extends AppCompatActivity {
+
+    private NotifyDeadlineService notificationService;
 
     private PagerAdapter adapter;
 
@@ -16,6 +20,12 @@ public class MenuManagmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_managment);
+
+        System.out.println("---------------------------------"+Utilisateur.getInstance().getDeadline());
+
+        Intent intentService = new Intent(getApplicationContext(), NotifyDeadlineService.class);
+        intentService.putExtra("deadline", Utilisateur.getInstance().getDeadline());
+        startService(intentService);
 
         final NonSwipeableViewPager viewPager = findViewById(R.id.myContainer);
         TabLayout tabLayout = findViewById(R.id.menu);

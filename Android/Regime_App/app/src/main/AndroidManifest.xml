@@ -54,7 +54,7 @@
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
 
-        <service android:name=".Services.NotifyTestService" />
+        <service android:name=".Services.NotifyDeadlineService" />
     </application>
 
 </manifest>

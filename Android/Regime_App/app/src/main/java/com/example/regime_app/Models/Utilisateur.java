@@ -29,7 +29,7 @@ public class Utilisateur extends AppCompatActivity {
         taille = 175;
         poids = 85.0;
         obectif = 75.0;
-        deadline = "13/05/2019";
+        deadline = "20/5/2019";
         resetPreferences();
         resetAllergies();
     }

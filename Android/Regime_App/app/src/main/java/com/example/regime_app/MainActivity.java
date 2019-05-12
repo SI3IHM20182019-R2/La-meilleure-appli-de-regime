@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonConnexion;
     private Button buttonSlider;
     private Button buttonNotification;
-    private Button buttonSmartNotification;
 
     private NotificationManagerCompat notificationManagerCompat;
 
@@ -83,14 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
         buttonNotification = this.findViewById(R.id.notification);
         buttonNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showNotificationTest("Title of this notification", "Notification's content here");
-            }
-        });
-
-        buttonSmartNotification = this.findViewById(R.id.smart_notification);
-        buttonSmartNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showNotificationTest("Title of this notification", "Notification's content here");
