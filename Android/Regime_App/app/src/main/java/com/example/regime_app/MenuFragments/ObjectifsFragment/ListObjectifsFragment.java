@@ -1,5 +1,6 @@
 package com.example.regime_app.MenuFragments.ObjectifsFragment;
 
+import android.app.Dialog;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.regime_app.Adapters.ListObjectifsAdapter;
@@ -24,6 +26,7 @@ import java.util.Date;
 public class ListObjectifsFragment extends Fragment {
 
     private ArrayList<ObjectifInterface> objectifs = new ArrayList<>();
+    private Dialog myDialog;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,7 +38,17 @@ public class ListObjectifsFragment extends Fragment {
         this.objectifs.add(new Objectif(TypeObjectif.PerteDePoids, new Date(), false));
 
         initRecyclerView(view);
-
+        Button buttonsupprimer = view.findViewById(R.id.boutonSupprimer);
+        buttonsupprimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog = new Dialog(view.getContext());
+                myDialog.setContentView(R.layout.pop_up_confirmation_suppression_objectif);
+                TextView textBut = (TextView) myDialog.findViewById(R.id.questionSuppression);
+                textBut.setText("Voulez vous vraiment arreter votre objectif : " + Commom.objectifSelected.toString().toLowerCase() + "?");
+                myDialog.show();
+            }
+        });
         return view;
     }
 
