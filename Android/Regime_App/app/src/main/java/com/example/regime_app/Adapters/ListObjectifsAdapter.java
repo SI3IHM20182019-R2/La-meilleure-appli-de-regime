@@ -22,7 +22,7 @@ public class ListObjectifsAdapter extends RecyclerView.Adapter<MesObjectifsViewH
     ArrayList<ObjectifInterface> objectifs;
     private Context mContext;
 
-    int row_index = -1;
+    int row_index = 0;
 
     public ListObjectifsAdapter(Context context, ArrayList<ObjectifInterface> objectifs) {
         this.objectifs = objectifs;
@@ -50,13 +50,21 @@ public class ListObjectifsAdapter extends RecyclerView.Adapter<MesObjectifsViewH
             }
         });
         if (row_index==position){
-            holder.itemView.setBackgroundColor(Color.parseColor("#000000"));
+            holder.itemView.setBackgroundColor(Color.parseColor("#4CAF50"));
             holder.name.setTextColor(Color.parseColor("#FFFFFF"));
 
         }
         else {
             holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
             holder.name.setTextColor(Color.parseColor("#000000"));
+        }
+
+        if (Commom.objectifSelected != null) {
+            TextView textBut = (TextView) Commom.listObjectifView.findViewById(R.id.butObjectif);
+            textBut.setText(Commom.objectifSelected.getBut());
+
+            TextView textConseil = (TextView) Commom.listObjectifView.findViewById(R.id.conseilCoach);
+            textConseil.setText(Commom.objectifSelected.getConseilCoach());
         }
     }
 

@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridLayout;
 
 import com.example.regime_app.MenuFragments.ObjectifsFragment.InfoObjectifFragments.AmeliorationSilhouetteFragment;
@@ -28,6 +29,15 @@ public class AjoutObjectifFragment extends Fragment {
         final View view = inflater.inflate(R.layout.ajouter_objectif, container, false);
         GridLayout gridObjectifs = (GridLayout) view.findViewById(R.id.grid_view_ajout_objectif);
         setSingleEvent(gridObjectifs);
+
+        Button buttomAjouter = view.findViewById(R.id.boutonAjouterAMesObejctifs);
+        buttomAjouter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getChildFragmentManager().beginTransaction().add(R.id.AjouterUnObjectifLayout, new ListObjectifsFragment()).commit();
+            }
+        });
+
         return view;
     }
 
@@ -53,7 +63,7 @@ public class AjoutObjectifFragment extends Fragment {
                         CardView cardView = (CardView) gridLayout.getChildAt(i);
                         cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                     }
-                    cardView.setCardBackgroundColor(Color.parseColor("#CECECE"));
+                    cardView.setCardBackgroundColor(Color.parseColor("#4CAF50"));
                     getChildFragmentManager().beginTransaction().add(R.id.InfoComplementaireLayout, getItem(idGridView)).commit();
                 }
             });

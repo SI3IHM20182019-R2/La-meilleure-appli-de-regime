@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "typeObjectif": "PerteDePoids",
+    "dateDebut": "2019-05-01",
+    "dateFin": "2019-05-26",
+    "infoComplementaire": "4"
+  },
+  {
+    "id": 1,
+    "typeObjectif": "MangerSain",
+    "dateDebut": "2019-05-01",
+    "dateFin": "2019-05-26",
+    "infoComplementaire": "PlusDeFruitLegume"
+  },
+  {
+    "id": 2,
+    "typeObjectif": "ReduireGlucides",
+    "dateDebut": "2019-05-01",
+    "dateFin": "2019-05-26",
+    "infoComplementaire": "Modere"
+  },
+  {
+    "id": 3,
+    "typeObjectif": "PerteGraisse",
+    "dateDebut": "2019-05-01",
+    "dateFin": "2019-05-26",
+    "infoComplementaire": "Cuisses"
+  }
+]

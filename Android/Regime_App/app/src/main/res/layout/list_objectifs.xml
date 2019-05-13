@@ -1,60 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ListObjectifLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="20">
 
     <!--Titre page-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="2"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="2">
 
         <TextView
-            android:text="Mes Objéctifs"
-            android:textSize ="32sp"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:layout_centerInParent="true"
+            android:text="Mes Objéctifs"
+            android:textSize="32sp" />
     </RelativeLayout>
 
     <!--RecyclerView des objectifs-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="4"
         android:layout_height="0dp"
         android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp">
+        android:layout_marginRight="13dp"
+        android:layout_weight="4">
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recyclerView"
-            android:orientation="horizontal">
-        </android.support.v7.widget.RecyclerView>
+            android:orientation="horizontal"></android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+    <!--Bouton ajouter un objectif-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/boutonAjouter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_button_white"
+            android:text="Ajouter un nouvel objectif" />
     </RelativeLayout>
 
     <!--Bar de progression objectif-->
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="2"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
         <TextView
-            android:text="Barre de progression"
-            android:textSize="10dp"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="But de l'objectif"
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <!--But de l'objectif-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="4"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="4">
 
         <TextView
             android:id="@+id/butObjectif"
@@ -62,14 +77,27 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="But de l'objectif"
-            android:textSize="10dp" />
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Conseil du coach"
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <!--Conseil du coach-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="4"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="4">
 
         <TextView
             android:id="@+id/conseilCoach"
@@ -77,14 +105,14 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Conseil du coach"
-            android:textSize="10dp" />
+            android:textSize="14dp" />
     </RelativeLayout>
 
     <!--Bouton supprimer un objectif-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <Button
             android:id="@+id/boutonSupprimer"
