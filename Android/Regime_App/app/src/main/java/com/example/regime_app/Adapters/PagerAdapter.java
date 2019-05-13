@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.regime_app.MenuFragments.EvolutionFragment;
-import com.example.regime_app.MenuFragments.ObjectifsFragment.MesObjectifsFragment;
+import com.example.regime_app.MenuFragments.ObjectifsFragment.ListObjectifsFragment;
 import com.example.regime_app.MenuFragments.ProfilFragment;
 import com.example.regime_app.MenuFragments.MenuRegimesManagmentFragment;
 import com.example.regime_app.PlatsAccueilFragment;
@@ -26,7 +26,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 0 : fragment =  new PlatsAccueilFragment(); break;
             case 1 : fragment = new ProfilFragment(); break;
             case 2 : fragment = new MenuRegimesManagmentFragment(); break;
-            case 3 : fragment = new MesObjectifsFragment(); break;
+            case 3 : fragment = new ListObjectifsFragment(); break;
             case 4 : fragment = new EvolutionFragment(); break;
         }
         return fragment;
