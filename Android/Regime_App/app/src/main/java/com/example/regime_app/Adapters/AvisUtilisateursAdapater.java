@@ -92,14 +92,15 @@ import com.example.regime_app.ViewHolders.AvisUtilisateursHolder;
 import com.example.regime_app.ViewHolders.MesRegimesHolder;
 import com.example.regime_app.ViewHolders.RechercheRegimeViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AvisUtilisateursAdapater extends RecyclerView.Adapter {
     private Regime regime;
     private List<Avis> listavis;
 
-    public AvisUtilisateursAdapater(Regime regime) {
-        this.listavis = regime.getListavis();
+    public AvisUtilisateursAdapater(ArrayList<Avis> regimeavis) {
+        this.listavis = regimeavis;
     }
 
     @NonNull

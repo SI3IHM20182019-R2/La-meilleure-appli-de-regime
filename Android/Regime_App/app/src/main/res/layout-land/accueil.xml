@@ -176,7 +176,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button5"
+                        android:id="@+id/precedent"
                         android:layout_width="105dp"
                         android:layout_height="38dp"
                         android:background="#FCF8F8"
@@ -192,7 +192,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/button4"
+                        android:id="@+id/suivant"
                         android:layout_width="90dp"
                         android:layout_height="38dp"
                         android:background="#FFFCFC"
