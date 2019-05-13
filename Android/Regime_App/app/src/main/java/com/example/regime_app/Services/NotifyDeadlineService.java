@@ -7,12 +7,14 @@ import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 
+import com.example.regime_app.Models.Utilisateur;
 import com.example.regime_app.R;
 
 import java.util.Calendar;
@@ -48,12 +50,18 @@ public class NotifyDeadlineService extends IntentService {
         int currentMonth = calendar.get(Calendar.MONTH)+1;
         int currentDay = calendar.get(Calendar.DAY_OF_MONTH)+1;
 
-        System.out.println(currentMonth + "/" + currentDay + "/" + currentYear);
+        Utilisateur user = Utilisateur.getInstance();
+        Double objectif = user.getObectif();
+        Double poids = user.getPoids();
 
 //        showNotificationTest("La deadline arrive bientôt !", "Il ne te reste plus que " + Integer.toString(day-currentDay) + " jours avant d'arriver à ta deadline");
 
-        if (year-currentYear <= 0 && month-currentMonth <= 0 && day-currentDay <= 7) {
-            showNotificationTest("La deadline arrive bientôt !", "Il ne te reste plus que " + Integer.toString(day-currentDay) + " jours avant d'arriver à ta deadline");
+        System.out.println(objectif-poids);
+        if (year-currentYear <= 0 && month-currentMonth <= 0 && day-currentDay <= 7 && poids-objectif > 0) {
+            showBadNotification(day-currentDay);
+        }
+        if (year-currentYear <= 0 && month-currentMonth <= 0 && day-currentDay <= 7 && poids-objectif <= 0) {
+            showGoodNotification();
         }
     }
 
@@ -89,6 +97,28 @@ public class NotifyDeadlineService extends IntentService {
                 .setContentText(content)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         Log.d("Main Activity:", "test notification pushed");
+        notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
+    }
+
+    public void showGoodNotification() {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder( this, CHANNEL_TEST_ID)
+                .setSmallIcon(R.drawable.check_icon)
+                .setContentTitle("La deadline arrive bientôt !")
+                .setContentText("Bravo! tu as réussit à arriver a ton objectif. Tu peux t'en fixer un nouveau dès maintenant ou bien attendre la fin de l'actuel")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setColor(Color.GREEN);
+        Log.d("Main Activity:", "good notification pushed");
+        notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
+    }
+
+    public void showBadNotification(int nbJourRestant) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder( this, CHANNEL_TEST_ID)
+                .setSmallIcon(R.drawable.warning_icon)
+                .setContentTitle("La deadline arrive bientôt !")
+                .setContentText("Il ne te reste plus que " + Integer.toString(nbJourRestant) + " jours avant d'arriver à ta deadline")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setColor(Color.RED);
+        Log.d("Main Activity:", "good notification pushed");
         notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
     }
 }

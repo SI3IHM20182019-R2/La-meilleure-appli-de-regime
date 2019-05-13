@@ -39,6 +39,15 @@ public class PlatsAccueilFragment extends Fragment {
         this.nom = view.findViewById(R.id.nomValue);
         this.nom.setText(utilisateur.getPrenom()+" "+utilisateur.getNom());
 
+        this.poids = view.findViewById(R.id.poidsValue);
+        this.poids.setText(Double.toString(utilisateur.getPoids())+" kg");
+
+        this.objectifActuel = view.findViewById(R.id.textView12);
+        this.objectifActuel.setText(Double.toString(utilisateur.getPoids())+" kg");
+
+        this.objectif = view.findViewById(R.id.textView19);
+        this.objectif.setText(Double.toString(utilisateur.getObectif())+" kg");
+
         return view;
 
 }
