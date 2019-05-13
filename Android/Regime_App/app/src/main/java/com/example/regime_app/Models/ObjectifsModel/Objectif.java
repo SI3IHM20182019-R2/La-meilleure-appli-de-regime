@@ -7,12 +7,12 @@ public class Objectif implements ObjectifInterface {
 
     private TypeObjectif typeObjectif;
     private Date dateFinObjectif;
-    private boolean isChecked;
+    private Date dateDebutObjectif;
 
-    public Objectif(TypeObjectif typeObjectif, Date dateFinObjectif, boolean isChecked) {
+    public Objectif(TypeObjectif typeObjectif, Date dateDebutObjectif, Date dateFinObjectif) {
         this.typeObjectif = typeObjectif;
+        this.dateDebutObjectif = dateDebutObjectif;
         this.dateFinObjectif = dateFinObjectif;
-        this.isChecked = isChecked;
     }
 
     public int getImage () {
@@ -34,11 +34,13 @@ public class Objectif implements ObjectifInterface {
     public String toString(){
         return this.typeObjectif.toString();
     }
+
+    public Date getDateDebutObjectif() {
+        return this.dateFinObjectif;
+    }
+
     public Date getDateFinObjectif() {
         return this.dateFinObjectif;
     }
 
-    public boolean isChecked(){
-        return this.isChecked;
-    }
 }

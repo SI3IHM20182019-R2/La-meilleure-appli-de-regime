@@ -15,8 +15,13 @@ import android.widget.TextView;
 import com.example.regime_app.Adapters.ListObjectifsAdapter;
 import com.example.regime_app.Commom.Commom;
 import com.example.regime_app.Interface.ObjectifInterface;
-import com.example.regime_app.Models.ObjectifsModel.NewObjectif;
+import com.example.regime_app.Models.ObjectifsModel.IntensiteObjectif;
 import com.example.regime_app.Models.ObjectifsModel.Objectif;
+import com.example.regime_app.Models.ObjectifsModel.ObjectifAmeliorationSilhouette;
+import com.example.regime_app.Models.ObjectifsModel.ObjectifMangerSain;
+import com.example.regime_app.Models.ObjectifsModel.ObjectifPerteDePoids;
+import com.example.regime_app.Models.ObjectifsModel.ObjectifPriseDeMuscle;
+import com.example.regime_app.Models.ObjectifsModel.ThemeMangerSainObjectif;
 import com.example.regime_app.Models.ObjectifsModel.TypeObjectif;
 import com.example.regime_app.R;
 
@@ -31,10 +36,10 @@ public class ListObjectifsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.list_objectifs, container, false);
-        this.objectifs.add(new Objectif(TypeObjectif.AmeliorationSilhouette, new Date(), false));
-        this.objectifs.add(new Objectif(TypeObjectif.MangerSain, new Date(), false));
-        this.objectifs.add(new Objectif(TypeObjectif.PriseDeMuscle, new Date(), false));
-        this.objectifs.add(new Objectif(TypeObjectif.PerteDePoids, new Date(), false));
+        this.objectifs.add(new ObjectifAmeliorationSilhouette(new Date(), new Date(), IntensiteObjectif.Faible));
+        this.objectifs.add(new ObjectifMangerSain(new Date(), new Date(), ThemeMangerSainObjectif.PlusDeFibre));
+        this.objectifs.add(new ObjectifPriseDeMuscle(new Date(), new Date(), 4));
+        this.objectifs.add(new ObjectifPerteDePoids(new Date(), new Date(), 4));
 
         initRecyclerView(view);
         Button buttonsupprimer = view.findViewById(R.id.boutonSupprimer);

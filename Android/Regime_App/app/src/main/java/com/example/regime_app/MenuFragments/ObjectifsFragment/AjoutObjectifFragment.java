@@ -63,7 +63,7 @@ public class AjoutObjectifFragment extends Fragment {
                         CardView cardView = (CardView) gridLayout.getChildAt(i);
                         cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                     }
-                    cardView.setCardBackgroundColor(Color.parseColor("#CECECE"));
+                    cardView.setCardBackgroundColor(Color.parseColor("#4CAF50"));
                     getChildFragmentManager().beginTransaction().add(R.id.InfoComplementaireLayout, getItem(idGridView)).commit();
                 }
             });

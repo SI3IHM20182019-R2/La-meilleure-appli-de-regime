@@ -1,0 +1,17 @@
+package com.example.regime_app.Models.ObjectifsModel;
+
+import java.util.Date;
+
+public class ObjectifPriseDeMuscle extends Objectif {
+
+    public int nbKiloAPrendre;
+
+    public ObjectifPriseDeMuscle(Date dateDebutObjectif, Date dateFinObjectif, int nbKiloAPrendre){
+        super(TypeObjectif.PriseDeMuscle, dateDebutObjectif, dateFinObjectif);
+        this.nbKiloAPrendre = nbKiloAPrendre;
+    }
+
+    public int getNbKiloAPrendre() {
+        return nbKiloAPrendre;
+    }
+}
