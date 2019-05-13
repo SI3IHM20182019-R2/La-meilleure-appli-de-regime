@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.example.regime_app.Adapters.PagerAdapter;
 import com.example.regime_app.Models.Utilisateur;
 import com.example.regime_app.Services.NotifyDeadlineService;
+import com.example.regime_app.WelcomeView.ConnexionPart.ChoixInscriptionConnexion;
 
 public class MenuManagmentActivity extends AppCompatActivity {
 
@@ -44,7 +45,7 @@ public class MenuManagmentActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 5) {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), ChoixInscriptionConnexion.class);
                     startActivity(intent);
                 } else {
                     viewPager.setCurrentItem(tab.getPosition(), false);

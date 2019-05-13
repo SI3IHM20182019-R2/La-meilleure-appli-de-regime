@@ -24,18 +24,18 @@
         <ImageView
             android:id="@+id/regime_image"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:contentDescription="Image" />
 
         <TextView
             android:id="@+id/regime_note"
-            android:textColor="#000000"
-            android:textAlignment="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:textColor="#000000" />
 
     </LinearLayout>
 
@@ -72,6 +72,15 @@
             android:background="@drawable/buttonstyle2"
             android:text="Voir details "
             android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ajouter aux favoris"
+            android:textStyle="bold"
+            android:textColor="#7a0024"/>
 
     </LinearLayout>
 

@@ -4,9 +4,11 @@
     package="com.example.regime_app"
     tools:ignore="GoogleAppIndexingWarning">>
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" android:exported="true" />
+    <uses-permission
+        android:name="android.permission.WRITE_CALENDAR"
+        android:exported="true" />
 
     <application
         android:allowBackup="true"
@@ -15,8 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".WelcomeView.WelcomePart.SelectionAllergies"/>
-        <activity android:name=".WelcomeView.WelcomePart.SelectionPreferencesAlimentaires"/>
+        <activity android:name=".WelcomeView.ConnexionPart.Connexion"></activity>
+        <activity android:name=".WelcomeView.ConnexionPart.ChoixInscriptionConnexion" />
+        <activity android:name=".WelcomeView.WelcomePart.SelectionAllergies" />
+        <activity android:name=".WelcomeView.WelcomePart.SelectionPreferencesAlimentaires" />
         <activity
             android:name=".MainActivity"
             android:configChanges="screenSize">

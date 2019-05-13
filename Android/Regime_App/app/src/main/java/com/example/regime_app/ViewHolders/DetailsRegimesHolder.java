@@ -26,6 +26,7 @@ public class DetailsRegimesHolder extends RecyclerView.ViewHolder {
     private TextView plat ;
     private TextView dessert ;
     private TextView Heure ;
+    private TextView note ;
     private ImageView repasimage ;
 
 
@@ -35,6 +36,7 @@ public class DetailsRegimesHolder extends RecyclerView.ViewHolder {
         plat = (TextView)itemView.findViewById(R.id.plat);
         dessert = (TextView)itemView.findViewById(R.id.dessert);
         Heure = (TextView)itemView.findViewById(R.id.Heure);
+        note = (TextView)itemView.findViewById(R.id.note);
         repasimage = (ImageView)itemView.findViewById(R.id.repasimage);
 
         this.context = context;

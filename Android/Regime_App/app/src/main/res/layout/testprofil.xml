@@ -85,6 +85,7 @@
                                         android:textSize="20sp" />
 
                                     <TextView
+                                        android:id="@+id/note"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingTop="10dp"
@@ -139,11 +140,12 @@
                                 android:src="@drawable/goal" />
 
                             <TextView
+                                android:id="@+id/objectif"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="20dp"
-                                android:text="OBJECTIF"
+                                android:text="Perte du Poids"
                                 android:textStyle="bold" />
                         </LinearLayout>
 
@@ -160,12 +162,13 @@
                                 android:src="@drawable/profile" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/createur"
 
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="20dp"
-                                android:text="Createur"
+                                android:text="Yury Romain"
                                 android:textStyle="bold" />
                         </LinearLayout>
 
@@ -182,12 +185,13 @@
                                 android:src="@drawable/date" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/date"
 
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="20dp"
-                                android:text="Date de création"
+                                android:text="04/12/2018"
                                 android:textStyle="bold" />
                         </LinearLayout>
 

@@ -44,6 +44,7 @@
         android:layout_width="160dp"
         android:layout_height="32dp"
         android:text="Aujourd'hui"
+        android:background="@color/activeDot"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="parent" />
