@@ -44,7 +44,7 @@ public class platsrecycleviewfragment extends Fragment {
     private RecyclerView recyclerView;
     private Button addCalendar;
     private TextView jour;
-    int day = 14;
+    int day = 13;
     int month = 4;
     int year = 2019;
 

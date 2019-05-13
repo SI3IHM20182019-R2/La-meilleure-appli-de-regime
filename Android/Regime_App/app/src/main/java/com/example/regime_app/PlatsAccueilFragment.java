@@ -54,7 +54,7 @@ public class PlatsAccueilFragment extends Fragment {
 
 
         final View view = inflater.inflate(R.layout.accueil, container, false);
-       datepicker = view.findViewById(R.id.calendar);
+        datepicker = view.findViewById(R.id.calendar);
         datepicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +112,6 @@ public class PlatsAccueilFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 page += 1;
-
                 List<Fragment> fragmentsInPlace = getChildFragmentManager().getFragments();
                 if (fragmentsInPlace == null) {
                     return;
@@ -122,6 +121,7 @@ public class PlatsAccueilFragment extends Fragment {
                 {
                     getChildFragmentManager().beginTransaction().remove(fragment).commit();
                 }
+
                 Bundle args = new Bundle();
                 platsrecycleviewfragment platsrecycleviewfragment = new platsrecycleviewfragment();
                 platsrecycleviewfragment.setArguments(args);
@@ -149,6 +149,7 @@ public class PlatsAccueilFragment extends Fragment {
                 {
                     getChildFragmentManager().beginTransaction().remove(fragment).commit();
                 }
+
                 Bundle args = new Bundle();
                 platsrecycleviewfragment platsrecycleviewfragment = new platsrecycleviewfragment();
                 platsrecycleviewfragment.setArguments(args);
