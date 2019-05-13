@@ -72,7 +72,7 @@ public class ListObjectifsFragment extends Fragment {
                 getChildFragmentManager().beginTransaction().add(R.id.ListObjectifLayout, new AjoutObjectifFragment()).commit();
             }
         });
-
+        Commom.listObjectifView = view;
         return view;
     }
 
@@ -128,14 +128,6 @@ public class ListObjectifsFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         ListObjectifsAdapter adapter = new ListObjectifsAdapter(view.getContext(), this.objectifs);
         recyclerView.setAdapter(adapter);
-
-        if (Commom.objectifSelected != null) {
-            TextView textBut = (TextView) view.findViewById(R.id.butObjectif);
-            textBut.setText(Commom.objectifSelected.getBut());
-
-            TextView textConseil = (TextView) view.findViewById(R.id.conseilCoach);
-            textConseil.setText(Commom.objectifSelected.getConseilCoach());
-        }
     }
 
     public void chargementTicket(String urlObjectifs, View view) {

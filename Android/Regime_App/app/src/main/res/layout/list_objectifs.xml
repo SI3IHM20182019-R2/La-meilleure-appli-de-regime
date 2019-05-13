@@ -51,17 +51,18 @@
     </RelativeLayout>
 
     <!--Bar de progression objectif-->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Barre de progression"
-            android:textSize="10dp" />
+            android:text="But de l'objectif"
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <!--But de l'objectif-->
@@ -76,7 +77,20 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="But de l'objectif"
-            android:textSize="10dp" />
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Conseil du coach"
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <!--Conseil du coach-->
@@ -91,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Conseil du coach"
-            android:textSize="10dp" />
+            android:textSize="14dp" />
     </RelativeLayout>
 
     <!--Bouton supprimer un objectif-->
