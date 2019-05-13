@@ -13,17 +13,25 @@ public class Utilisateur extends AppCompatActivity {
     private String sexe = null;
     private Integer age = null;
     private Integer taille = null;
-    private Float poids = null;
-    private Float obectif = null;
+    private Double poids = null;
+    private Double obectif = null;
     private String deadline = null;
     private Map<String, Boolean> preference;
     private Map<String, Boolean> allergies;
 
     private Utilisateur() {
+        nom = "DURAND";
+        prenom = "Marie";
+        mail = "marie.durand@mail.fr";
+        pwd = "mariemdp";
+        sexe = "Femme";
+        age = 42;
+        taille = 175;
+        poids = 85.0;
+        obectif = 75.0;
+        deadline = "20/5/2019";
         resetPreferences();
-        System.out.println("------------------------------------------------------------------------------------------" + preference.size());
         resetAllergies();
-        System.out.println("------------------------------------------------------------------------------------------" + allergies.size());
     }
 
     private static Utilisateur INSTANCE = new Utilisateur();
@@ -92,11 +100,11 @@ public class Utilisateur extends AppCompatActivity {
         this.taille = taille;
     }
 
-    public void setPoids(float poids) {
+    public void setPoids(double poids) {
         this.poids = poids;
     }
 
-    public void setObectif(float obectif) {
+    public void setObectif(double obectif) {
         this.obectif = obectif;
     }
 
@@ -150,11 +158,11 @@ public class Utilisateur extends AppCompatActivity {
         return taille;
     }
 
-    public float getPoids() {
+    public double getPoids() {
         return poids;
     }
 
-    public float getObectif() {
+    public double getObectif() {
         return obectif;
     }
 

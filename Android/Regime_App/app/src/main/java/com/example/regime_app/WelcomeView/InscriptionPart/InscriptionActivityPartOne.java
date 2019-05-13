@@ -21,7 +21,8 @@ public class InscriptionActivityPartOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription_part_one);
 
-        initalizeData();
+        Utilisateur.getInstance().clear();
+//        initalizeData();
 
         this.mail = this.findViewById(R.id.email_input);
         this.prenom = this.findViewById(R.id.prenom_input);
@@ -72,19 +73,19 @@ public class InscriptionActivityPartOne extends AppCompatActivity {
         return input.length() == 0;
     }
 
-    private void initalizeData() {
-        String saved_mail = Utilisateur.getInstance().getMail();
-        String saved_prenom = Utilisateur.getInstance().getPrenom();
-        String saved_nom = Utilisateur.getInstance().getNom();
-        String saved_pwd = Utilisateur.getInstance().getPwd();
-        if (saved_mail != null) this.mail.setText(saved_mail);
-        if (saved_prenom != null) this.prenom.setText(saved_prenom);
-        if (saved_nom != null) this.nom.setText(saved_nom);
-        if (saved_pwd != null) {
-            this.pwd.setText(saved_pwd);
-            this.confirm.setText(saved_pwd);
-        }
-    }
+//    private void initalizeData() {
+//        String saved_mail = Utilisateur.getInstance().getMail();
+//        String saved_prenom = Utilisateur.getInstance().getPrenom();
+//        String saved_nom = Utilisateur.getInstance().getNom();
+//        String saved_pwd = Utilisateur.getInstance().getPwd();
+//        if (saved_mail != null) this.mail.setText(saved_mail);
+//        if (saved_prenom != null) this.prenom.setText(saved_prenom);
+//        if (saved_nom != null) this.nom.setText(saved_nom);
+//        if (saved_pwd != null) {
+//            this.pwd.setText(saved_pwd);
+//            this.confirm.setText(saved_pwd);
+//        }
+//    }
 
     private void storeData() {
         String mailToStore = this.mail.getText().toString();

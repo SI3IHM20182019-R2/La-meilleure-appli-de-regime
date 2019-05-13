@@ -46,7 +46,6 @@ public class CreerIngredientFragment extends FragmentSwitchable {
         Button confirmer = view.findViewById(R.id.ingredient_confirmer);
 
         EditText nom = view.findViewById(R.id.modifier_ingredient_nom);
-        EditText description = view.findViewById(R.id.modifier_ingredient_description);
 
         TextView champsNonRemplis = view.findViewById(R.id.creer_ingredient_champs_non_remplis);
 
@@ -61,7 +60,7 @@ public class CreerIngredientFragment extends FragmentSwitchable {
             if (!nom.getText().toString().equals("") && !glucides.getText().toString().equals("") && !lipides.getText().toString().equals("") && !proteines.getText().toString().equals("") && !calories.getText().toString().equals("")) {
                 s2.setReadyToSwitch(true);
                 getFragmentManager().beginTransaction().remove(this).commit();
-                Mocks.addIngredient(new Ingredient(nom.getText().toString(), description.getText().toString(), ingredientPhoto, Float.parseFloat(glucides.getText().toString())/100, Float.parseFloat(lipides.getText().toString())/100, Float.parseFloat(proteines.getText().toString())/100, Float.parseFloat(calories.getText().toString())/100));
+                Mocks.addIngredient(new Ingredient(nom.getText().toString(), ingredientPhoto, Float.parseFloat(glucides.getText().toString())/100, Float.parseFloat(lipides.getText().toString())/100, Float.parseFloat(proteines.getText().toString())/100, Float.parseFloat(calories.getText().toString())/100));
             } else {
                 champsNonRemplis.setAlpha(1.0f);
                 nom.setBackground(getContext().getResources().getDrawable(R.drawable.red_square, getContext().getTheme()));

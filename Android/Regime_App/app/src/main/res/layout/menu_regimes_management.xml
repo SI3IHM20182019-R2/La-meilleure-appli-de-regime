@@ -11,13 +11,15 @@
         android:id="@+id/regimesMenu"
         android:layout_width="match_parent"
         android:layout_height="@dimen/tablayout_height"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@drawable/menu2"/>
 
     <com.example.regime_app.NonSwipeableViewPager
         android:id="@+id/myRegimesContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/tablayout_height"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/greenbackround" />
 
 </android.support.constraint.ConstraintLayout>

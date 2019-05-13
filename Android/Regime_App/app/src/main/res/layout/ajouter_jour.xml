@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/greenbackround">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -100,13 +101,15 @@
                 android:layout_marginStart="10dp"/>
         </LinearLayout>
         <Button
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:id="@+id/ajouter_repas"
             android:text="Ajouter un repas"
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/ButtonTextAppearance"/>
+            android:textSize="14sp"
+            android:background="@drawable/buttonstyle2"
+            android:paddingTop="5dp"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

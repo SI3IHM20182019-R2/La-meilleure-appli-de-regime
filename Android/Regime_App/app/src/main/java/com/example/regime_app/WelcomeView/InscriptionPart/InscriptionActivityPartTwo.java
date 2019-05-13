@@ -188,8 +188,8 @@ public class InscriptionActivityPartTwo extends AppCompatActivity {
         Utilisateur utilisateur = Utilisateur.getInstance();
         utilisateur.setAge(Integer.parseInt(ageToStore));
         utilisateur.setTaille(Integer.parseInt(sizeToStore));
-        utilisateur.setPoids(Float.parseFloat(weightToStore));
-        utilisateur.setObectif(Float.parseFloat(objectifToStore));
+        utilisateur.setPoids(Double.parseDouble(weightToStore));
+        utilisateur.setObectif(Double.parseDouble(objectifToStore));
         utilisateur.setDeadline(deadlineToStore);
 
         RadioButton checkedSexe = findViewById(sexeInput.getCheckedRadioButtonId());

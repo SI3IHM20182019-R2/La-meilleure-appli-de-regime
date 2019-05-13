@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/greenbackround">
 
     <LinearLayout
         android:orientation="vertical"
@@ -98,7 +99,8 @@
                         android:layout_marginStart="6dp"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/stroke2px"/>
+                        android:background="@drawable/stroke2px"
+                        android:inputType="number"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_marginTop="10dp"
@@ -114,7 +116,8 @@
                         android:layout_marginStart="15dp"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/stroke2px"/>
+                        android:background="@drawable/stroke2px"
+                        android:inputType="number"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -136,7 +139,8 @@
                         android:layout_marginStart="15dp"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/stroke2px"/>
+                        android:background="@drawable/stroke2px"
+                        android:inputType="number"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_marginTop="10dp"
@@ -152,7 +156,8 @@
                         android:layout_marginStart="5dp"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/stroke2px"/>
+                        android:background="@drawable/stroke2px"
+                        android:inputType="number"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -162,7 +167,9 @@
             android:text="Confirmer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/ButtonTextAppearance"/>
+            android:textSize="14sp"
+            android:background="@drawable/buttonstyle2"
+            android:paddingTop="5dp"/>
 
         <TextView
             android:id="@+id/creer_ingredient_champs_non_remplis"

@@ -9,12 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
-import com.example.regime_app.Adapters.AccueilAdapter;
-import com.example.regime_app.Adapters.RegimesPagerAdapter;
-
-import java.util.List;
+import com.example.regime_app.Models.Utilisateur;
 
 
 public class PlatsAccueilFragment extends Fragment {
@@ -23,6 +20,8 @@ public class PlatsAccueilFragment extends Fragment {
     private ViewPager pagerhere;
 
     private static int value = 0;
+
+    private TextView nom, poids, objectifActuel, objectif;
 
     /**
      * The pager adapter, which provides the pages to the view pager widget.
@@ -47,24 +46,23 @@ public class PlatsAccueilFragment extends Fragment {
                 List<Fragment> fragmentsInPlace = getChildFragmentManager().getFragments();
                 if (fragmentsInPlace == null) {
                     return;
-                }
 
+                }
                 for (Fragment fragment : fragmentsInPlace)
                 {
                     getChildFragmentManager().beginTransaction().remove(fragment).commit();
                 }
-                platsrecycleviewfragment platsrecycleviewfragment = new platsrecycleviewfragment();
                 Bundle args = new Bundle();
-                args.putInt("numberpage", page);
+                platsrecycleviewfragment platsrecycleviewfragment = new platsrecycleviewfragment();
                 platsrecycleviewfragment.setArguments(args);
-
+                args.putInt("numberpage", page);
                 getChildFragmentManager().beginTransaction().add(R.id.fragmentrecycle, platsrecycleviewfragment).commit();
-
-
-
         }
         });
+        Utilisateur utilisateur = Utilisateur.getInstance();
 
+        this.nom = view.findViewById(R.id.nomValue);
+        this.nom.setText(utilisateur.getPrenom()+" "+utilisateur.getNom());
         return view;
 
 
