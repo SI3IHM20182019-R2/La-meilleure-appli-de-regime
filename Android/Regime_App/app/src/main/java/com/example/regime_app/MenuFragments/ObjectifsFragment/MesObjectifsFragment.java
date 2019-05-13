@@ -27,28 +27,7 @@ public class MesObjectifsFragment extends Fragment {
         final View view = inflater.inflate(R.layout.mes_objectifs, container, false);
         getChildFragmentManager().beginTransaction().add(R.id.MesObjectifsLayout, this.listObjectifsFragment).commit();
         RelativeLayout mesObjectifsLayout = (RelativeLayout) view.findViewById(R.id.MesObjectifsLayout);
-        //setSingleEvent(mesObjectifsLayout);
         return view;
     }
-/*
-    private void setSingleEvent(final RelativeLayout gridLayout){
-        @Override
-        public void onClick(View view) {
-            List<Fragment> fragmentsInPlace = getChildFragmentManager().getFragments();
-            if (fragmentsInPlace == null) {
-                return;
-            }
 
-            for (Fragment fragment : fragmentsInPlace)
-            {
-                getChildFragmentManager().beginTransaction().remove(fragment).commit();
-            }
-
-            for (int i = 0; i<gridLayout.getChildCount(); i++) {
-                CardView cardView = (CardView) gridLayout.getChildAt(i);
-                cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-            }
-             getChildFragmentManager().beginTransaction().add(R.id.InfoComplementaireLayout, getItem(idGridView)).commit();
-        }
-    });*/
 }

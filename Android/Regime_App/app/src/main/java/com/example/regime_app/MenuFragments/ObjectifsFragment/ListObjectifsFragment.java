@@ -31,7 +31,6 @@ public class ListObjectifsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.list_objectifs, container, false);
-        this.objectifs.add(new NewObjectif());
         this.objectifs.add(new Objectif(TypeObjectif.AmeliorationSilhouette, new Date(), false));
         this.objectifs.add(new Objectif(TypeObjectif.MangerSain, new Date(), false));
         this.objectifs.add(new Objectif(TypeObjectif.PriseDeMuscle, new Date(), false));
@@ -47,6 +46,14 @@ public class ListObjectifsFragment extends Fragment {
                 TextView textBut = (TextView) myDialog.findViewById(R.id.questionSuppression);
                 textBut.setText("Voulez vous vraiment arreter votre objectif : " + Commom.objectifSelected.toString().toLowerCase() + "?");
                 myDialog.show();
+            }
+        });
+
+        Button buttomAjouter = view.findViewById(R.id.boutonAjouter);
+        buttomAjouter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getChildFragmentManager().beginTransaction().add(R.id.ListObjectifLayout, new AjoutObjectifFragment()).commit();
             }
         });
         return view;
