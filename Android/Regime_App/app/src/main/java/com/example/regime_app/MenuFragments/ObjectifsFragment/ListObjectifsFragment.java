@@ -61,34 +61,7 @@ public class ListObjectifsFragment extends Fragment {
         buttonsupprimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myDialog = new Dialog(view.getContext());
-                myDialog.setContentView(R.layout.pop_up_confirmation_suppression_objectif);
-                TextView textBut = (TextView) myDialog.findViewById(R.id.questionSuppression);
-                System.out.println("SUPRESSION" + Commom.objectifSelected.getId());
-                textBut.setText("Voulez vous vraiment arreter votre objectif : " + Commom.objectifSelected.toString().toLowerCase() + "?");
-                myDialog.show();
-
-                RequestQueue requestQueue = Volley.newRequestQueue(view.getContext());
-                JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
-                        Request.Method.DELETE,
-                        urlObjectifs + '/' + Commom.objectifSelected.getId(),
-                        null,
-                        new Response.Listener<JSONArray>() {
-                            @Override
-                            public void onResponse(JSONArray response) {
-                                Log.e("Responce ", response.toString());
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.e("Error ", error.toString());
-                            }
-                        }
-                );
-                requestQueue.add(jsonArrayRequest);
-                Commom.objectifSelected = objectifs.get(0);
-
+                suppression (view, urlObjectifs);
             }
         });
 
@@ -186,5 +159,54 @@ public class ListObjectifsFragment extends Fragment {
                 }
         );
         requestQueue.add(jsonArrayRequest);
+    }
+
+    public void suppression (View view, String urlObjectifs) {
+        myDialog = new Dialog(view.getContext());
+        myDialog.setContentView(R.layout.pop_up_confirmation_suppression_objectif);
+        TextView textBut = (TextView) myDialog.findViewById(R.id.questionSuppression);
+        textBut.setText("Voulez vous vraiment arreter votre objectif : " + Commom.objectifSelected.toString().toLowerCase() + "?");
+        Button buttonOui = (Button) myDialog.findViewById(R.id.boutonOui);
+        buttonOui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                suppressionTicket(view, urlObjectifs);
+                myDialog.dismiss();
+            }
+        });
+
+        Button buttonNon = (Button) myDialog.findViewById(R.id.boutonNon);
+        buttonNon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+            }
+        });
+
+        myDialog.show();
+    }
+
+    public void suppressionTicket(View view, String urlObjectifs){
+        RequestQueue requestQueue = Volley.newRequestQueue(view.getContext());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.DELETE,
+                urlObjectifs + '/' + Commom.objectifSelected.getId(),
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.e("Responce ", response.toString());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error ", error.toString());
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
+        Commom.objectifSelected = objectifs.get(0);
+        getChildFragmentManager().beginTransaction().add(R.id.ListObjectifLayout, new ListObjectifsFragment()).commit();
     }
 }
