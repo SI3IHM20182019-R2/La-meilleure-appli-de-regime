@@ -33,10 +33,10 @@
             android:layout_weight="2">
 
             <Spinner
-                android:id="@+id/intensiteObjectif"
+                android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -73,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
+                android:text="AAAA-MM-JJ"
                 android:layout_centerInParent="true"/>
 
         </RelativeLayout>
