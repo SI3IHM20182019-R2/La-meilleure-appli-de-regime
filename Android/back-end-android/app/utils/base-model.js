@@ -21,6 +21,14 @@ module.exports = class BaseModel {
     this.load();
   }
 
+  getById(id) {
+    console.log('fffff' + id);
+    if (typeof id === 'string') id = ''+ id;
+    const item = this.items.find(i => i.id === id);
+    if (!item) throw new NotFoundError(`Cannot get ${this.name} id=${id} : not found`);
+    return item;
+  }
+
   load() {
     try {
       this.items = JSON.parse(fs.readFileSync(this.filePath, 'utf8'));

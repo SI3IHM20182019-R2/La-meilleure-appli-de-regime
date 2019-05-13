@@ -6,6 +6,8 @@ import java.util.Date;
 
 public interface ObjectifInterface {
 
+    public int getId();
+
     public String toString ();
 
     public int getImage ();

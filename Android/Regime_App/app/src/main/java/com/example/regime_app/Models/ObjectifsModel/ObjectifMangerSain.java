@@ -6,8 +6,8 @@ public class ObjectifMangerSain extends Objectif {
 
     public ThemeMangerSainObjectif themeMangerSainObjectif;
 
-    public ObjectifMangerSain(Date dateDebutObjectif, Date dateFinObjectif, ThemeMangerSainObjectif themeMangerSainObjectif){
-        super(TypeObjectif.MangerSain, dateDebutObjectif, dateFinObjectif);
+    public ObjectifMangerSain(Date dateDebutObjectif, Date dateFinObjectif, ThemeMangerSainObjectif themeMangerSainObjectif, int id){
+        super(TypeObjectif.MangerSain, dateDebutObjectif, dateFinObjectif, id);
         this.themeMangerSainObjectif = themeMangerSainObjectif;
     }
 

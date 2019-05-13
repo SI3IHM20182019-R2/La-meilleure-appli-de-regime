@@ -8,13 +8,18 @@ public class Objectif implements ObjectifInterface {
     private TypeObjectif typeObjectif;
     private Date dateFinObjectif;
     private Date dateDebutObjectif;
+    private int id;
 
-    public Objectif(TypeObjectif typeObjectif, Date dateDebutObjectif, Date dateFinObjectif) {
+    public Objectif(TypeObjectif typeObjectif, Date dateDebutObjectif, Date dateFinObjectif, int id) {
         this.typeObjectif = typeObjectif;
         this.dateDebutObjectif = dateDebutObjectif;
         this.dateFinObjectif = dateFinObjectif;
+        this.id = id;
     }
 
+    public int getId(){
+        return this.id;
+    }
     public int getImage () {
         return this.typeObjectif.getImage();
     }

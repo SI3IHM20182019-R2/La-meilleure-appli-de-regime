@@ -11,20 +11,20 @@
     "typeObjectif": "MangerSain",
     "dateDebut": "2019-05-01",
     "dateFin": "2019-05-26",
-    "infoComplementaire": "PlusDeFibre"
+    "infoComplementaire": "PlusDeFruitLegume"
   },
   {
     "id": 2,
     "typeObjectif": "ReduireGlucides",
     "dateDebut": "2019-05-01",
     "dateFin": "2019-05-26",
-    "infoComplementaire": "Faible"
+    "infoComplementaire": "Modere"
   },
   {
     "id": 3,
     "typeObjectif": "PerteGraisse",
     "dateDebut": "2019-05-01",
     "dateFin": "2019-05-26",
-    "infoComplementaire": "Ventre"
+    "infoComplementaire": "Cuisses"
   }
 ]

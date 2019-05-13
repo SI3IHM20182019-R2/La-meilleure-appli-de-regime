@@ -55,31 +55,7 @@ public class ListObjectifsFragment extends Fragment {
         String urlObjectifs = "http://" + Commom.ipLocal + ":8081/api/objectifs";
         final View view = inflater.inflate(R.layout.list_objectifs, container, false);
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this.getContext());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
-                Request.Method.GET,
-                urlObjectifs,
-                null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        miseAjoutObjectif(view, response);
-                        Log.e("Response ", response.toString());
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("Error ", error.toString());
-                    }
-                }
-        );
-        requestQueue.add(jsonArrayRequest);
+        chargementTicket(urlObjectifs, view);
 
         Button buttonsupprimer = view.findViewById(R.id.boutonSupprimer);
         buttonsupprimer.setOnClickListener(new View.OnClickListener() {
@@ -88,8 +64,31 @@ public class ListObjectifsFragment extends Fragment {
                 myDialog = new Dialog(view.getContext());
                 myDialog.setContentView(R.layout.pop_up_confirmation_suppression_objectif);
                 TextView textBut = (TextView) myDialog.findViewById(R.id.questionSuppression);
+                System.out.println("SUPRESSION" + Commom.objectifSelected.getId());
                 textBut.setText("Voulez vous vraiment arreter votre objectif : " + Commom.objectifSelected.toString().toLowerCase() + "?");
                 myDialog.show();
+
+                RequestQueue requestQueue = Volley.newRequestQueue(view.getContext());
+                JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                        Request.Method.DELETE,
+                        urlObjectifs + '/' + Commom.objectifSelected.getId(),
+                        null,
+                        new Response.Listener<JSONArray>() {
+                            @Override
+                            public void onResponse(JSONArray response) {
+                                Log.e("Responce ", response.toString());
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.e("Error ", error.toString());
+                            }
+                        }
+                );
+                requestQueue.add(jsonArrayRequest);
+                Commom.objectifSelected = objectifs.get(0);
+
             }
         });
 
@@ -110,12 +109,15 @@ public class ListObjectifsFragment extends Fragment {
             Date dateDebut = null;
             Date dateFin = null;
             String infoComplementaire = null;
+            int id = -1;
+
             try {
                 JSONObject jsonObject = objectifArray.getJSONObject(i);
                 typeObjectif = jsonObject.get("typeObjectif").toString();
                 dateDebut = format.parse(jsonObject.get("dateDebut").toString());
                 dateFin= format.parse(jsonObject.get("dateFin").toString());
                 infoComplementaire = jsonObject.get("infoComplementaire").toString();
+                id = jsonObject.getInt("id");
             } catch (JSONException e) {
                 e.printStackTrace();
             } catch (ParseException e) {
@@ -124,24 +126,25 @@ public class ListObjectifsFragment extends Fragment {
 
 
             if (typeObjectif.equals(TypeObjectif.AmeliorationSilhouette.toString())){
-                this.objectifs.add(new ObjectifAmeliorationSilhouette(dateDebut, dateFin, IntensiteObjectif.valueOf(infoComplementaire)));
+                this.objectifs.add(new ObjectifAmeliorationSilhouette(dateDebut, dateFin, IntensiteObjectif.valueOf(infoComplementaire), id));
             }
             if (typeObjectif.equals(TypeObjectif.MangerSain.toString())){
-                this.objectifs.add(new ObjectifMangerSain(dateDebut, dateFin, ThemeMangerSainObjectif.valueOf(infoComplementaire)));
+                this.objectifs.add(new ObjectifMangerSain(dateDebut, dateFin, ThemeMangerSainObjectif.valueOf(infoComplementaire), id));
             }
             if (typeObjectif.equals(TypeObjectif.PerteDePoids.toString())){
-                this.objectifs.add(new ObjectifPerteDePoids(dateDebut, dateFin, Integer.valueOf(infoComplementaire)));
+                this.objectifs.add(new ObjectifPerteDePoids(dateDebut, dateFin, Integer.valueOf(infoComplementaire), id));
             }
             if (typeObjectif.equals(TypeObjectif.PerteGraisse.toString())){
-                this.objectifs.add(new ObjectifPerdeDeGraisseLocalise(dateDebut, dateFin, ZoneCorpsGraisseObjectif.valueOf(infoComplementaire)));
+                this.objectifs.add(new ObjectifPerdeDeGraisseLocalise(dateDebut, dateFin, ZoneCorpsGraisseObjectif.valueOf(infoComplementaire), id));
             }
             if (typeObjectif.equals(TypeObjectif.PriseDeMuscle.toString())){
-                this.objectifs.add(new ObjectifPriseDeMuscle(dateDebut, dateFin, Integer.valueOf(infoComplementaire)));
+                this.objectifs.add(new ObjectifPriseDeMuscle(dateDebut, dateFin, Integer.valueOf(infoComplementaire), id));
             }
             if (typeObjectif.equals(TypeObjectif.ReduireGlucides.toString())){
-                this.objectifs.add(new ObjectifReduireGlucides(dateDebut, dateFin, IntensiteObjectif.valueOf(infoComplementaire)));
+                this.objectifs.add(new ObjectifReduireGlucides(dateDebut, dateFin, IntensiteObjectif.valueOf(infoComplementaire), id));
             }
         }
+        Commom.objectifSelected = this.objectifs.get(0);
         initRecyclerView(view);
     }
 
@@ -160,5 +163,28 @@ public class ListObjectifsFragment extends Fragment {
             TextView textConseil = (TextView) view.findViewById(R.id.conseilCoach);
             textConseil.setText(Commom.objectifSelected.getConseilCoach());
         }
+    }
+
+    public void chargementTicket(String urlObjectifs, View view) {
+        RequestQueue requestQueue = Volley.newRequestQueue(this.getContext());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                urlObjectifs,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        miseAjoutObjectif(view, response);
+                        Log.e("Response ", response.toString());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error ", error.toString());
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
     }
 }
