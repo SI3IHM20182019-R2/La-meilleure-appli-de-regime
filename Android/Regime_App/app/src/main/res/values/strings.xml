@@ -12,20 +12,8 @@
     <string name="channel_test">CHANNEL_TEST</string>
     <string name="channel_test_description">CHANNEL_TEST_DESCRIPTION</string>
 
-    <string-array name="desserts">
-        <item>Cupcake</item>
-        <item>Donut</item>
-        <item>Eclair</item>
-        <item>Froyo</item>
-        <item>Gingerbread</item>
-        <item>Honeycomb</item>
-        <item>Ice Cream Sandwich</item>
-        <item>Jelly Bean</item>
-        <item>Kit Kat</item>
-        <item>Lollipop</item>
-        <item>Marshmallow</item>
-        <item>Nougat</item>
-    </string-array>
+    <string name="addCalendar"> Je souhaite ajouter les informations sur mon objectif à mon agenda </string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

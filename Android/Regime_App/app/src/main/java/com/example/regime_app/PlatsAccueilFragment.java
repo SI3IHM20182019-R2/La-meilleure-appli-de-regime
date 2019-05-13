@@ -9,9 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.regime_app.Models.Utilisateur;
+
+import java.util.List;
 
 
 public class PlatsAccueilFragment extends Fragment {
@@ -28,11 +32,16 @@ public class PlatsAccueilFragment extends Fragment {
      */
     private PagerAdapter pagerAdapter;
     private RecyclerView recyclerView;
+    private Button next;
+    private Button prev;
+    private static int page = 0;
 
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.accueil, container, false);
+        next = view.findViewById(R.id.suivant);
+        prev = view.findViewById(R.id.precedent);
 
         Utilisateur utilisateur = Utilisateur.getInstance();
 
@@ -48,10 +57,52 @@ public class PlatsAccueilFragment extends Fragment {
         this.objectif = view.findViewById(R.id.textView19);
         this.objectif.setText(Double.toString(utilisateur.getObectif())+" kg");
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page += 1;
+
+                List<Fragment> fragmentsInPlace = getChildFragmentManager().getFragments();
+                if (fragmentsInPlace == null) {
+                    return;
+
+                }
+                for (Fragment fragment : fragmentsInPlace)
+                {
+                    getChildFragmentManager().beginTransaction().remove(fragment).commit();
+                }
+                Bundle args = new Bundle();
+                platsrecycleviewfragment platsrecycleviewfragment = new platsrecycleviewfragment();
+                platsrecycleviewfragment.setArguments(args);
+                args.putInt("numberpage", page);
+                getChildFragmentManager().beginTransaction().add(R.id.fragmentrecycle, platsrecycleviewfragment).commit();
+        }
+        });
+
+
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page -=1 ;
+
+                List<Fragment> fragmentsInPlace = getChildFragmentManager().getFragments();
+                if (fragmentsInPlace == null) {
+                    return;
+
+                }
+                for (Fragment fragment : fragmentsInPlace)
+                {
+                    getChildFragmentManager().beginTransaction().remove(fragment).commit();
+                }
+                Bundle args = new Bundle();
+                platsrecycleviewfragment platsrecycleviewfragment = new platsrecycleviewfragment();
+                platsrecycleviewfragment.setArguments(args);
+                args.putInt("numberpage", page);
+                getChildFragmentManager().beginTransaction().add(R.id.fragmentrecycle, platsrecycleviewfragment).commit();
+            }
+        });
+
         return view;
 
+        }
 }
-
-}
-
-

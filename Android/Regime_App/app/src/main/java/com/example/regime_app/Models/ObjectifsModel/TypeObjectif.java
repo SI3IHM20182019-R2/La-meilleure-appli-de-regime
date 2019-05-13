@@ -24,7 +24,7 @@ public enum TypeObjectif {
         this.conseilCoach = conseilCoach;
     }
 
-    public String toString(){
+    public String getText(){
         return this.text;
     }
 

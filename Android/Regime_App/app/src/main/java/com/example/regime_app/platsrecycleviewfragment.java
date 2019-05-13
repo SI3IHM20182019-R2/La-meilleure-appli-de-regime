@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.regime_app.Adapters.PlatsAccueilAdapter;
@@ -32,6 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.TimeZone;
@@ -41,6 +43,8 @@ import static android.support.v4.content.ContextCompat.checkSelfPermission;
 public class platsrecycleviewfragment extends Fragment {
     private RecyclerView recyclerView;
     private Button addCalendar;
+    private TextView jour;
+    int day = 14;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -66,18 +70,42 @@ public class platsrecycleviewfragment extends Fragment {
         //cet adapter servira à remplir notre recyclerview
         recyclerView.setAdapter(new PlatsAccueilAdapter(repasdujour));
 
+        jour =  view.findViewById(R.id.jour);
+        if (getArguments() != null) {
+            int id = getArguments().getInt("numberpage", 0);
+            Calendar calendar = Calendar.getInstance();
+            day = calendar.get(Calendar.DAY_OF_MONTH);
+            calendar.add(Calendar.DAY_OF_YEAR, id);
+            Date newday = calendar.getTime();
+            if (id == 1) {  jour.setText("Demain");
+             day = calendar.get(Calendar.DAY_OF_MONTH);
+
+            }
+            else if (id == -1) {  jour.setText("Hier") ;
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+            }
+            else {  jour.setText(newday.toString());
+                 day = calendar.get(Calendar.DAY_OF_MONTH);
+            }
+        }
+
+
         //Button ajout au calendrier
         addCalendar = (Button) view.findViewById(R.id.addCalendar);
         Repas repas1 = repasdujour.get(0);
-       addCalendar.setOnClickListener(new View.OnClickListener() {
+        addCalendar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick (View v) {
-           ajouterCalendrier(5, 2019, 14, 8, repasdujour.get(0));
-               Toast.makeText(getActivity(), "Event is succefully Added.", Toast.LENGTH_SHORT).show();
+               System.out.println(day);
+           ajouterCalendrier(5, 2019, day, 8, repasdujour.get(0));
+           ajouterCalendrier(5, 2019, day, 12, repasdujour.get(1));
+           ajouterCalendrier(5, 2019, day, 20, repasdujour.get(2));
+               Toast.makeText(getActivity(), "Repas de ce jour bien ajouté au calendrier.", Toast.LENGTH_SHORT).show();
+
            }
 
-
        });
+
         return view;
     }
 
@@ -100,14 +128,13 @@ public class platsrecycleviewfragment extends Fragment {
         ContentValues values = new ContentValues();
         values.put(CalendarContract.Events.DTSTART, startMillis);
         values.put(CalendarContract.Events.DTEND, endMillis);
-        values.put(CalendarContract.Events.TITLE, "Repas de" + heure + "h");
-        values.put(CalendarContract.Events.DESCRIPTION, "Entree:" + repas.getEntree().getNom() + "," + "Plat:" + repas.getPlat().getNom() + "," +"dessert" + repas.getDessert().getNom());
+        values.put(CalendarContract.Events.TITLE, "Repas de " + heure + "h00");
+        values.put(CalendarContract.Events.DESCRIPTION, "Entree : " + repas.getEntree().getNom() + "," + " Plat : " + repas.getPlat().getNom() + "," +" dessert " + repas.getDessert().getNom());
         values.put(CalendarContract.Events.CALENDAR_ID, calID);
         values.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().toString());
         Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
 
         long eventID = Long.parseLong(uri.getLastPathSegment());
-        //Log.i("RunnerBecomes", "event id: " + eventID);
 
     }
 
