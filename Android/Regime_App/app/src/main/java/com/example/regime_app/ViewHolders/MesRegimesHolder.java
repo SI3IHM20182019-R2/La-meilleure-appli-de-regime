@@ -27,6 +27,7 @@ public class MesRegimesHolder extends RecyclerView.ViewHolder {
     private TextView title ;
     private TextView description ;
     private ImageView imageregime ;
+    private ImageView switcher ;
     private ImageButton deleteimage ;
     private TextView voirdetails ;
 
@@ -34,18 +35,24 @@ public class MesRegimesHolder extends RecyclerView.ViewHolder {
         super(itemView);
         title = (TextView)itemView.findViewById(R.id.title);
         description = (TextView)itemView.findViewById(R.id.description);
+        switcher = (ImageButton) itemView.findViewById(R.id.switcher);
         imageregime = (ImageView) itemView.findViewById(R.id.imageregime);
         deleteimage = (ImageButton) itemView.findViewById(R.id.deleteimage);
         voirdetails =(TextView)itemView.findViewById(R.id.Viewdetails);
         this.context = context;
     }
 
-    public void bindData(final Regime regime , final List<Regime> regimes , final MesRegimesAdapter ad) {
+    public void bindData(final Regime regime , final List<Regime> regimes , final List<Regime> regimeactuel , final MesRegimesAdapter ad) {
         //imageregime.setImageResource(context.getResources().getIdentifier(regime.getImageName(), "drawable", context.getPackageName()));
         Bitmap bit = BitmapFactory.decodeResource(context.getResources() , context.getResources().getIdentifier(regime.getImageName(), "drawable", context.getPackageName())) ;
         RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(context.getResources() , bit) ;
         roundedBitmapDrawable.setCircular(true);
         imageregime.setImageDrawable(roundedBitmapDrawable);
+        if (regimes.size()>1 ){
+            switcher.setImageResource(R.drawable.subtitue);
+        }else {
+            switcher.setImageResource(android.R.color.transparent);
+        }
         title.setText(regime.getNom());
         description.setText(regime.getDescription());
         deleteimage.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +69,15 @@ public class MesRegimesHolder extends RecyclerView.ViewHolder {
                 intent.putExtra("regime" , regime) ;
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                 context.startActivity(intent) ;
+            }
+        });
+        switcher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                regimeactuel.clear();
+                regimeactuel.add(regime);
+                regimes.remove(regime );
+                ad.setnotification();
             }
         });
 

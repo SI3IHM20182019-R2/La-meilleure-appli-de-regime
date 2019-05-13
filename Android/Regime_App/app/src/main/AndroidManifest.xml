@@ -17,7 +17,7 @@
         <activity android:name=".WelcomeView.WelcomePart.SelectionPreferencesAlimentaires"/>
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name=".DetailsRegimeActivity"
-            android:configChanges="orientation|screenSize"
+            android:configChanges="screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".Donner_Avis"
@@ -35,7 +35,7 @@
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".MenuManagmentActivity"
-            android:configChanges="orientation|screenSize"
+            android:configChanges="screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo"

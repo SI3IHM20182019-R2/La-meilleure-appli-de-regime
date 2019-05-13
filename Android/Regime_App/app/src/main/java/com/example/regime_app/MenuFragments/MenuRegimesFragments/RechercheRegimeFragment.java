@@ -26,7 +26,7 @@ public class RechercheRegimeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new RechercheRegimeTicketAdapter(Mocks.regimes);
+        mAdapter = new RechercheRegimeTicketAdapter(Mocks.regimes , Mocks.regimeActuel);
         recyclerView.setAdapter(mAdapter);
 
         return view;

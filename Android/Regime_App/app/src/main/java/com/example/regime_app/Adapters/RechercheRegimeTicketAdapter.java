@@ -15,9 +15,11 @@ import java.util.List;
 
 public class RechercheRegimeTicketAdapter extends RecyclerView.Adapter {
     private List<Regime> regimes;
+    private List<Regime> regimeactuel;
 
-    public RechercheRegimeTicketAdapter(List<Regime> regimes) {
+    public RechercheRegimeTicketAdapter(List<Regime> regimes , List<Regime> regimeactuel) {
         this.regimes = regimes;
+        this.regimeactuel = regimeactuel;
     }
 
     @NonNull
@@ -29,11 +31,15 @@ public class RechercheRegimeTicketAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
-        ((RechercheRegimeViewHolder) viewHolder).bindData(regimes.get(position));
+        ((RechercheRegimeViewHolder) viewHolder).bindData(regimes.get(position) , this.regimeactuel , this);
     }
 
     @Override
     public int getItemCount() {
         return regimes.size();
+    }
+
+    public void setnotification () {
+        this.notifyDataSetChanged();
     }
 }

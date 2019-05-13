@@ -94,9 +94,11 @@ import java.util.List;
 
 public class MesRegimesAdapter extends RecyclerView.Adapter {
     private List<Regime> regimes;
+    private List<Regime> regimeactuel;
 
-    public MesRegimesAdapter(List<Regime> regimes) {
+    public MesRegimesAdapter(List<Regime> regimes , List<Regime> regime) {
         this.regimes = regimes;
+        this.regimeactuel = regime ;
     }
 
     @NonNull
@@ -108,7 +110,7 @@ public class MesRegimesAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position ) {
-        ((MesRegimesHolder) viewHolder).bindData(regimes.get(position) ,this.regimes , this);
+        ((MesRegimesHolder) viewHolder).bindData(regimes.get(position) ,this.regimes ,this.regimeactuel, this);
     }
 
     @Override
