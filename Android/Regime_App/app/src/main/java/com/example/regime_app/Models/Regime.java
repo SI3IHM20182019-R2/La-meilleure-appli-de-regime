@@ -11,6 +11,22 @@ public class Regime implements Parcelable {
     private String nom;
     private String note;
     private String description;
+    private String objectif;
+    private String createur;
+    private String date;
+
+    public String getObjectif() {
+        return objectif;
+    }
+
+    public String getCreateur() {
+        return createur;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
     private String imageName;
     private ArrayList<Repas> listrepas = new ArrayList<Repas>() {{
         add(new Repas(new Plat("jus", 1 ,1 ,1 , 1) ,new Plat("café", 1 ,1 ,1 , 1) , new Plat("croissant", 1 ,1 ,1 ,1) , "repas1" , " 8h30"));
@@ -23,7 +39,10 @@ public class Regime implements Parcelable {
         this.nom = nom;
         this.description = description;
         this.imageName = imagePath;
-        this.note = "aucune note";
+        this.note = "3/5";
+        this.objectif = "Pedre du poids " ;
+        this.createur = " Yury Romain ";
+        this.date = "12/04/2018" ;
     }
     public Regime(String nom, String description, String imagePath , Avis avis) {
         this.nom = nom;

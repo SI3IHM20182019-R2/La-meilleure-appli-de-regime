@@ -29,6 +29,7 @@ import java.util.List;
 
 public class DetailsRegimeActivity extends AppCompatActivity {
     private TextView title ;
+    private TextView note ;
     private ExpandableListView listView ;
     private DetailsRegimesAdapter listAdpater ;
     private List<String> listDataHeader = new ArrayList<>();
@@ -41,6 +42,7 @@ public class DetailsRegimeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testprofil);
         title = (TextView) findViewById(R.id.title);
+        note = (TextView) findViewById(R.id.note);
         description = (TextView) findViewById(R.id.description);
         imageregime = (ImageView)  findViewById(R.id.imageregime);
         donneravis = (Button)  findViewById(R.id.avis);
@@ -52,6 +54,7 @@ public class DetailsRegimeActivity extends AppCompatActivity {
         roundedBitmapDrawable.setCircular(true);
         imageregime.setImageDrawable(roundedBitmapDrawable);
         title.setText(regime.getNom());
+        note.setText(regime.getNote());
         description.setText(regime.getDescription());
         /*Spinner spinerrepas = findViewById(R.id.spinnerreaps) ;
         DetailsRegimesAdapter mAdapter = new DetailsRegimesAdapter(this , regime.getListrepas() , regime) ;
