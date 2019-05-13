@@ -3,6 +3,7 @@ package com.example.regime_app;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Parcelable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import com.example.regime_app.Models.JourRepas;
 import com.example.regime_app.Models.Regime;
 import com.example.regime_app.Models.Repas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -67,7 +69,7 @@ public class DetailsRegimeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DetailsRegimeActivity.this , Donner_Avis.class ) ;
-                intent.putExtra("regimeavis" , regime) ;
+                intent.putExtra("regimeavis" , (Serializable) regime.getListavis()) ;
                 startActivity(intent) ;
             }
         });

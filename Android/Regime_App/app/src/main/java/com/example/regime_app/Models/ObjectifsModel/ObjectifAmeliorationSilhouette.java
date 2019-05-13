@@ -6,8 +6,8 @@ public class ObjectifAmeliorationSilhouette extends Objectif {
 
     public IntensiteObjectif intensiteObjectif;
 
-    public ObjectifAmeliorationSilhouette(Date dateDebutObjectif, Date dateFinObjectif, IntensiteObjectif intensiteObjectif){
-        super(TypeObjectif.ReduireGlucides, dateDebutObjectif, dateFinObjectif);
+    public ObjectifAmeliorationSilhouette(Date dateDebutObjectif, Date dateFinObjectif, IntensiteObjectif intensiteObjectif, int id){
+        super(TypeObjectif.ReduireGlucides, dateDebutObjectif, dateFinObjectif, id);
         this.intensiteObjectif = intensiteObjectif;
     }
 

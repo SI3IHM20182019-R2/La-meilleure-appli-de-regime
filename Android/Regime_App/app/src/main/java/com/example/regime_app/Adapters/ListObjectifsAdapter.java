@@ -58,6 +58,14 @@ public class ListObjectifsAdapter extends RecyclerView.Adapter<MesObjectifsViewH
             holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
             holder.name.setTextColor(Color.parseColor("#000000"));
         }
+
+        if (Commom.objectifSelected != null) {
+            TextView textBut = (TextView) Commom.listObjectifView.findViewById(R.id.butObjectif);
+            textBut.setText(Commom.objectifSelected.getBut());
+
+            TextView textConseil = (TextView) Commom.listObjectifView.findViewById(R.id.conseilCoach);
+            textConseil.setText(Commom.objectifSelected.getConseilCoach());
+        }
     }
 
     @Override

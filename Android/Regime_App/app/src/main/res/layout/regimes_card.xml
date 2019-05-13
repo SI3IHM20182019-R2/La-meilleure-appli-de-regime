@@ -16,6 +16,15 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
+            <ImageButton
+                android:id="@+id/switcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@null"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="?attr/actionModeBackground" />
+
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"

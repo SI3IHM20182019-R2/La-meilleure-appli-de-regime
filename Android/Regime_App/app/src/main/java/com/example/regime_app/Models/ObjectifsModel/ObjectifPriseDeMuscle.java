@@ -6,8 +6,8 @@ public class ObjectifPriseDeMuscle extends Objectif {
 
     public int nbKiloAPrendre;
 
-    public ObjectifPriseDeMuscle(Date dateDebutObjectif, Date dateFinObjectif, int nbKiloAPrendre){
-        super(TypeObjectif.PriseDeMuscle, dateDebutObjectif, dateFinObjectif);
+    public ObjectifPriseDeMuscle(Date dateDebutObjectif, Date dateFinObjectif, int nbKiloAPrendre, int id){
+        super(TypeObjectif.PriseDeMuscle, dateDebutObjectif, dateFinObjectif, id);
         this.nbKiloAPrendre = nbKiloAPrendre;
     }
 

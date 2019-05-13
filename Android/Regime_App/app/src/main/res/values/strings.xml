@@ -24,4 +24,25 @@
     <string name="channel_notification_description">Channel alloué pour envoyer des notification en fonction du temps restant avant la deadline</string>
 
 
+    <string-array name= "intensite_array">
+        <item>Intensité</item>
+        <item>Faible</item>
+        <item>Modere</item>
+        <item>Maximal</item>
+    </string-array>
+
+    <string-array name= "themeMangerSain_array">
+        <item>Thème</item>
+        <item>Plus de fibre</item>
+        <item>Plus de fruit legume</item>
+        <item>Général</item>
+    </string-array>
+
+    <string-array name= "zoneCorps_array">
+        <item>Priorité</item>
+        <item>Cuisses</item>
+        <item>Fesses</item>
+        <item>Ventre</item>
+    </string-array>
+
 </resources>

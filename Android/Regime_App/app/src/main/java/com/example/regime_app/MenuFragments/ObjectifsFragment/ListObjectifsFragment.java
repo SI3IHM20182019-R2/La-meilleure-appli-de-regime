@@ -55,6 +55,82 @@ public class ListObjectifsFragment extends Fragment {
         String urlObjectifs = "http://" + Commom.ipLocal + ":8081/api/objectifs";
         final View view = inflater.inflate(R.layout.list_objectifs, container, false);
 
+        chargementTicket(urlObjectifs, view);
+
+        Button buttonsupprimer = view.findViewById(R.id.boutonSupprimer);
+        buttonsupprimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                suppression (view, urlObjectifs);
+            }
+        });
+
+        Button buttomAjouter = view.findViewById(R.id.boutonAjouter);
+        buttomAjouter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getChildFragmentManager().beginTransaction().add(R.id.ListObjectifLayout, new AjoutObjectifFragment()).commit();
+            }
+        });
+        Commom.listObjectifView = view;
+        return view;
+    }
+
+    private void miseAjoutObjectif (View view, JSONArray objectifArray){
+        for (int i=0; i<objectifArray.length(); i++){
+            String typeObjectif = null;
+            Date dateDebut = null;
+            Date dateFin = null;
+            String infoComplementaire = null;
+            int id = -1;
+
+            try {
+                JSONObject jsonObject = objectifArray.getJSONObject(i);
+                typeObjectif = jsonObject.get("typeObjectif").toString();
+                dateDebut = format.parse(jsonObject.get("dateDebut").toString());
+                dateFin= format.parse(jsonObject.get("dateFin").toString());
+                infoComplementaire = jsonObject.get("infoComplementaire").toString();
+                id = jsonObject.getInt("id");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+            if (typeObjectif.equals(TypeObjectif.AmeliorationSilhouette.toString())){
+                this.objectifs.add(new ObjectifAmeliorationSilhouette(dateDebut, dateFin, IntensiteObjectif.valueOf(infoComplementaire), id));
+            }
+            if (typeObjectif.equals(TypeObjectif.MangerSain.toString())){
+                this.objectifs.add(new ObjectifMangerSain(dateDebut, dateFin, ThemeMangerSainObjectif.valueOf(infoComplementaire), id));
+            }
+            if (typeObjectif.equals(TypeObjectif.PerteDePoids.toString())){
+                this.objectifs.add(new ObjectifPerteDePoids(dateDebut, dateFin, Integer.valueOf(infoComplementaire), id));
+            }
+            if (typeObjectif.equals(TypeObjectif.PerteGraisse.toString())){
+                this.objectifs.add(new ObjectifPerdeDeGraisseLocalise(dateDebut, dateFin, ZoneCorpsGraisseObjectif.valueOf(infoComplementaire), id));
+            }
+            if (typeObjectif.equals(TypeObjectif.PriseDeMuscle.toString())){
+                this.objectifs.add(new ObjectifPriseDeMuscle(dateDebut, dateFin, Integer.valueOf(infoComplementaire), id));
+            }
+            if (typeObjectif.equals(TypeObjectif.ReduireGlucides.toString())){
+                this.objectifs.add(new ObjectifReduireGlucides(dateDebut, dateFin, IntensiteObjectif.valueOf(infoComplementaire), id));
+            }
+        }
+        Commom.objectifSelected = this.objectifs.get(0);
+        initRecyclerView(view);
+    }
+
+    private void initRecyclerView(View view){
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+        ListObjectifsAdapter adapter = new ListObjectifsAdapter(view.getContext(), this.objectifs);
+        recyclerView.setAdapter(adapter);
+    }
+
+    public void chargementTicket(String urlObjectifs, View view) {
         RequestQueue requestQueue = Volley.newRequestQueue(this.getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,
@@ -63,11 +139,6 @@ public class ListObjectifsFragment extends Fragment {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
                         miseAjoutObjectif(view, response);
                         Log.e("Response ", response.toString());
                     }
@@ -80,85 +151,54 @@ public class ListObjectifsFragment extends Fragment {
                 }
         );
         requestQueue.add(jsonArrayRequest);
+    }
 
-        Button buttonsupprimer = view.findViewById(R.id.boutonSupprimer);
-        buttonsupprimer.setOnClickListener(new View.OnClickListener() {
+    public void suppression (View view, String urlObjectifs) {
+        myDialog = new Dialog(view.getContext());
+        myDialog.setContentView(R.layout.pop_up_confirmation_suppression_objectif);
+        TextView textBut = (TextView) myDialog.findViewById(R.id.questionSuppression);
+        textBut.setText("Voulez vous vraiment arreter votre objectif : " + Commom.objectifSelected.toString().toLowerCase() + "?");
+        Button buttonOui = (Button) myDialog.findViewById(R.id.boutonOui);
+        buttonOui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myDialog = new Dialog(view.getContext());
-                myDialog.setContentView(R.layout.pop_up_confirmation_suppression_objectif);
-                TextView textBut = (TextView) myDialog.findViewById(R.id.questionSuppression);
-                textBut.setText("Voulez vous vraiment arreter votre objectif : " + Commom.objectifSelected.toString().toLowerCase() + "?");
-                myDialog.show();
+                suppressionTicket(view, urlObjectifs);
+                myDialog.dismiss();
             }
         });
 
-        Button buttomAjouter = view.findViewById(R.id.boutonAjouter);
-        buttomAjouter.setOnClickListener(new View.OnClickListener() {
+        Button buttonNon = (Button) myDialog.findViewById(R.id.boutonNon);
+        buttonNon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getChildFragmentManager().beginTransaction().add(R.id.ListObjectifLayout, new AjoutObjectifFragment()).commit();
+                myDialog.dismiss();
             }
         });
 
-        return view;
+        myDialog.show();
     }
 
-    private void miseAjoutObjectif (View view, JSONArray objectifArray){
-        for (int i=0; i<objectifArray.length(); i++){
-            String typeObjectif = null;
-            Date dateDebut = null;
-            Date dateFin = null;
-            String infoComplementaire = null;
-            try {
-                JSONObject jsonObject = objectifArray.getJSONObject(i);
-                typeObjectif = jsonObject.get("typeObjectif").toString();
-                dateDebut = format.parse(jsonObject.get("dateDebut").toString());
-                dateFin= format.parse(jsonObject.get("dateFin").toString());
-                infoComplementaire = jsonObject.get("infoComplementaire").toString();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-
-            if (typeObjectif.equals(TypeObjectif.AmeliorationSilhouette.toString())){
-                this.objectifs.add(new ObjectifAmeliorationSilhouette(dateDebut, dateFin, IntensiteObjectif.valueOf(infoComplementaire)));
-            }
-            if (typeObjectif.equals(TypeObjectif.MangerSain.toString())){
-                this.objectifs.add(new ObjectifMangerSain(dateDebut, dateFin, ThemeMangerSainObjectif.valueOf(infoComplementaire)));
-            }
-            if (typeObjectif.equals(TypeObjectif.PerteDePoids.toString())){
-                this.objectifs.add(new ObjectifPerteDePoids(dateDebut, dateFin, Integer.valueOf(infoComplementaire)));
-            }
-            if (typeObjectif.equals(TypeObjectif.PerteGraisse.toString())){
-                this.objectifs.add(new ObjectifPerdeDeGraisseLocalise(dateDebut, dateFin, ZoneCorpsGraisseObjectif.valueOf(infoComplementaire)));
-            }
-            if (typeObjectif.equals(TypeObjectif.PriseDeMuscle.toString())){
-                this.objectifs.add(new ObjectifPriseDeMuscle(dateDebut, dateFin, Integer.valueOf(infoComplementaire)));
-            }
-            if (typeObjectif.equals(TypeObjectif.ReduireGlucides.toString())){
-                this.objectifs.add(new ObjectifReduireGlucides(dateDebut, dateFin, IntensiteObjectif.valueOf(infoComplementaire)));
-            }
-        }
-        initRecyclerView(view);
-    }
-
-    private void initRecyclerView(View view){
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(layoutManager);
-        ListObjectifsAdapter adapter = new ListObjectifsAdapter(view.getContext(), this.objectifs);
-        recyclerView.setAdapter(adapter);
-
-        if (Commom.objectifSelected != null) {
-            TextView textBut = (TextView) view.findViewById(R.id.butObjectif);
-            textBut.setText(Commom.objectifSelected.getBut());
-
-            TextView textConseil = (TextView) view.findViewById(R.id.conseilCoach);
-            textConseil.setText(Commom.objectifSelected.getConseilCoach());
-        }
+    public void suppressionTicket(View view, String urlObjectifs){
+        RequestQueue requestQueue = Volley.newRequestQueue(view.getContext());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.DELETE,
+                urlObjectifs + '/' + Commom.objectifSelected.getId(),
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.e("Responce ", response.toString());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error ", error.toString());
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
+        Commom.objectifSelected = objectifs.get(0);
+        getChildFragmentManager().beginTransaction().add(R.id.ListObjectifLayout, new ListObjectifsFragment()).commit();
     }
 }

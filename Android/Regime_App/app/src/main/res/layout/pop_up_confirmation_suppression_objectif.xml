@@ -50,10 +50,11 @@
                 android:gravity="center">
 
                 <Button
+                    android:id="@+id/boutonNon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Non"
-                    android:background="@drawable/color_button_red"/>
+                    android:background="@drawable/color_button_red"
+                    android:text="Non" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -61,11 +62,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center">
+
                 <Button
+                    android:id="@+id/boutonOui"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Oui"
-                    android:background="@drawable/color_button_green"/>
+                    android:background="@drawable/color_button_green"
+                    android:text="Oui" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

@@ -6,8 +6,8 @@ public class ObjectifPerdeDeGraisseLocalise extends Objectif {
 
     public ZoneCorpsGraisseObjectif zoneCorpsGraisseObjectif;
 
-    public ObjectifPerdeDeGraisseLocalise(Date dateDebutObjectif, Date dateFinObjectif, ZoneCorpsGraisseObjectif zoneCorpsGraisseObjectif){
-        super(TypeObjectif.PerteGraisse, dateDebutObjectif, dateFinObjectif);
+    public ObjectifPerdeDeGraisseLocalise(Date dateDebutObjectif, Date dateFinObjectif, ZoneCorpsGraisseObjectif zoneCorpsGraisseObjectif, int id){
+        super(TypeObjectif.PerteGraisse, dateDebutObjectif, dateFinObjectif, id);
         this.zoneCorpsGraisseObjectif = zoneCorpsGraisseObjectif;
     }
 
