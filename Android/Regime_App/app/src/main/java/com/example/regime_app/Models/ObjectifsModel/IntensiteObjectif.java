@@ -4,7 +4,7 @@ import com.example.regime_app.R;
 
 public enum IntensiteObjectif {
     Faible ("Faible"),
-    Modéré ("Modéré"),
+    Modere ("Modere"),
     Maximal ("Maximal");
 
     private String text;

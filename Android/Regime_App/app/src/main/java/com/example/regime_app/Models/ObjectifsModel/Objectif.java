@@ -32,7 +32,7 @@ public class Objectif implements ObjectifInterface {
     }
 
     public String toString(){
-        return this.typeObjectif.toString();
+        return this.typeObjectif.getText();
     }
 
     public Date getDateDebutObjectif() {

@@ -9,4 +9,5 @@ import java.util.Date;
 
 public class Commom {
     public static ObjectifInterface objectifSelected = new ObjectifPerteDePoids(new Date(), new Date(), 4);
+    public static String ipLocal = "192.168.1.77";
 }
