@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
         createNotificationChannelTest();
         setContentView(R.layout.activity_main);
 
+        Intent intentApp = new Intent(getApplicationContext(), MenuManagmentActivity.class);
+        startActivity(intentApp);
+
         buttonSlider = findViewById(R.id.slider);
         buttonSlider.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), InscriptionActivityPartOne.class);
