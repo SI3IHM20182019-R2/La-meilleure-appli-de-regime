@@ -14,6 +14,8 @@ import android.widget.Button;
 
 import com.example.regime_app.Models.Mocks;
 import com.example.regime_app.Models.Utilisateur;
+import com.example.regime_app.WelcomeView.ConnexionPart.ChoixInscriptionConnexion;
+import com.example.regime_app.WelcomeView.ConnexionPart.Connexion;
 import com.example.regime_app.WelcomeView.InscriptionPart.InscriptionActivity;
 import com.example.regime_app.WelcomeView.InscriptionPart.InscriptionActivityPartOne;
 
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         createNotificationChannelTest();
         setContentView(R.layout.activity_main);
 
-        Intent intentApp = new Intent(getApplicationContext(), MenuManagmentActivity.class);
+        Intent intentApp = new Intent(getApplicationContext(), ChoixInscriptionConnexion.class);
         startActivity(intentApp);
 
         buttonSlider = findViewById(R.id.slider);
