@@ -45,6 +45,8 @@ public class platsrecycleviewfragment extends Fragment {
     private Button addCalendar;
     private TextView jour;
     int day = 14;
+    int month = 4;
+    int year = 2019;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -55,6 +57,35 @@ public class platsrecycleviewfragment extends Fragment {
         repasdujour.add(getRepas("repas2.json", "12h00"));
         repasdujour.add(getRepas("repas3.json","20h00"));
 
+
+        jour =  view.findViewById(R.id.jour);
+        if (getArguments() != null) {
+            day = getArguments().getInt("day", 0);
+            month = getArguments().getInt("month", 0);
+            year = getArguments().getInt("year", 0);
+            int id = getArguments().getInt("numberpage", 0);
+            System.out.println("month"+ month);
+            System.out.println("year"+ year);
+            //  jour.setText("Demain");
+
+
+           Calendar calendar = Calendar.getInstance();
+           //day = calendar.get(Calendar.DAY_OF_MONTH);
+            //calendar.add(Calendar.DAY_OF_YEAR, id);
+            //Date newday = calendar.getTime();*/
+            if (id == 1) {    jour.setText("Demain");
+
+
+            }
+            else if (id == -1) {  jour.setText("Hier") ;
+            }
+
+            else {  jour.setText(day + "-" + month + "-" + year);
+            }
+        }
+        else {
+            //jour.setText("Aujourd'hui");
+        }
 
 
         recyclerView = (RecyclerView) view.findViewById(R.id.new_recycle);
@@ -70,24 +101,6 @@ public class platsrecycleviewfragment extends Fragment {
         //cet adapter servira à remplir notre recyclerview
         recyclerView.setAdapter(new PlatsAccueilAdapter(repasdujour));
 
-        jour =  view.findViewById(R.id.jour);
-        if (getArguments() != null) {
-            int id = getArguments().getInt("numberpage", 0);
-            Calendar calendar = Calendar.getInstance();
-            day = calendar.get(Calendar.DAY_OF_MONTH);
-            calendar.add(Calendar.DAY_OF_YEAR, id);
-            Date newday = calendar.getTime();
-            if (id == 1) {  jour.setText("Demain");
-             day = calendar.get(Calendar.DAY_OF_MONTH);
-
-            }
-            else if (id == -1) {  jour.setText("Hier") ;
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
-            }
-            else {  jour.setText(newday.toString());
-                 day = calendar.get(Calendar.DAY_OF_MONTH);
-            }
-        }
 
 
         //Button ajout au calendrier
@@ -96,15 +109,21 @@ public class platsrecycleviewfragment extends Fragment {
         addCalendar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick (View v) {
-               System.out.println(day);
-           ajouterCalendrier(5, 2019, day, 8, repasdujour.get(0));
-           ajouterCalendrier(5, 2019, day, 12, repasdujour.get(1));
-           ajouterCalendrier(5, 2019, day, 20, repasdujour.get(2));
+               System.out.println("DAAAY"+ day);
+               System.out.println("MONTH" + month);
+               System.out.println("YEAR"+ year);
+               System.out.println(repasdujour.get(0));
+
+               ajouterCalendrier(month, year, day, 8, repasdujour.get(0));
+               ajouterCalendrier(month, year, day, 12, repasdujour.get(1));
+               ajouterCalendrier(month,year, day, 20, repasdujour.get(2));
                Toast.makeText(getActivity(), "Repas de ce jour bien ajouté au calendrier.", Toast.LENGTH_SHORT).show();
 
            }
 
        });
+
+
 
         return view;
     }
