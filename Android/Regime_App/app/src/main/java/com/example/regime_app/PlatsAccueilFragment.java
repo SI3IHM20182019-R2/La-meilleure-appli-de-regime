@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.regime_app.Models.Utilisateur;
@@ -39,9 +40,11 @@ public class PlatsAccueilFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.accueil, container, false);
-        prev = (Button) view.findViewById(R.id.suivant);
+        next = view.findViewById(R.id.suivant);
+        prev = view.findViewById(R.id.precedent);
 
-        prev.setOnClickListener(new View.OnClickListener() {
+
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 page += 1;
@@ -61,6 +64,29 @@ public class PlatsAccueilFragment extends Fragment {
                 args.putInt("numberpage", page);
                 getChildFragmentManager().beginTransaction().add(R.id.fragmentrecycle, platsrecycleviewfragment).commit();
         }
+        });
+
+
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page -=1 ;
+
+                List<Fragment> fragmentsInPlace = getChildFragmentManager().getFragments();
+                if (fragmentsInPlace == null) {
+                    return;
+
+                }
+                for (Fragment fragment : fragmentsInPlace)
+                {
+                    getChildFragmentManager().beginTransaction().remove(fragment).commit();
+                }
+                Bundle args = new Bundle();
+                platsrecycleviewfragment platsrecycleviewfragment = new platsrecycleviewfragment();
+                platsrecycleviewfragment.setArguments(args);
+                args.putInt("numberpage", page);
+                getChildFragmentManager().beginTransaction().add(R.id.fragmentrecycle, platsrecycleviewfragment).commit();
+            }
         });
         Utilisateur utilisateur = Utilisateur.getInstance();
 

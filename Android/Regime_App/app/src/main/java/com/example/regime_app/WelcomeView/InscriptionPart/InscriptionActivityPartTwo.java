@@ -2,12 +2,17 @@ package com.example.regime_app.WelcomeView.InscriptionPart;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -20,6 +25,7 @@ import com.example.regime_app.R;
 import com.example.regime_app.WelcomeView.WelcomePart.WelcomeActivity;
 
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class InscriptionActivityPartTwo extends AppCompatActivity {
 
@@ -31,6 +37,10 @@ public class InscriptionActivityPartTwo extends AppCompatActivity {
     private EditText ageInput, sizeInput, weightInput, objectifInput, dateDisplay;
     private LinearLayout sexeInputLayout;
     private RadioGroup sexeInput;
+    private CheckBox checkBox_calendar;
+    private int day = 0;
+    private int month_deadline = 0;
+    private int year_deadline = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +56,8 @@ public class InscriptionActivityPartTwo extends AppCompatActivity {
 
         dateDisplay = findViewById(R.id.date_display);
         dateInput = findViewById(R.id.date_input);
+        checkBox_calendar = findViewById(R.id.checkBox);
+
 
 //        this.ageInput.setText(Utilisateur.getInstance().getAge());
 //        this.sizeInput.setText(Utilisateur.getInstance().getTaille());
@@ -88,6 +100,9 @@ public class InscriptionActivityPartTwo extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month+1;
+                day = dayOfMonth;
+                month_deadline = month-1;
+                year_deadline = year;
                 dateDisplay.setText(dayOfMonth + "/" + month + "/" + year);
             }
         };
@@ -98,6 +113,13 @@ public class InscriptionActivityPartTwo extends AppCompatActivity {
             public void onClick(View v) {
                 if (checkData()) {
                     storeData();
+                    if (checkBox_calendar.isChecked()) {
+                        String poidsfinobjectif = "Poids que je dois avoir: " + Utilisateur.getInstance().getObectif();
+                        String poidsActuel = "Poids que j'ai aujourd'hui: " + Utilisateur.getInstance().getPoids();
+                        addCalendar(14, 4, 2019, "Debut objectif Perte de poids", poidsActuel);
+                        addCalendar(day, month_deadline, year_deadline, "Fin de l'objectif", poidsfinobjectif);
+                    }
+
                     Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
                     startActivity(intent);
                 }
@@ -195,5 +217,30 @@ public class InscriptionActivityPartTwo extends AppCompatActivity {
         RadioButton checkedSexe = findViewById(sexeInput.getCheckedRadioButtonId());
         String sexeToStore = checkedSexe.getText().toString();
         utilisateur.setSexe(sexeToStore);
+    }
+
+    private void addCalendar (int day, int month, int year, String title, String poids) {
+        long calID = 1;
+        long startMillis = 0;
+        long endMillis = 0;
+        Calendar beginTime = Calendar.getInstance();
+        beginTime.set(year, month, day);
+        startMillis = beginTime.getTimeInMillis();
+        Calendar endTime = Calendar.getInstance();
+        endTime.set(year, month, day);
+        endMillis = endTime.getTimeInMillis();
+
+
+        ContentResolver cr = getContentResolver();
+        ContentValues values = new ContentValues();
+        values.put(CalendarContract.Events.DTSTART, startMillis);
+        values.put(CalendarContract.Events.DTEND, endMillis);
+        values.put(CalendarContract.Events.TITLE, title);
+        values.put(CalendarContract.Events.DESCRIPTION, poids);
+        values.put(CalendarContract.Events.CALENDAR_ID, calID);
+        values.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().toString());
+        Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
+
+        long eventID = Long.parseLong(uri.getLastPathSegment());
     }
 }

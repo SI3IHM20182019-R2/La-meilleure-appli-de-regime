@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="110dp"
-        android:layout_height="32dp"
+        android:layout_width="89dp"
+        android:layout_height="21dp"
         android:layout_marginStart="104dp"
         android:layout_marginTop="40dp"
-        android:text="Plat de"
+        android:text="Plat de:"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,21 +20,19 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/new_recycle"
-        android:layout_width="347dp"
-        android:layout_height="182dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="92dp"
+        android:layout_width="265dp"
+        android:layout_height="166dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toTopOf="@+id/addCalendar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
         android:id="@+id/addCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="12dp"
         android:background="@color/colorPrimary"
         android:text="Ajouter au calendrier"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +42,6 @@
         android:id="@+id/jour"
         android:layout_width="87dp"
         android:layout_height="35dp"
-        android:layout_marginStart="18dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="parent" />
