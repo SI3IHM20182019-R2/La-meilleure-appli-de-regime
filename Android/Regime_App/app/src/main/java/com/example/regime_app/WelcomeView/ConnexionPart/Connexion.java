@@ -30,6 +30,7 @@ public class Connexion extends AppCompatActivity {
             public void onClick(View v) {
                 if (checkData()) {
                     Intent intent = new Intent(getApplicationContext(), MenuManagmentActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
 
