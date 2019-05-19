@@ -76,15 +76,6 @@ public class AccueilController extends Controller {
         super("/appregime/view/accueil.fxml");
         this.user = user;
         this.nom.setText(this.user.getPseudo());
-       // System.out.println(this.user.getPoids());
-
-        //Generate 3 plats for the day
-      /*  ListPlats l = new ListPlats();
-        Random random = new Random();
-        int index = random.nextInt(10);
-        int index = random.nextInt(10);
-        int index = random.nextInt(10);
-       // platModelListView.setItems(l.getPlatList());*/
         this.initRepasList();
         this.initCalendar();
         this.PoidsActuel.setText(String.valueOf(this.user.getPoids()));
@@ -95,21 +86,13 @@ public class AccueilController extends Controller {
     }
 
     public void initCalendar() {
-       BorderPane root = new BorderPane();
-      //  scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-       // CalendarView calendarView = new CalendarView();
+        BorderPane root = new BorderPane();
         DatePicker datePicker = new DatePicker(LocalDate.now());
         DatePickerSkin datePickerSkin = new DatePickerSkin(new DatePicker(LocalDate.now()));
         Node popupContent = datePickerSkin.getPopupContent();
-       // calendar.getChildren().addAll(popupContent);
-       root.setCenter(popupContent);
-       calendar.getChildren().addAll(root);
-        LocalDate selectedDate = datePicker.getValue();
-        //Or using neat lambda
-        datePicker.valueProperty().addListener((observable, oldValue, newValue) -> {
-            System.out.println("New Value: " + newValue);
-        });
-
+        root.setCenter(popupContent);
+        calendar.getChildren().addAll(root);
+        datePicker.valueProperty().addListener((observable, oldValue, newValue) -> System.out.println("New Value: " + newValue));
     }
 
     public void initRepasList() {
@@ -118,7 +101,7 @@ public class AccueilController extends Controller {
         int index = random.nextInt(4);
         int index1 = random.nextInt(4);
         int index2 = random.nextInt(4);
-        ObservableList<RepasModel> ls= FXCollections.observableList(new ArrayList<>());
+        ObservableList<RepasModel> ls = FXCollections.observableList(new ArrayList<>());
         ls.add(l.getRepasList().get(index));
         ls.add(l.getRepasList().get(index1));
         ls.add(l.getRepasList().get(index2));
@@ -127,17 +110,14 @@ public class AccueilController extends Controller {
         platModelListView.setItems(ls);
 
         platModelListView.setCellFactory(
-                new Callback< ListView<RepasModel>, ListCell<RepasModel> >() {
+                new Callback<ListView<RepasModel>, ListCell<RepasModel>>() {
                     @Override
                     public ListCell<RepasModel> call(ListView<RepasModel> listView) {
-                        // Cette cellule personalisée pourrait (devrait) être placée dans une classe à part
                         return new ListCell<RepasModel>() {
                             @Override
                             protected void updateItem(RepasModel item, boolean empty) {
                                 super.updateItem(item, empty);
                                 if (item != null) {
-
-                                    //setText(String.valueOf(item.getName()));
                                     RepasController repasController = new RepasController();
                                     repasController.setRepas(item);
                                     setGraphic(repasController.getFxml());
@@ -148,10 +128,6 @@ public class AccueilController extends Controller {
                         };
                     }
                 });
-
-        // Include from the code a different fxml file
-       // displayAdBanner(department);
-
     }
 
     private void creerRegime() {
