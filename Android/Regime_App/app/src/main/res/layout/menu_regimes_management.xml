@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TabLayout
+        app:tabTextAppearance="@style/RegimesTabTextAppearance"
+        android:id="@+id/regimesMenu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tablayout_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@drawable/menu2"/>
+
+    <com.example.regime_app.NonSwipeableViewPager
+        android:id="@+id/myRegimesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/tablayout_height"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/greenbackround" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Regime_App</string>
+    <string name="nom" id="nom">Marie Durand</string>
+    <string name="poids" id="poids">Poids:</string>
+    <string name="poidsValue" id="poidsValue"> 85Kg</string>
+    <string name="nomObjectif" id="nomObjectif"> Objectif:</string>
+    <string name="objectifValue" id="objectifValue"> Perte de poids</string>
+    <string name="platdujour" id="platdujour"> Plat du jour</string>
+    <string name="email" id="email"> mariedurand@yahoo.fr </string>
+
+    <string name="test" id="test"> Test</string>
+    <string name="channel_test">CHANNEL_TEST</string>
+    <string name="channel_test_description">CHANNEL_TEST_DESCRIPTION</string>
+
+    <string name="addCalendar"> Je souhaite ajouter les informations sur mon objectif à mon agenda </string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialog_msg_preference_alimentaire">Choisissez vos preferences alimentaires :</string>
+    <string name="soumettre">Soumettre</string>
+    <string name="annuler">Annuler</string>
+    <string name="channel_notification">Notification deadline</string>
+    <string name="channel_notification_description">Channel alloué pour envoyer des notification en fonction du temps restant avant la deadline</string>
+    <string name="click_here"><![CDATA[--> Cliquez ici <--]]></string>
+
+
+    <string-array name="intensite_array">
+        <item>Intensité</item>
+        <item>Faible</item>
+        <item>Modere</item>
+        <item>Maximal</item>
+    </string-array>
+
+    <string-array name="themeMangerSain_array">
+        <item>Thème</item>
+        <item>Plus de fibre</item>
+        <item>Plus de fruit legume</item>
+        <item>Général</item>
+    </string-array>
+
+    <string-array name="zoneCorps_array">
+        <item>Priorité</item>
+        <item>Cuisses</item>
+        <item>Fesses</item>
+        <item>Ventre</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bienvenue_green1">
+
+    <CheckBox
+        android:id="@+id/checkbox_gluten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="8dp"
+        android:buttonTint="@android:color/white"
+        android:onClick="onCheckboxClicked"
+        android:text="gluten"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkbox_glucose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:buttonTint="@android:color/white"
+        android:onClick="onCheckboxClicked"
+        android:text="glucose"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_soja"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_soja" />
+
+    <CheckBox
+        android:id="@+id/checkbox_soja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:buttonTint="@android:color/white"
+        android:onClick="onCheckboxClicked"
+        android:text="soja"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_oeuf"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_oeuf" />
+
+    <CheckBox
+        android:id="@+id/checkbox_oeuf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:buttonTint="@android:color/white"
+        android:onClick="onCheckboxClicked"
+        android:text="oeuf"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_poisson"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_poisson" />
+
+    <CheckBox
+        android:id="@+id/checkbox_arachide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:buttonTint="@android:color/white"
+        android:onClick="onCheckboxClicked"
+        android:text="arachide"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_gluten"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_gluten" />
+
+    <CheckBox
+        android:id="@+id/checkbox_moutarde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:buttonTint="@android:color/white"
+        android:onClick="onCheckboxClicked"
+        android:text="moutarde"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_arachide"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_arachide" />
+
+    <CheckBox
+        android:id="@+id/checkbox_poisson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:buttonTint="@android:color/white"
+        android:onClick="onCheckboxClicked"
+        android:text="poisson"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_moutarde"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_moutarde" />
+
+    <Button
+        android:id="@+id/soumettre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="128dp"
+        android:background="@null"
+        android:text="@string/soumettre"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/annuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="128dp"
+        android:background="@null"
+        android:text="@string/annuler"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

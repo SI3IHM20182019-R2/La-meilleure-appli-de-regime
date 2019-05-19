@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.regime_app"
+    tools:ignore="GoogleAppIndexingWarning">>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission
+        android:name="android.permission.WRITE_CALENDAR"
+        android:exported="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".WelcomeView.ConnexionPart.Connexion"></activity>
+        <activity android:name=".WelcomeView.ConnexionPart.ChoixInscriptionConnexion" />
+        <activity android:name=".WelcomeView.WelcomePart.SelectionAllergies" />
+        <activity android:name=".WelcomeView.WelcomePart.SelectionPreferencesAlimentaires" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="androi    d.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsRegimeActivity"
+            android:configChanges="screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Donner_Avis"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".MenuManagmentActivity"
+            android:configChanges="screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartTwo"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".WelcomeView.InscriptionPart.InscriptionActivityPartOne"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".WelcomeView.WelcomePart.WelcomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".WelcomeView.InscriptionPart.InscriptionActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+
+        <service android:name=".Services.NotifyDeadlineService" />
+    </application>
+
+</manifest>

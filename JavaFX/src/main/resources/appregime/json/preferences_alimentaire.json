@@ -1,0 +1,22 @@
+[
+  {
+    "libelle": "ovo-lacto-végétarien",
+    "description": "Ne mange pas de viande mais consomme des œufs, du lait, des produits laitiers."
+  },
+  {
+    "libelle": "ovo-végétarien",
+    "description": "Ne mange pas de viande consomme des œufs mais pas de produits laitiers."
+  },
+  {
+    "libelle": "lacto-végétarien",
+    "description": "Ne mange pas de viande consomme des produits laitiers mais pas d'œufs."
+  },
+  {
+    "libelle": "pesco-végétariens",
+    "description": "Ne mange pas de viande mais s'auhtorise la consommation de poisson"
+  },
+  {
+    "libelle": "vegetalien",
+    "description": "Ne consomme aucun produit d'origine animale, donc ni viande, ni lait, ni œufs, ni miel"
+  }
+]
